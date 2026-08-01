@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>VTT CABS APK Download</title>
+    <title>VTT CABS APK Downloads</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            max-width: 600px;
-            margin: 50px auto;
+            max-width: 800px;
+            margin: 30px auto;
             padding: 20px;
             background: #f5f5f5;
         }
@@ -15,47 +15,89 @@
             padding: 30px;
             border-radius: 10px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            text-align: center;
         }
-        h1 { color: #1976D2; }
+        h1 { color: #0D47A1; text-align: center; }
+        h2 { color: #1976D2; }
+        .apk-card {
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 15px 0;
+            background: #fafafa;
+        }
+        .apk-card h3 { margin-top: 0; color: #0D47A1; }
+        .apk-card p { color: #666; font-size: 14px; margin: 5px 0; }
         .download-btn {
             display: inline-block;
             background: #1976D2;
             color: white;
-            padding: 15px 30px;
+            padding: 12px 24px;
             text-decoration: none;
             border-radius: 5px;
-            font-size: 18px;
-            margin: 20px 0;
+            font-size: 16px;
+            margin-top: 10px;
         }
         .download-btn:hover { background: #1565C0; }
-        .info { color: #666; font-size: 14px; }
+        .download-btn.admin { background: #0D47A1; }
+        .download-btn.admin:hover { background: #0a3780; }
+        .features { margin-top: 20px; }
+        .features li { margin: 5px 0; }
+        .info-box {
+            background: #e3f2fd;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .info-box h4 { margin-top: 0; color: #0D47A1; }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>🚕 VTT CABS</h1>
-        <h2>Release APK Download</h2>
-        <p>Production-ready cab booking app for Android</p>
-        <a class="download-btn" href="vtt-cabs-release.apk" download="vtt-cabs-release.apk">Download APK (19 MB)</a>
-        <p class="info">
-            Version: 1.0<br>
-            Size: 19 MB<br>
-            MD5: 3614e055036b2ec4c40a98d88da3daf2
-        </p>
-        <script>
-            // Auto-trigger download on page load
-            window.onload = function() {
-                setTimeout(function() {
-                    var link = document.createElement('a');
-                    link.href = 'vtt-cabs-release.apk';
-                    link.download = 'vtt-cabs-release.apk';
-                    document.body.appendChild(link);
-                    link.click();
-                    document.body.removeChild(link);
-                }, 500);
-            };
-        </script>
+        <h2>Android Apps Download</h2>
+        
+        <div class="info-box">
+            <h4>Test Credentials</h4>
+            <p><strong>Customer:</strong> test@vtt.com / test123</p>
+            <p><strong>Driver:</strong> driver1@vtt.com / driver123</p>
+            <p><strong>Admin:</strong> 9999999999 / Admin@123</p>
+        </div>
+        
+        <div class="apk-card">
+            <h3>📱 VTT CABS Customer App</h3>
+            <p>Book cabs, track rides, and manage your trips</p>
+            <p><strong>Package:</strong> com.aistudio.vttcabs.app</p>
+            <p><strong>Size:</strong> ~19 MB</p>
+            <a class="download-btn" href="VTT-CABS-Customer.apk" download="VTT-CABS-Customer.apk">Download Customer APK</a>
+        </div>
+        
+        <div class="apk-card">
+            <h3>🚗 VTT CABS Admin Panel</h3>
+            <p>Manage drivers, bookings, customers, and analytics</p>
+            <p><strong>Package:</strong> com.vttcabs.admin.app</p>
+            <p><strong>Size:</strong> ~18 MB</p>
+            <a class="download-btn admin" href="VTT-CABS-Admin.apk" download="VTT-CABS-Admin.apk">Download Admin APK</a>
+        </div>
+        
+        <div class="features">
+            <h3>Features Included</h3>
+            <ul>
+                <li>✅ Customer, Driver & Admin Login</li>
+                <li>✅ Firebase Authentication</li>
+                <li>✅ Google Maps Integration</li>
+                <li>✅ Real-time Booking System</li>
+                <li>✅ Live GPS Tracking</li>
+                <li>✅ Fare Calculation</li>
+                <li>✅ Supabase/Firebase Database</li>
+                <li>✅ Push Notifications</li>
+                <li>✅ Material 3 UI Design</li>
+            </ul>
+        </div>
+        
+        <div class="info-box">
+            <h4>Version 1.0.0</h4>
+            <p>All apps built and ready for testing</p>
+        </div>
     </div>
 </body>
 </html>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.VTTCABS" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:statusBarColor">@color/vtt_blue_dark</item>
+        <item name="android:navigationBarColor">@color/vtt_blue_dark</item>
+    </style>
+</resources>

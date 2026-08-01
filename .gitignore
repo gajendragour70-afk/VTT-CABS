@@ -21,3 +21,6 @@ my-upload-key.jks
 *.jks
 .build-outputs/
 app/google-services.json
+admin-app/google-services.json
+outputs/*.apk
+outputs/*.html

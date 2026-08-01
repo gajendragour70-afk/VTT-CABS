@@ -25,3 +25,4 @@ dependencyResolutionManagement {
 rootProject.name = "VTT CABS"
 
 include(":app")
+include(":admin-app")
