@@ -33,7 +33,7 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
-import androidx.compose.material3.Divider
+import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Surface
@@ -153,7 +153,7 @@ fun CustomerProfileScreen(
                     icon = Icons.Default.Home,
                     onClick = { viewModel.showToast("Home address saved") }
                 )
-                Divider(color = Color(0xFFF1F5F9))
+                HorizontalDivider(color = Color(0xFFF1F5F9))
                 ProfileOptionRow(
                     title = "Work / Office",
                     subtitle = "Electronic City Phase 1, Bengaluru",

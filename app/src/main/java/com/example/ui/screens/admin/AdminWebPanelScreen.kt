@@ -46,7 +46,7 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
-import androidx.compose.material3.Divider
+import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
@@ -573,7 +573,7 @@ private fun AdminDashboardOverviewTab(viewModel: VttCabViewModel) {
                             Text(booking.bookingStatus.name, fontSize = 10.sp, fontWeight = FontWeight.Bold, color = VTTBluePrimary, modifier = Modifier.padding(horizontal = 8.dp, vertical = 4.dp))
                         }
                     }
-                    Divider(color = Color(0xFFF1F5F9))
+                    HorizontalDivider(color = Color(0xFFF1F5F9))
                 }
             }
         }
@@ -767,9 +767,9 @@ private fun AdminCustomerListTab(viewModel: VttCabViewModel) {
         ) {
             Column(modifier = Modifier.padding(16.dp)) {
                 CustomerRow("Rahul Sharma", "rahul.sharma@example.com", "+91 9876543210", "12 Rides Completed")
-                Divider(color = Color(0xFFF1F5F9))
+                HorizontalDivider(color = Color(0xFFF1F5F9))
                 CustomerRow("Priya Patel", "priya.patel@example.com", "+91 9812345678", "8 Rides Completed")
-                Divider(color = Color(0xFFF1F5F9))
+                HorizontalDivider(color = Color(0xFFF1F5F9))
                 CustomerRow("Amit Kumar", "amit.k@example.com", "+91 9765432109", "19 Rides Completed")
             }
         }
@@ -879,7 +879,7 @@ private fun AdminFareManagementTab(viewModel: VttCabViewModel) {
                 FareRuleRow("SUV (7-Seater)", "Base: ₹85", "Rate: ₹17/km")
 
                 Spacer(modifier = Modifier.height(16.dp))
-                Divider()
+                HorizontalDivider()
                 Spacer(modifier = Modifier.height(16.dp))
 
                 Text("Round Trip Rates", fontWeight = FontWeight.Bold, fontSize = 14.sp, color = VTTBluePrimary)
@@ -889,7 +889,7 @@ private fun AdminFareManagementTab(viewModel: VttCabViewModel) {
                 Text("• Toll & Parking: Charged as per actual receipts", fontSize = 12.sp)
 
                 Spacer(modifier = Modifier.height(16.dp))
-                Divider()
+                HorizontalDivider()
                 Spacer(modifier = Modifier.height(16.dp))
 
                 Text("Local Rental Packages", fontWeight = FontWeight.Bold, fontSize = 14.sp, color = VTTBluePrimary)
@@ -937,9 +937,9 @@ private fun AdminCouponsTab(viewModel: VttCabViewModel) {
         ) {
             Column(modifier = Modifier.padding(16.dp)) {
                 CouponRow("VTTFIRST50", "50% OFF up to ₹100", "ACTIVE")
-                Divider(color = Color(0xFFF1F5F9))
+                HorizontalDivider(color = Color(0xFFF1F5F9))
                 CouponRow("SAVERIDE", "Flat ₹75 OFF on Outstation", "ACTIVE")
-                Divider(color = Color(0xFFF1F5F9))
+                HorizontalDivider(color = Color(0xFFF1F5F9))
                 CouponRow("INDORE10", "10% OFF Bhopal-Indore Route", "ACTIVE")
             }
         }

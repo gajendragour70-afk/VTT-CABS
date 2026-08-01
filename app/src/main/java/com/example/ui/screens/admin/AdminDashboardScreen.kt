@@ -47,7 +47,7 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
-import androidx.compose.material3.Divider
+import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.FilterChip
 import androidx.compose.material3.FilterChipDefaults
 import androidx.compose.material3.Icon
@@ -780,7 +780,7 @@ fun AdminDriverVerificationCard(
             }
 
             Spacer(modifier = Modifier.height(8.dp))
-            Divider(color = Color(0xFFE2E8F0))
+            HorizontalDivider(color = Color(0xFFE2E8F0))
             Spacer(modifier = Modifier.height(8.dp))
 
             // Details Grid: Phone, Email, Address, DOB, Emergency Contact, DL, Aadhaar, PAN

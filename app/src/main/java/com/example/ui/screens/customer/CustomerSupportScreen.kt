@@ -32,7 +32,7 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
-import androidx.compose.material3.Divider
+import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -191,17 +191,17 @@ fun CustomerSupportScreen(
                     question = "How is my ride fare calculated?",
                     answer = "Fares are transparently calculated based on actual road distance (OSRM GPS route), base fare, and per-km rate."
                 )
-                Divider(color = Color(0xFFF1F5F9))
+                HorizontalDivider(color = Color(0xFFF1F5F9))
                 FaqRow(
                     question = "Can I cancel my ride booking?",
                     answer = "Yes, you can cancel your booking anytime before trip start without penalty."
                 )
-                Divider(color = Color(0xFFF1F5F9))
+                HorizontalDivider(color = Color(0xFFF1F5F9))
                 FaqRow(
                     question = "What if I lose an item in the cab?",
                     answer = "Contact your driver partner or call our 24x7 support immediately with your Trip ID."
                 )
-                Divider(color = Color(0xFFF1F5F9))
+                HorizontalDivider(color = Color(0xFFF1F5F9))
                 FaqRow(
                     question = "Which payment methods are accepted?",
                     answer = "We accept Google Pay, PhonePe, UPI QR, Credit/Debit cards, VTT Wallet, and Cash."

@@ -30,7 +30,7 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
-import androidx.compose.material3.Divider
+import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -151,7 +151,7 @@ fun CustomerPaymentsScreen(
                         isSelected = selectedPaymentMethod == PaymentMethod.UPI,
                         onClick = { viewModel.setPaymentMethod(PaymentMethod.UPI) }
                     )
-                    Divider(color = Color(0xFFF1F5F9))
+                    HorizontalDivider(color = Color(0xFFF1F5F9))
                     PaymentOptionRow(
                         title = "Credit / Debit Card",
                         subtitle = "Visa, Mastercard, RuPay",
@@ -159,7 +159,7 @@ fun CustomerPaymentsScreen(
                         isSelected = selectedPaymentMethod == PaymentMethod.CARD,
                         onClick = { viewModel.setPaymentMethod(PaymentMethod.CARD) }
                     )
-                    Divider(color = Color(0xFFF1F5F9))
+                    HorizontalDivider(color = Color(0xFFF1F5F9))
                     PaymentOptionRow(
                         title = "Cash to Driver",
                         subtitle = "Pay directly after ride completion",

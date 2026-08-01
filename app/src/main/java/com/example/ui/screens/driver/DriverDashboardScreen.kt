@@ -39,7 +39,7 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
-import androidx.compose.material3.Divider
+import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
@@ -506,7 +506,7 @@ fun DriverActiveNavigationCard(
                 }
 
                 Spacer(modifier = Modifier.height(10.dp))
-                Divider(color = Color(0xFFE2E8F0))
+                HorizontalDivider(color = Color(0xFFE2E8F0))
                 Spacer(modifier = Modifier.height(10.dp))
 
                 // Drop Location

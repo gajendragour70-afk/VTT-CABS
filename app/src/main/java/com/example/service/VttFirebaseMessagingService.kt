@@ -6,6 +6,7 @@ import com.google.firebase.messaging.RemoteMessage
 
 class VttFirebaseMessagingService : FirebaseMessagingService() {
 
+    @Deprecated("Deprecated in Java")
     override fun onNewToken(token: String) {
         super.onNewToken(token)
         Log.d(TAG, "Refreshed FCM Token: $token")

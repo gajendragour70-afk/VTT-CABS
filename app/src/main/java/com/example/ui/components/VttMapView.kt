@@ -321,6 +321,7 @@ fun VttMapView(
                     settings.apply {
                         javaScriptEnabled = true
                         domStorageEnabled = true
+                        @Suppress("DEPRECATION")
                         databaseEnabled = true
                         useWideViewPort = true
                         loadWithOverviewMode = true

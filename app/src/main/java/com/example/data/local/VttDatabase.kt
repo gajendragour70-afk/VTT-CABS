@@ -36,7 +36,9 @@ abstract class VttDatabase : RoomDatabase() {
                     context.applicationContext,
                     VttDatabase::class.java,
                     "vtt_cabs.db"
-                ).fallbackToDestructiveMigration().build()
+                )
+                    .fallbackToDestructiveMigration(dropAllTables = true)
+                    .build()
                 INSTANCE = instance
                 instance
             }

@@ -52,7 +52,7 @@ import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.CircularProgressIndicator
-import androidx.compose.material3.Divider
+import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
@@ -270,7 +270,7 @@ fun CustomerBookingScreen(
                                 }
                             }
 
-                            Divider(
+                            HorizontalDivider(
                                 modifier = Modifier.padding(vertical = 10.dp),
                                 color = Color(0xFFE2E8F0)
                             )
@@ -299,7 +299,7 @@ fun CustomerBookingScreen(
                                 }
                             }
 
-                            Divider(
+                            HorizontalDivider(
                                 modifier = Modifier.padding(vertical = 10.dp),
                                 color = Color(0xFFE2E8F0)
                             )
@@ -851,7 +851,7 @@ fun CustomerBookingScreen(
                     if (fare.rateBreakdownNote.isNotBlank()) {
                         FareRow("Rate Plan", fare.rateBreakdownNote)
                     }
-                    Divider(modifier = Modifier.padding(vertical = 6.dp))
+                    HorizontalDivider(modifier = Modifier.padding(vertical = 6.dp))
                     FareRow("Base Fare", "₹${fare.baseFare.toInt()}")
                     if (fare.distanceFare > 0.0) {
                         FareRow("Distance Charge (${fare.perKmRateText})", "₹${fare.distanceFare}")
@@ -869,13 +869,13 @@ fun CustomerBookingScreen(
                         FareRow("Minimum Fare Policy", "Applied")
                     }
 
-                    Divider(modifier = Modifier.padding(vertical = 8.dp))
+                    HorizontalDivider(modifier = Modifier.padding(vertical = 8.dp))
 
                     FareRow("Subtotal", "₹${fare.subtotal.toInt()}", isBold = true)
                     FareRow("Toll Charge", "Extra (Not Included)", isSecondary = true)
                     FareRow("Parking Fee", "Extra (Not Included)", isSecondary = true)
 
-                    Divider(modifier = Modifier.padding(vertical = 8.dp))
+                    HorizontalDivider(modifier = Modifier.padding(vertical = 8.dp))
 
                     Row(
                         modifier = Modifier.fillMaxWidth(),
