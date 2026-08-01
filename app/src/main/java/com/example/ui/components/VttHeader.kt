@@ -46,8 +46,7 @@ import com.example.ui.theme.VTTBluePrimary
 fun VttHeader(
     currentRole: UserRole,
     currentUser: UserEntity? = null,
-    onRoleSelected: (UserRole) -> Unit,
-    onOpenRoleSelection: (() -> Unit)? = null,
+    onRoleSelected: (UserRole) -> Unit = {},
     unreadNotificationCount: Int = 0,
     onNotificationsClick: () -> Unit = {},
     onAuthClick: () -> Unit = {},
@@ -74,8 +73,7 @@ fun VttHeader(
                         modifier = Modifier
                             .size(38.dp)
                             .clip(CircleShape)
-                            .background(Color.White)
-                            .clickable { onOpenRoleSelection?.invoke() },
+                            .background(Color.White),
                         contentAlignment = Alignment.Center
                     ) {
                         Icon(
@@ -113,24 +111,6 @@ fun VttHeader(
                 Row(
                     verticalAlignment = Alignment.CenterVertically
                 ) {
-                    if (onOpenRoleSelection != null) {
-                        Surface(
-                            shape = RoundedCornerShape(20.dp),
-                            color = Color.White.copy(alpha = 0.2f),
-                            modifier = Modifier
-                                .clickable { onOpenRoleSelection() }
-                                .padding(end = 6.dp)
-                        ) {
-                            Text(
-                                text = "Portals",
-                                fontSize = 11.sp,
-                                fontWeight = FontWeight.Bold,
-                                color = Color.White,
-                                modifier = Modifier.padding(horizontal = 8.dp, vertical = 4.dp)
-                            )
-                        }
-                    }
-
                     Surface(
                         shape = RoundedCornerShape(20.dp),
                         color = Color.White.copy(alpha = 0.15f),
@@ -150,7 +130,7 @@ fun VttHeader(
                             )
                             Spacer(modifier = Modifier.width(4.dp))
                             Text(
-                                text = if (currentUser == null || currentUser.name.isBlank()) "Guest" else currentUser.name.take(12),
+                                text = if (currentUser == null || currentUser.name.isBlank()) "Account" else currentUser.name.take(12),
                                 fontSize = 12.sp,
                                 fontWeight = FontWeight.Bold,
                                 color = Color.White
@@ -182,78 +162,6 @@ fun VttHeader(
                     }
                 }
             }
-
-            // Mobile App Segmented Role Switcher: Customer | Driver Partner Only
-            Surface(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(top = 10.dp),
-                shape = RoundedCornerShape(12.dp),
-                color = Color.White.copy(alpha = 0.12f)
-            ) {
-                Row(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(4.dp),
-                    horizontalArrangement = Arrangement.SpaceEvenly
-                ) {
-                    RoleChip(
-                        role = UserRole.CUSTOMER,
-                        title = "Customer App",
-                        icon = Icons.Default.Person,
-                        isSelected = currentRole == UserRole.CUSTOMER,
-                        onClick = { onRoleSelected(UserRole.CUSTOMER) },
-                        modifier = Modifier.weight(1f)
-                    )
-                    RoleChip(
-                        role = UserRole.DRIVER,
-                        title = "Driver Partner",
-                        icon = Icons.Default.DirectionsCar,
-                        isSelected = currentRole == UserRole.DRIVER,
-                        onClick = { onRoleSelected(UserRole.DRIVER) },
-                        modifier = Modifier.weight(1f)
-                    )
-                }
-            }
-        }
-    }
-}
-
-@Composable
-private fun RoleChip(
-    role: UserRole,
-    title: String,
-    icon: ImageVector,
-    isSelected: Boolean,
-    onClick: () -> Unit,
-    modifier: Modifier = Modifier
-) {
-    Surface(
-        modifier = modifier
-            .padding(horizontal = 2.dp)
-            .clip(RoundedCornerShape(8.dp))
-            .clickable(onClick = onClick),
-        color = if (isSelected) Color.White else Color.Transparent,
-        shape = RoundedCornerShape(8.dp)
-    ) {
-        Row(
-            modifier = Modifier.padding(vertical = 6.dp, horizontal = 4.dp),
-            horizontalArrangement = Arrangement.Center,
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-            Icon(
-                imageVector = icon,
-                contentDescription = title,
-                tint = if (isSelected) VTTBluePrimary else Color.White.copy(alpha = 0.85f),
-                modifier = Modifier.size(16.dp)
-            )
-            Text(
-                text = title,
-                fontSize = 12.sp,
-                fontWeight = if (isSelected) FontWeight.Bold else FontWeight.Medium,
-                color = if (isSelected) VTTBluePrimary else Color.White.copy(alpha = 0.85f),
-                modifier = Modifier.padding(start = 4.dp)
-            )
         }
     }
 }

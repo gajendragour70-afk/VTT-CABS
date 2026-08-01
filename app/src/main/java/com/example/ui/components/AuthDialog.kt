@@ -194,22 +194,29 @@ fun AuthDialog(
                     .height(420.dp)
                     .verticalScroll(scrollState)
             ) {
-                // Role Tabs (Mobile App: Customer & Driver Partner Only)
-                TabRow(
-                    selectedTabIndex = if (selectedRoleTab > 1) 0 else selectedRoleTab,
-                    containerColor = Color.Transparent,
-                    contentColor = VTTBluePrimary
-                ) {
-                    Tab(
-                        selected = selectedRoleTab == 0,
-                        onClick = { selectedRoleTab = 0 },
-                        text = { Text("Customer", fontSize = 12.sp, fontWeight = FontWeight.Bold) }
-                    )
-                    Tab(
-                        selected = selectedRoleTab == 1,
-                        onClick = { selectedRoleTab = 1 },
-                        text = { Text("Driver Partner", fontSize = 12.sp, fontWeight = FontWeight.Bold) }
-                    )
+                // Scope authentication to current app role if initialRole is provided
+                if (initialRole == UserRole.CUSTOMER) {
+                    selectedRoleTab = 0
+                } else if (initialRole == UserRole.DRIVER) {
+                    selectedRoleTab = 1
+                } else {
+                    // Role Tabs (For App Launcher / General Auth)
+                    TabRow(
+                        selectedTabIndex = if (selectedRoleTab > 1) 0 else selectedRoleTab,
+                        containerColor = Color.Transparent,
+                        contentColor = VTTBluePrimary
+                    ) {
+                        Tab(
+                            selected = selectedRoleTab == 0,
+                            onClick = { selectedRoleTab = 0 },
+                            text = { Text("Customer", fontSize = 12.sp, fontWeight = FontWeight.Bold) }
+                        )
+                        Tab(
+                            selected = selectedRoleTab == 1,
+                            onClick = { selectedRoleTab = 1 },
+                            text = { Text("Driver Partner", fontSize = 12.sp, fontWeight = FontWeight.Bold) }
+                        )
+                    }
                 }
 
                 Spacer(modifier = Modifier.height(14.dp))

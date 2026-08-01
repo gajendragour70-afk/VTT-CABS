@@ -57,11 +57,13 @@ fun CustomerProfileDialog(
     onDismiss: () -> Unit
 ) {
     val currentUser by viewModel.currentUser.collectAsState()
+    val user = currentUser ?: return
+
     var isEditing by remember { mutableStateOf(false) }
 
-    var editName by remember { mutableStateOf(currentUser.name) }
-    var editPhone by remember { mutableStateOf(currentUser.phone) }
-    var editEmail by remember { mutableStateOf(currentUser.email) }
+    var editName by remember { mutableStateOf(user.name) }
+    var editPhone by remember { mutableStateOf(user.phone) }
+    var editEmail by remember { mutableStateOf(user.email) }
 
     AlertDialog(
         onDismissRequest = onDismiss,
@@ -111,7 +113,7 @@ fun CustomerProfileDialog(
                             contentAlignment = Alignment.Center
                         ) {
                             Text(
-                                text = currentUser.name.take(1).uppercase(),
+                                text = user.name.ifBlank { "V" }.take(1).uppercase(),
                                 fontSize = 22.sp,
                                 fontWeight = FontWeight.ExtraBold,
                                 color = VTTBluePrimary
@@ -119,14 +121,14 @@ fun CustomerProfileDialog(
                         }
 
                         Column(modifier = Modifier.padding(start = 12.dp)) {
-                            Text(currentUser.name, fontWeight = FontWeight.Bold, color = Color.White, fontSize = 16.sp)
-                            Text(currentUser.email, fontSize = 12.sp, color = Color.White.copy(alpha = 0.8f))
+                            Text(user.name, fontWeight = FontWeight.Bold, color = Color.White, fontSize = 16.sp)
+                            Text(user.email, fontSize = 12.sp, color = Color.White.copy(alpha = 0.8f))
                             Row(
                                 verticalAlignment = Alignment.CenterVertically,
                                 modifier = Modifier.padding(top = 2.dp)
                             ) {
                                 Icon(Icons.Default.Star, contentDescription = null, tint = Color(0xFFF59E0B), modifier = Modifier.size(14.dp))
-                                Text(" ${currentUser.rating} Customer Rating", fontSize = 11.sp, color = Color.White, fontWeight = FontWeight.SemiBold)
+                                Text(" ${user.rating} Customer Rating", fontSize = 11.sp, color = Color.White, fontWeight = FontWeight.SemiBold)
                             }
                         }
                     }
@@ -163,13 +165,13 @@ fun CustomerProfileDialog(
                     )
                 } else {
                     // Profile Info Tiles
-                    ProfileDetailTile(icon = Icons.Default.Person, label = "Full Name", value = currentUser.name)
+                    ProfileDetailTile(icon = Icons.Default.Person, label = "Full Name", value = user.name)
                     Spacer(modifier = Modifier.height(6.dp))
-                    ProfileDetailTile(icon = Icons.Default.Phone, label = "Mobile Number", value = currentUser.phone)
+                    ProfileDetailTile(icon = Icons.Default.Phone, label = "Mobile Number", value = user.phone)
                     Spacer(modifier = Modifier.height(6.dp))
-                    ProfileDetailTile(icon = Icons.Default.Email, label = "Email Address", value = currentUser.email)
+                    ProfileDetailTile(icon = Icons.Default.Email, label = "Email Address", value = user.email)
                     Spacer(modifier = Modifier.height(6.dp))
-                    ProfileDetailTile(icon = Icons.Default.Lock, label = "Account Role", value = currentUser.role.name)
+                    ProfileDetailTile(icon = Icons.Default.Lock, label = "Account Role", value = user.role.name)
                 }
             }
         },
@@ -178,11 +180,11 @@ fun CustomerProfileDialog(
                 Button(
                     onClick = {
                         viewModel.registerUser(
-                            name = editName.ifBlank { currentUser.name },
-                            email = editEmail.ifBlank { currentUser.email },
-                            phone = editPhone.ifBlank { currentUser.phone },
-                            pass = currentUser.password,
-                            role = currentUser.role
+                            name = editName.ifBlank { user.name },
+                            email = editEmail.ifBlank { user.email },
+                            phone = editPhone.ifBlank { user.phone },
+                            pass = user.password,
+                            role = user.role
                         )
                         isEditing = false
                         viewModel.showToast("Profile updated successfully!")

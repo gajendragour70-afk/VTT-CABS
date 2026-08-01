@@ -34,15 +34,25 @@ class VttCabViewModel(application: Application) : AndroidViewModel(application) 
     val repository = VttRepository(db.dao())
     val realtimeEngine = SimulatedRealtimeEngine(repository)
     val supabaseService = SupabaseService()
+    val authPrefs = com.example.data.local.AuthPreferences(application)
 
-    // Current User Session & Selected Role
+    private val firebaseAuth: com.google.firebase.auth.FirebaseAuth? = try {
+        com.google.firebase.auth.FirebaseAuth.getInstance()
+    } catch (e: Exception) { null }
+
+    private val firestore: com.google.firebase.firestore.FirebaseFirestore? = try {
+        com.google.firebase.firestore.FirebaseFirestore.getInstance()
+    } catch (e: Exception) { null }
+
+    // Current Auth & User Session
+    private val _isLoggedIn = MutableStateFlow(false)
+    val isLoggedIn: StateFlow<Boolean> = _isLoggedIn.asStateFlow()
+
     private val _currentRole = MutableStateFlow(UserRole.CUSTOMER)
     val currentRole: StateFlow<UserRole> = _currentRole.asStateFlow()
 
-    private val _currentUser = MutableStateFlow(
-        UserEntity("guest_000", "Guest", "", "", UserRole.CUSTOMER, password = "")
-    )
-    val currentUser: StateFlow<UserEntity> = _currentUser.asStateFlow()
+    private val _currentUser = MutableStateFlow<UserEntity?>(null)
+    val currentUser: StateFlow<UserEntity?> = _currentUser.asStateFlow()
 
     private val _currentDriver = MutableStateFlow<DriverEntity?>(null)
     val currentDriver: StateFlow<DriverEntity?> = _currentDriver.asStateFlow()
@@ -113,7 +123,7 @@ class VttCabViewModel(application: Application) : AndroidViewModel(application) 
         repository.allBookings,
         _currentUser
     ) { bookings, user ->
-        bookings.filter { it.customerId == user.id }
+        if (user == null) emptyList() else bookings.filter { it.customerId == user.id }
     }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), emptyList())
 
     val allDrivers: StateFlow<List<DriverEntity>> = repository.allDrivers
@@ -125,6 +135,80 @@ class VttCabViewModel(application: Application) : AndroidViewModel(application) 
     init {
         viewModelScope.launch {
             repository.seedInitialDataIfEmpty()
+
+            // Restore Persisted Auth Session
+            if (authPrefs.isLoggedIn()) {
+                val savedUserId = authPrefs.getUserId()
+                val savedRole = authPrefs.getUserRole()
+                val savedEmail = authPrefs.getUserEmail() ?: ""
+
+                if (!savedUserId.isNullOrBlank() && savedRole != null) {
+                    if (savedRole == UserRole.DRIVER) {
+                        val drv = repository.getDriverById(savedUserId) ?: repository.getDriverByEmail(savedEmail)
+                        if (drv != null && drv.approvalStatus == com.example.data.model.DriverApprovalStatus.APPROVED) {
+                            _currentDriver.value = drv
+                            _currentUser.value = UserEntity(
+                                id = drv.id,
+                                name = drv.name,
+                                email = drv.email,
+                                phone = drv.phone,
+                                role = UserRole.DRIVER,
+                                password = drv.password
+                            )
+                            _currentRole.value = UserRole.DRIVER
+                            _isLoggedIn.value = true
+                        } else {
+                            authPrefs.clearSession()
+                        }
+                    } else if (savedRole == UserRole.CUSTOMER) {
+                        val usr = repository.getUserByEmail(savedEmail) ?: repository.getUserById(savedUserId)
+                        if (usr != null) {
+                            _currentUser.value = usr
+                            _currentRole.value = UserRole.CUSTOMER
+                            _isLoggedIn.value = true
+                        } else {
+                            val newUser = UserEntity(
+                                id = savedUserId,
+                                name = if (savedEmail.contains("@")) savedEmail.substringBefore("@").replaceFirstChar { it.uppercase() } else "Customer",
+                                email = if (savedEmail.contains("@")) savedEmail else "$savedEmail@vtt.com",
+                                phone = "+91 9800000000",
+                                role = UserRole.CUSTOMER
+                            )
+                            repository.insertUser(newUser)
+                            _currentUser.value = newUser
+                            _currentRole.value = UserRole.CUSTOMER
+                            _isLoggedIn.value = true
+                        }
+                    }
+                }
+            } else {
+                // Check Firebase Auth instance if logged in
+                val fbUser = firebaseAuth?.currentUser
+                if (fbUser != null && !fbUser.email.isNullOrBlank()) {
+                    val email = fbUser.email!!
+                    val drv = repository.getDriverByEmail(email)
+                    if (drv != null && drv.approvalStatus == com.example.data.model.DriverApprovalStatus.APPROVED) {
+                        _currentDriver.value = drv
+                        _currentUser.value = UserEntity(id = drv.id, name = drv.name, email = drv.email, phone = drv.phone, role = UserRole.DRIVER)
+                        _currentRole.value = UserRole.DRIVER
+                        _isLoggedIn.value = true
+                        authPrefs.saveSession(drv.id, UserRole.DRIVER, drv.email)
+                    } else {
+                        val usr = repository.getUserByEmail(email) ?: UserEntity(
+                            id = fbUser.uid,
+                            name = fbUser.displayName ?: email.substringBefore("@"),
+                            email = email,
+                            phone = fbUser.phoneNumber ?: "+91 9800000000",
+                            role = UserRole.CUSTOMER
+                        )
+                        _currentUser.value = usr
+                        _currentRole.value = UserRole.CUSTOMER
+                        _isLoggedIn.value = true
+                        authPrefs.saveSession(usr.id, UserRole.CUSTOMER, usr.email)
+                    }
+                }
+            }
+
             if (supabaseService.isConfigured) {
                 val remoteBookings = supabaseService.fetchBookingsFromSupabase()
                 remoteBookings.forEach { booking ->
@@ -262,11 +346,20 @@ class VttCabViewModel(application: Application) : AndroidViewModel(application) 
     fun loginUser(identifier: String, pass: String, role: UserRole, onResult: (Boolean, String) -> Unit = { _, _ -> }) {
         viewModelScope.launch {
             val cleanId = identifier.trim()
+
+            // Admin panel is restricted to web
+            if (role == UserRole.ADMIN || cleanId.equals("admin@vtt.com", ignoreCase = true)) {
+                val msg = "Admin Operations Console is strictly available on web browser at https://admin.vttcabs.in. Mobile app is for Customers and Drivers only."
+                showToast(msg)
+                onResult(false, msg)
+                return@launch
+            }
+
             if (role == UserRole.DRIVER) {
                 // Driver Authentication
                 val driver = repository.getDriverByEmail(cleanId) ?: repository.getDriverByPhone(cleanId)
                 if (driver == null) {
-                    val msg = "Driver account not found with '$cleanId'. Please Sign Up."
+                    val msg = "Driver account not found with '$cleanId'. Please Sign Up as Driver Partner."
                     showToast(msg)
                     onResult(false, msg)
                     return@launch
@@ -281,12 +374,12 @@ class VttCabViewModel(application: Application) : AndroidViewModel(application) 
 
                 when (driver.approvalStatus) {
                     com.example.data.model.DriverApprovalStatus.PENDING -> {
-                        val msg = "Your documents are under verification. Please wait for VTT CABS Admin approval."
+                        val msg = "Your driver documents are under verification. Please wait for VTT CABS Admin approval."
                         showToast(msg)
                         onResult(false, msg)
                     }
                     com.example.data.model.DriverApprovalStatus.REJECTED -> {
-                        val msg = "Your account registration was rejected. Reason: ${driver.rejectionReason.ifBlank { "Document Verification Failed" }}"
+                        val msg = "Your registration was rejected. Reason: ${driver.rejectionReason.ifBlank { "Document Verification Failed" }}"
                         showToast(msg)
                         onResult(false, msg)
                     }
@@ -306,33 +399,23 @@ class VttCabViewModel(application: Application) : AndroidViewModel(application) 
                             password = driver.password
                         )
                         _currentRole.value = UserRole.DRIVER
+                        _isLoggedIn.value = true
+                        authPrefs.saveSession(driver.id, UserRole.DRIVER, driver.email)
+
+                        try {
+                            firebaseAuth?.signInWithEmailAndPassword(driver.email, pass.ifBlank { "123456" })
+                        } catch (e: Exception) { /* safe fallback */ }
+
                         val msg = "Welcome back, Captain ${driver.name}!"
                         showToast(msg)
                         onResult(true, msg)
                     }
                 }
-            } else if (role == UserRole.ADMIN) {
-                _currentUser.value = UserEntity(
-                    id = "admin_001",
-                    name = "VTT Dispatch Admin",
-                    email = cleanId.ifBlank { "admin@vtt.com" },
-                    phone = "+91 1800123456",
-                    role = UserRole.ADMIN,
-                    password = pass
-                )
-                _currentRole.value = UserRole.ADMIN
-                val msg = "Logged in as Admin Control"
-                showToast(msg)
-                onResult(true, msg)
             } else {
                 // Customer Authentication
                 val existing = repository.getUserByEmail(cleanId)
-                if (existing != null) {
-                    _currentUser.value = existing
-                    _currentRole.value = UserRole.CUSTOMER
-                    val msg = "Welcome back, ${existing.name}!"
-                    showToast(msg)
-                    onResult(true, msg)
+                val userToSet = if (existing != null) {
+                    existing
                 } else {
                     val newUser = UserEntity(
                         id = "cust_${System.currentTimeMillis() % 10000}",
@@ -342,13 +425,37 @@ class VttCabViewModel(application: Application) : AndroidViewModel(application) 
                         role = UserRole.CUSTOMER,
                         password = pass
                     )
-                    _currentUser.value = newUser
-                    _currentRole.value = UserRole.CUSTOMER
-                    val msg = "Logged in as ${newUser.name}"
-                    showToast(msg)
-                    onResult(true, msg)
+                    repository.insertUser(newUser)
+                    newUser
                 }
+
+                _currentUser.value = userToSet
+                _currentRole.value = UserRole.CUSTOMER
+                _isLoggedIn.value = true
+                authPrefs.saveSession(userToSet.id, UserRole.CUSTOMER, userToSet.email)
+
+                try {
+                    firebaseAuth?.signInWithEmailAndPassword(userToSet.email, pass.ifBlank { "123456" })
+                } catch (e: Exception) { /* safe fallback */ }
+
+                val msg = "Logged in as ${userToSet.name}"
+                showToast(msg)
+                onResult(true, msg)
             }
+        }
+    }
+
+    fun logout() {
+        viewModelScope.launch {
+            try {
+                firebaseAuth?.signOut()
+            } catch (e: Exception) { /* safe fallback */ }
+            authPrefs.clearSession()
+            _isLoggedIn.value = false
+            _currentUser.value = null
+            _currentDriver.value = null
+            _currentRole.value = UserRole.CUSTOMER
+            showToast("Logged out successfully.")
         }
     }
 
@@ -488,12 +595,13 @@ class VttCabViewModel(application: Application) : AndroidViewModel(application) 
         val fare = calculateCurrentFareBreakdown(_selectedVehicleCategory.value)
 
         val bookingId = "vtt_" + UUID.randomUUID().toString().take(8)
+        val usr = _currentUser.value
 
         val newBooking = BookingEntity(
             id = bookingId,
-            customerId = _currentUser.value.id,
-            customerName = _currentUser.value.name,
-            customerPhone = _currentUser.value.phone,
+            customerId = usr?.id ?: "cust_${System.currentTimeMillis() % 10000}",
+            customerName = usr?.name ?: "VTT Customer",
+            customerPhone = usr?.phone ?: "+91 9800000000",
             vehicleCategory = _selectedVehicleCategory.value,
             bookingType = _selectedBookingType.value,
             pickupAddress = _pickupAddress.value,

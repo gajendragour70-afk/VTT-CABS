@@ -40,6 +40,15 @@ class VttRepository(private val dao: VttDao) {
     suspend fun getUserByEmail(email: String): UserEntity? =
         dao.getUserByEmail(email)
 
+    suspend fun getUserById(id: String): UserEntity? =
+        dao.getUserById(id)
+
+    suspend fun insertUser(user: UserEntity) =
+        dao.insertUser(user)
+
+    suspend fun getDriverById(id: String): DriverEntity? =
+        dao.getDriverById(id)
+
     suspend fun getDriverByEmail(email: String): DriverEntity? =
         dao.getDriverByEmail(email)
 

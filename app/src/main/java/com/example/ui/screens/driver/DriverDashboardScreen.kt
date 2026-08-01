@@ -28,6 +28,7 @@ import androidx.compose.material.icons.filled.CalendarToday
 import androidx.compose.material.icons.filled.Call
 import androidx.compose.material.icons.filled.CheckCircle
 import androidx.compose.material.icons.filled.DirectionsCar
+import androidx.compose.material.icons.filled.ExitToApp
 import androidx.compose.material.icons.filled.Info
 import androidx.compose.material.icons.filled.LocationOn
 import androidx.compose.material.icons.filled.Navigation
@@ -161,15 +162,25 @@ fun DriverDashboardScreen(
                         }
                     }
 
-                    Switch(
-                        checked = driver.isOnline,
-                        onCheckedChange = { viewModel.toggleDriverOnline(driver.id, driver.isOnline) },
-                        colors = SwitchDefaults.colors(
-                            checkedThumbColor = Color.White,
-                            checkedTrackColor = VTTSuccess
-                        ),
-                        modifier = Modifier.testTag("driver_online_switch")
-                    )
+                    Row(verticalAlignment = Alignment.CenterVertically) {
+                        Switch(
+                            checked = driver.isOnline,
+                            onCheckedChange = { viewModel.toggleDriverOnline(driver.id, driver.isOnline) },
+                            colors = SwitchDefaults.colors(
+                                checkedThumbColor = Color.White,
+                                checkedTrackColor = VTTSuccess
+                            ),
+                            modifier = Modifier.testTag("driver_online_switch")
+                        )
+                        Spacer(modifier = Modifier.width(8.dp))
+                        IconButton(onClick = { viewModel.logout() }) {
+                            Icon(
+                                Icons.Default.ExitToApp,
+                                contentDescription = "Log Out Driver",
+                                tint = Color.White.copy(alpha = 0.85f)
+                            )
+                        }
+                    }
                 }
 
                 Spacer(modifier = Modifier.height(16.dp))
