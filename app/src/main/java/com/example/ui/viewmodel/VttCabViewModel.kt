@@ -343,30 +343,67 @@ class VttCabViewModel(application: Application) : AndroidViewModel(application) 
         }
     }
 
+    // Hardcoded Admin credentials
+    companion object {
+        const val ADMIN_PHONE = "9999999999"
+        const val ADMIN_PASSWORD = "Admin@123"
+    }
+
     fun loginUser(identifier: String, pass: String, role: UserRole, onResult: (Boolean, String) -> Unit = { _, _ -> }) {
         viewModelScope.launch {
             val cleanId = identifier.trim()
 
-            // Admin panel is restricted to web
+            // Admin Login - Hardcoded credentials
             if (role == UserRole.ADMIN || cleanId.equals("admin@vtt.com", ignoreCase = true)) {
-                val msg = "Admin Operations Console is strictly available on web browser at https://admin.vttcabs.in. Mobile app is for Customers and Drivers only."
-                showToast(msg)
-                onResult(false, msg)
+                // Check hardcoded admin credentials
+                val isValidAdmin = (cleanId == ADMIN_PHONE || cleanId == "admin@vtt.com") && pass == ADMIN_PASSWORD
+                
+                if (isValidAdmin) {
+                    val adminUser = UserEntity(
+                        id = "admin_001",
+                        name = "VTT Admin",
+                        email = "admin@vtt.com",
+                        phone = ADMIN_PHONE,
+                        role = UserRole.ADMIN,
+                        password = ADMIN_PASSWORD
+                    )
+                    _currentUser.value = adminUser
+                    _currentRole.value = UserRole.ADMIN
+                    _isLoggedIn.value = true
+                    authPrefs.saveSession(adminUser.id, UserRole.ADMIN, adminUser.email)
+                    
+                    val msg = "Welcome, Admin!"
+                    showToast(msg)
+                    onResult(true, msg)
+                } else {
+                    val msg = "Invalid admin credentials."
+                    showToast(msg)
+                    onResult(false, msg)
+                }
                 return@launch
             }
 
             if (role == UserRole.DRIVER) {
-                // Driver Authentication
+                // Driver Authentication - Only existing drivers, no registration
                 val driver = repository.getDriverByEmail(cleanId) ?: repository.getDriverByPhone(cleanId)
+                
                 if (driver == null) {
-                    val msg = "Driver account not found with '$cleanId'. Please Sign Up as Driver Partner."
+                    val msg = "Driver account not found. Please contact VTT CABS to register as a driver."
                     showToast(msg)
                     onResult(false, msg)
                     return@launch
                 }
 
-                if (driver.password.isNotBlank() && pass.isNotBlank() && driver.password != pass) {
-                    val msg = "Incorrect driver password. Please try again."
+                // Verify password
+                if (driver.password.isBlank() || pass.isBlank()) {
+                    val msg = "Invalid email/mobile or password."
+                    showToast(msg)
+                    onResult(false, msg)
+                    return@launch
+                }
+                
+                if (driver.password != pass) {
+                    val msg = "Invalid email/mobile or password."
                     showToast(msg)
                     onResult(false, msg)
                     return@launch
@@ -374,7 +411,7 @@ class VttCabViewModel(application: Application) : AndroidViewModel(application) 
 
                 when (driver.approvalStatus) {
                     com.example.data.model.DriverApprovalStatus.PENDING -> {
-                        val msg = "Your driver documents are under verification. Please wait for VTT CABS Admin approval."
+                        val msg = "Your account is pending verification. Please contact VTT CABS."
                         showToast(msg)
                         onResult(false, msg)
                     }
@@ -384,7 +421,7 @@ class VttCabViewModel(application: Application) : AndroidViewModel(application) 
                         onResult(false, msg)
                     }
                     com.example.data.model.DriverApprovalStatus.SUSPENDED -> {
-                        val msg = "Your driver account has been suspended by Admin. Contact support."
+                        val msg = "Your driver account has been suspended. Contact support."
                         showToast(msg)
                         onResult(false, msg)
                     }
@@ -403,7 +440,7 @@ class VttCabViewModel(application: Application) : AndroidViewModel(application) 
                         authPrefs.saveSession(driver.id, UserRole.DRIVER, driver.email)
 
                         try {
-                            firebaseAuth?.signInWithEmailAndPassword(driver.email, pass.ifBlank { "123456" })
+                            firebaseAuth?.signInWithEmailAndPassword(driver.email, pass)
                         } catch (e: Exception) { /* safe fallback */ }
 
                         val msg = "Welcome back, Captain ${driver.name}!"
@@ -412,36 +449,105 @@ class VttCabViewModel(application: Application) : AndroidViewModel(application) 
                     }
                 }
             } else {
-                // Customer Authentication
-                val existing = repository.getUserByEmail(cleanId)
-                val userToSet = if (existing != null) {
-                    existing
-                } else {
-                    val newUser = UserEntity(
-                        id = "cust_${System.currentTimeMillis() % 10000}",
-                        name = if (cleanId.contains("@")) cleanId.substringBefore("@").replaceFirstChar { it.uppercase() } else cleanId,
-                        email = if (cleanId.contains("@")) cleanId else "$cleanId@vtt.com",
-                        phone = if (cleanId.startsWith("+91")) cleanId else "+91 9800000000",
-                        role = UserRole.CUSTOMER,
-                        password = pass
-                    )
-                    repository.insertUser(newUser)
-                    newUser
+                // Customer Authentication - ONLY registered users, NO guest login
+                val cleanPhone = if (cleanId.startsWith("+91")) cleanId else "+91$cleanId"
+                val existingByEmail = repository.getUserByEmail(cleanId)
+                val existingByPhone = repository.getUserByPhone(cleanPhone)
+                val existing = existingByEmail ?: existingByPhone
+                
+                if (existing == null) {
+                    val msg = "Account not found. Please sign up first."
+                    showToast(msg)
+                    onResult(false, msg)
+                    return@launch
+                }
+                
+                // Verify password
+                if (existing.password.isBlank() || pass.isBlank()) {
+                    val msg = "Invalid email/mobile or password."
+                    showToast(msg)
+                    onResult(false, msg)
+                    return@launch
+                }
+                
+                if (existing.password != pass) {
+                    val msg = "Invalid email/mobile or password."
+                    showToast(msg)
+                    onResult(false, msg)
+                    return@launch
                 }
 
-                _currentUser.value = userToSet
+                _currentUser.value = existing
                 _currentRole.value = UserRole.CUSTOMER
                 _isLoggedIn.value = true
-                authPrefs.saveSession(userToSet.id, UserRole.CUSTOMER, userToSet.email)
+                authPrefs.saveSession(existing.id, UserRole.CUSTOMER, existing.email)
 
                 try {
-                    firebaseAuth?.signInWithEmailAndPassword(userToSet.email, pass.ifBlank { "123456" })
+                    firebaseAuth?.signInWithEmailAndPassword(existing.email, pass)
                 } catch (e: Exception) { /* safe fallback */ }
 
-                val msg = "Logged in as ${userToSet.name}"
+                val msg = "Welcome back, ${existing.name}!"
                 showToast(msg)
                 onResult(true, msg)
             }
+        }
+    }
+    
+    // Sign up for customers only
+    fun signUpCustomer(name: String, email: String, phone: String, password: String, onResult: (Boolean, String) -> Unit) {
+        viewModelScope.launch {
+            if (name.isBlank() || email.isBlank() || phone.isBlank() || password.isBlank()) {
+                val msg = "All fields are required."
+                showToast(msg)
+                onResult(false, msg)
+                return@launch
+            }
+            
+            // Check if user already exists
+            val cleanEmail = email.trim().lowercase()
+            val cleanPhone = if (phone.startsWith("+91")) phone else "+91${phone.trim()}"
+            val existingByEmail = repository.getUserByEmail(cleanEmail)
+            val existingByPhone = repository.getUserByPhone(cleanPhone)
+            
+            if (existingByEmail != null) {
+                val msg = "An account with this email already exists."
+                showToast(msg)
+                onResult(false, msg)
+                return@launch
+            }
+            
+            if (existingByPhone != null) {
+                val msg = "An account with this phone number already exists."
+                showToast(msg)
+                onResult(false, msg)
+                return@launch
+            }
+            
+            // Create new customer
+            val newUser = UserEntity(
+                id = "cust_${System.currentTimeMillis()}",
+                name = name.trim(),
+                email = cleanEmail,
+                phone = cleanPhone,
+                role = UserRole.CUSTOMER,
+                password = password
+            )
+            
+            repository.insertUser(newUser)
+            
+            // Auto-login after signup
+            _currentUser.value = newUser
+            _currentRole.value = UserRole.CUSTOMER
+            _isLoggedIn.value = true
+            authPrefs.saveSession(newUser.id, UserRole.CUSTOMER, newUser.email)
+            
+            try {
+                firebaseAuth?.createUserWithEmailAndPassword(cleanEmail, password)
+            } catch (e: Exception) { /* safe fallback */ }
+            
+            val msg = "Welcome to VTT CABS, ${newUser.name}!"
+            showToast(msg)
+            onResult(true, msg)
         }
     }
 

@@ -40,6 +40,9 @@ class VttRepository(private val dao: VttDao) {
     suspend fun getUserByEmail(email: String): UserEntity? =
         dao.getUserByEmail(email)
 
+    suspend fun getUserByPhone(phone: String): UserEntity? =
+        dao.getUserByPhone(phone)
+
     suspend fun getUserById(id: String): UserEntity? =
         dao.getUserById(id)
 
@@ -251,27 +254,29 @@ class VttRepository(private val dao: VttDao) {
     suspend fun seedInitialDataIfEmpty() {
         val existingUsers = dao.getAllUsers().firstOrNull()
         if (existingUsers.isNullOrEmpty()) {
-            // Default Customer
+            // Default Customer with password for testing
             val custUser = UserEntity(
                 id = "cust_101",
-                name = "Guest",
-                email = "user@vtt.com",
+                name = "Test User",
+                email = "test@vtt.com",
                 phone = "+91 9876543210",
-                role = UserRole.CUSTOMER
+                role = UserRole.CUSTOMER,
+                password = "test123"
             )
             dao.insertUser(custUser)
 
-            // Default Admin
+            // Admin user (but actual login uses hardcoded credentials)
             val adminUser = UserEntity(
                 id = "admin_001",
-                name = "VTT Dispatch Admin",
+                name = "VTT Admin",
                 email = "admin@vtt.com",
-                phone = "+91 1800123456",
-                role = UserRole.ADMIN
+                phone = "+91 9999999999",
+                role = UserRole.ADMIN,
+                password = "Admin@123"
             )
             dao.insertUser(adminUser)
 
-            // Default Drivers
+            // Default Drivers (all approved for testing)
             val drivers = listOf(
                 DriverEntity(
                     id = "drv_01",
@@ -287,7 +292,8 @@ class VttRepository(private val dao: VttDao) {
                     currentLat = 12.9750,
                     currentLng = 77.5850,
                     totalEarnings = 45800.0,
-                    walletBalance = 3200.0
+                    walletBalance = 3200.0,
+                    password = "driver123"
                 ),
                 DriverEntity(
                     id = "drv_02",
@@ -303,7 +309,8 @@ class VttRepository(private val dao: VttDao) {
                     currentLat = 12.9800,
                     currentLng = 77.6100,
                     totalEarnings = 89200.0,
-                    walletBalance = 5400.0
+                    walletBalance = 5400.0,
+                    password = "driver123"
                 ),
                 DriverEntity(
                     id = "drv_03",
@@ -319,7 +326,8 @@ class VttRepository(private val dao: VttDao) {
                     currentLat = 12.9650,
                     currentLng = 77.5950,
                     totalEarnings = 23400.0,
-                    walletBalance = 1800.0
+                    walletBalance = 1800.0,
+                    password = "driver123"
                 ),
                 DriverEntity(
                     id = "drv_04",
@@ -335,7 +343,27 @@ class VttRepository(private val dao: VttDao) {
                     currentLat = 12.9850,
                     currentLng = 77.6400,
                     totalEarnings = 61200.0,
-                    walletBalance = 4100.0
+                    walletBalance = 4100.0,
+                    password = "driver123"
+                ),
+                // Pending Driver (for testing approval workflow)
+                DriverEntity(
+                    id = "drv_05",
+                    name = "Pending Driver",
+                    phone = "+91 9855667788",
+                    email = "driver5@vtt.com",
+                    vehicleCategory = VehicleCategory.ERTIGA,
+                    vehicleModel = "Maruti Ertiga (White)",
+                    vehicleNumber = "KA-06-PR-5566",
+                    rating = 0.0,
+                    totalTrips = 0,
+                    isOnline = false,
+                    currentLat = 12.9700,
+                    currentLng = 77.6000,
+                    totalEarnings = 0.0,
+                    walletBalance = 0.0,
+                    password = "driver123",
+                    approvalStatus = com.example.data.model.DriverApprovalStatus.PENDING
                 )
             )
             for (drv in drivers) {
@@ -346,7 +374,8 @@ class VttRepository(private val dao: VttDao) {
                         name = drv.name,
                         email = drv.email,
                         phone = drv.phone,
-                        role = UserRole.DRIVER
+                        role = UserRole.DRIVER,
+                        password = drv.password
                     )
                 )
             }

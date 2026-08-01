@@ -1,8 +1,6 @@
 package com.example.ui.screens.auth
 
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -23,8 +21,6 @@ import androidx.compose.material.icons.filled.ChevronRight
 import androidx.compose.material.icons.filled.DirectionsCar
 import androidx.compose.material.icons.filled.LocalTaxi
 import androidx.compose.material.icons.filled.Person
-import androidx.compose.material.icons.filled.Shield
-import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
@@ -32,12 +28,7 @@ import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
-import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -59,8 +50,6 @@ fun LoginSelectionScreen(
     onSelectRole: (UserRole) -> Unit,
     modifier: Modifier = Modifier
 ) {
-    var showAdminNoticeDialog by remember { mutableStateOf(false) }
-
     Column(
         modifier = modifier
             .fillMaxSize()
@@ -234,67 +223,6 @@ fun LoginSelectionScreen(
             }
         }
 
-        Spacer(modifier = Modifier.height(32.dp))
-
-        // Admin Link / Notice
-        TextButton(
-            onClick = { showAdminNoticeDialog = true },
-            modifier = Modifier.testTag("admin_notice_link")
-        ) {
-            Row(verticalAlignment = Alignment.CenterVertically) {
-                Icon(
-                    Icons.Default.Shield,
-                    contentDescription = null,
-                    tint = Color.Gray,
-                    modifier = Modifier.size(16.dp)
-                )
-                Spacer(modifier = Modifier.width(6.dp))
-                Text(
-                    "System Admin Operations Console",
-                    fontSize = 12.sp,
-                    color = Color.Gray,
-                    fontWeight = FontWeight.Medium
-                )
-            }
-        }
-
         Spacer(modifier = Modifier.height(20.dp))
-    }
-
-    if (showAdminNoticeDialog) {
-        AlertDialog(
-            onDismissRequest = { showAdminNoticeDialog = false },
-            icon = {
-                Icon(
-                    Icons.Default.Shield,
-                    contentDescription = null,
-                    tint = VTTBlueDark,
-                    modifier = Modifier.size(36.dp)
-                )
-            },
-            title = {
-                Text(
-                    "VTT Admin Console Notice",
-                    fontWeight = FontWeight.Bold,
-                    fontSize = 17.sp,
-                    color = VTTBlueDark
-                )
-            },
-            text = {
-                Text(
-                    "The mobile app is strictly reserved for Customers and Driver Partners.\n\n" +
-                            "System Administrators must log into the Web Operations Portal at:\n" +
-                            "https://admin.vttcabs.in\n\n" +
-                            "For admin credentials or assistance, contact operations@vttcabs.in.",
-                    fontSize = 13.sp,
-                    color = Color.DarkGray
-                )
-            },
-            confirmButton = {
-                TextButton(onClick = { showAdminNoticeDialog = false }) {
-                    Text("Got It", fontWeight = FontWeight.Bold, color = VTTBluePrimary)
-                }
-            }
-        )
     }
 }
