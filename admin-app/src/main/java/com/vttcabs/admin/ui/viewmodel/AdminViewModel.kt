@@ -1,11 +1,12 @@
 package com.vttcabs.admin.ui.viewmodel
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.google.firebase.auth.FirebaseAuth
 import com.vttcabs.admin.VttAdminApp
 import com.vttcabs.admin.data.model.*
 import com.vttcabs.admin.data.remote.FirestoreService
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -14,8 +15,19 @@ import kotlinx.coroutines.tasks.await
 
 class AdminViewModel : ViewModel() {
     
+    companion object {
+        private const val TAG = "AdminViewModel"
+    }
+    
     private val firebaseAuth = VttAdminApp.instance.firebaseAuth
     private val firestoreService = FirestoreService()
+    
+    // Initialization state
+    private val _isLoading = MutableStateFlow(true)
+    val isLoading: StateFlow<Boolean> = _isLoading.asStateFlow()
+    
+    private val _initError = MutableStateFlow<String?>(null)
+    val initError: StateFlow<String?> = _initError.asStateFlow()
     
     // Auth state
     private val _isLoggedIn = MutableStateFlow(false)
@@ -74,28 +86,53 @@ class AdminViewModel : ViewModel() {
     val currentScreen: StateFlow<String> = _currentScreen.asStateFlow()
     
     init {
-        checkAuthState()
+        Log.d(TAG, "AdminViewModel initialized")
+        initializeApp()
     }
     
-    private fun checkAuthState() {
-        val currentUser = firebaseAuth.currentUser
-        if (currentUser != null) {
-            _isLoggedIn.value = true
-            _currentAdmin.value = AdminUser(
-                id = currentUser.uid,
-                email = currentUser.email ?: ""
-            )
-            _currentScreen.value = "dashboard"
+    private fun initializeApp() {
+        viewModelScope.launch {
+            _isLoading.value = true
+            _initError.value = null
+            Log.d(TAG, "Starting initialization...")
+            
+            try {
+                // Small delay to show loading screen
+                delay(500)
+                
+                // Check Firebase connection
+                Log.d(TAG, "Checking Firebase connection...")
+                val currentUser = firebaseAuth.currentUser
+                Log.d(TAG, "Firebase connected. Current user: ${currentUser?.uid}")
+                
+                _isLoading.value = false
+                Log.d(TAG, "Initialization complete")
+            } catch (e: Exception) {
+                Log.e(TAG, "Initialization failed: ${e.message}", e)
+                _initError.value = "Failed to connect to Firebase: ${e.message}"
+                _isLoading.value = false
+            }
         }
+    }
+    
+    fun retryInit() {
+        _initError.value = null
+        initializeApp()
     }
     
     fun login(email: String, password: String) {
         viewModelScope.launch {
             _authError.value = null
+            _isLoading.value = true
+            Log.d(TAG, "Attempting Firebase login with email: $email")
+            
             try {
                 val result = firebaseAuth.signInWithEmailAndPassword(email, password).await()
+                Log.d(TAG, "Firebase login result: ${result.user?.uid}")
+                
                 if (result.user != null) {
                     // Verify admin role from Firestore
+                    Log.d(TAG, "Verifying admin role...")
                     val adminDoc = VttAdminApp.instance.firestore
                         .collection("admins")
                         .document(result.user!!.uid)
@@ -112,23 +149,36 @@ class AdminViewModel : ViewModel() {
                         )
                         _currentScreen.value = "dashboard"
                         loadDashboardStats()
+                        Log.d(TAG, "Admin login successful")
                     } else {
                         firebaseAuth.signOut()
                         _authError.value = "Access denied. Admin privileges required."
+                        Log.w(TAG, "Admin access denied - no admin document found")
                     }
                 }
             } catch (e: Exception) {
+                Log.e(TAG, "Login failed: ${e.message}", e)
                 _authError.value = "Login failed: ${e.message}"
+            } finally {
+                _isLoading.value = false
             }
         }
     }
     
     fun loginWithHardcodedCredentials(phone: String, password: String) {
+        Log.d(TAG, "Attempting hardcoded login for phone: $phone")
+        
         // Hardcoded admin credentials for backup access
         if (phone == "9999999999" && password == "Admin@123") {
             viewModelScope.launch {
+                _authError.value = null
+                _isLoading.value = true
+                
                 try {
+                    // Sign in anonymously to get Firebase auth
                     val result = firebaseAuth.signInAnonymously().await()
+                    Log.d(TAG, "Anonymous sign-in result: ${result.user?.uid}")
+                    
                     if (result.user != null) {
                         _isLoggedIn.value = true
                         _currentAdmin.value = AdminUser(
@@ -139,24 +189,36 @@ class AdminViewModel : ViewModel() {
                         )
                         _currentScreen.value = "dashboard"
                         loadDashboardStats()
+                        Log.d(TAG, "Hardcoded admin login successful")
                     }
                 } catch (e: Exception) {
+                    Log.e(TAG, "Hardcoded login failed: ${e.message}", e)
                     _authError.value = "Login failed: ${e.message}"
+                } finally {
+                    _isLoading.value = false
                 }
             }
         } else {
             _authError.value = "Invalid admin credentials."
+            Log.w(TAG, "Invalid credentials provided")
         }
     }
     
     fun logout() {
+        Log.d(TAG, "Logging out...")
         firebaseAuth.signOut()
         _isLoggedIn.value = false
         _currentAdmin.value = null
         _currentScreen.value = "login"
+        _drivers.value = emptyList()
+        _customers.value = emptyList()
+        _bookings.value = emptyList()
+        _dashboardStats.value = DashboardStats()
+        Log.d(TAG, "Logout complete")
     }
     
     fun navigateTo(screen: String) {
+        Log.d(TAG, "Navigating to: $screen")
         _currentScreen.value = screen
         when (screen) {
             "dashboard" -> loadDashboardStats()
@@ -168,6 +230,7 @@ class AdminViewModel : ViewModel() {
     }
     
     fun showToast(message: String) {
+        Log.d(TAG, "Toast: $message")
         _toastMessage.value = message
     }
     
@@ -179,10 +242,15 @@ class AdminViewModel : ViewModel() {
     
     fun loadDashboardStats() {
         viewModelScope.launch {
+            Log.d(TAG, "Loading dashboard stats...")
             try {
                 val stats = firestoreService.getDashboardStats()
                 _dashboardStats.value = stats
+                Log.d(TAG, "Dashboard stats loaded: $stats")
             } catch (e: Exception) {
+                Log.e(TAG, "Error loading dashboard: ${e.message}", e)
+                // Set default values on error
+                _dashboardStats.value = DashboardStats()
                 showToast("Error loading dashboard: ${e.message}")
             }
         }
@@ -193,13 +261,17 @@ class AdminViewModel : ViewModel() {
     fun loadDrivers() {
         viewModelScope.launch {
             _isLoadingDrivers.value = true
+            Log.d(TAG, "Loading drivers...")
             try {
                 firestoreService.getAllDrivers().collect { driverList ->
                     _drivers.value = driverList
                     _isLoadingDrivers.value = false
+                    Log.d(TAG, "Loaded ${driverList.size} drivers")
                 }
             } catch (e: Exception) {
                 _isLoadingDrivers.value = false
+                _drivers.value = emptyList()
+                Log.e(TAG, "Error loading drivers: ${e.message}", e)
                 showToast("Error loading drivers: ${e.message}")
             }
         }
@@ -267,13 +339,17 @@ class AdminViewModel : ViewModel() {
     fun loadCustomers() {
         viewModelScope.launch {
             _isLoadingCustomers.value = true
+            Log.d(TAG, "Loading customers...")
             try {
                 firestoreService.getAllCustomers().collect { customerList ->
                     _customers.value = customerList
                     _isLoadingCustomers.value = false
+                    Log.d(TAG, "Loaded ${customerList.size} customers")
                 }
             } catch (e: Exception) {
                 _isLoadingCustomers.value = false
+                _customers.value = emptyList()
+                Log.e(TAG, "Error loading customers: ${e.message}", e)
                 showToast("Error loading customers: ${e.message}")
             }
         }
@@ -308,13 +384,17 @@ class AdminViewModel : ViewModel() {
     fun loadBookings() {
         viewModelScope.launch {
             _isLoadingBookings.value = true
+            Log.d(TAG, "Loading bookings...")
             try {
                 firestoreService.getAllBookings().collect { bookingList ->
                     _bookings.value = bookingList
                     _isLoadingBookings.value = false
+                    Log.d(TAG, "Loaded ${bookingList.size} bookings")
                 }
             } catch (e: Exception) {
                 _isLoadingBookings.value = false
+                _bookings.value = emptyList()
+                Log.e(TAG, "Error loading bookings: ${e.message}", e)
                 showToast("Error loading bookings: ${e.message}")
             }
         }
@@ -378,6 +458,8 @@ class AdminViewModel : ViewModel() {
                 }
             } catch (e: Exception) {
                 _isLoadingVehicles.value = false
+                _vehicles.value = emptyList()
+                _fareRules.value = emptyList()
                 showToast("Error loading vehicles: ${e.message}")
             }
         }
