@@ -25,6 +25,7 @@ export default function BookingPage() {
     pickupTime: '',
     vehicleType: 'sedan',
     tripType: 'oneway',
+    notes: '',
   });
 
   useEffect(() => {
@@ -47,7 +48,7 @@ export default function BookingPage() {
     }
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
@@ -65,7 +66,7 @@ export default function BookingPage() {
 
       const selectedVehicle = vehicleTypes.find(v => v.id === formData.vehicleType);
       const basePrice = selectedVehicle?.price || 10;
-      const totalAmount = basePrice * 10; // Estimate 10km minimum
+      const estimatedPrice = basePrice * 10; // Estimate 10km minimum
 
       const booking: Omit<Booking, 'id' | 'created_at' | 'updated_at'> = {
         user_id: user.id,
@@ -74,8 +75,11 @@ export default function BookingPage() {
         pickup_date: formData.pickupDate,
         pickup_time: formData.pickupTime,
         vehicle_type: formData.vehicleType as Booking['vehicle_type'],
+        trip_type: formData.tripType as Booking['trip_type'],
         status: 'pending',
-        total_amount: totalAmount,
+        estimated_price: estimatedPrice,
+        estimated_distance: 10,
+        notes: formData.notes || '',
       };
 
       const { data, error: insertError } = await supabase
@@ -86,14 +90,14 @@ export default function BookingPage() {
 
       if (insertError) {
         console.error('Booking error:', insertError);
-        setError('Failed to create booking. Please try again.');
+        setError('Failed to create booking. Table may not exist. Please run the SQL schema first.');
       } else {
         setSuccess(true);
         setTimeout(() => navigate('/history'), 2000);
       }
-    } catch (err) {
+    } catch (err: any) {
       console.error('Submit error:', err);
-      setError('An unexpected error occurred');
+      setError(err.message || 'An unexpected error occurred');
     } finally {
       setSubmitting(false);
     }
@@ -159,9 +163,13 @@ export default function BookingPage() {
         </div>
 
         {error && (
-          <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg flex items-center gap-2 text-red-600">
-            <AlertCircle className="w-5 h-5 flex-shrink-0" />
-            <span>{error}</span>
+          <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg flex items-start gap-2 text-red-600">
+            <AlertCircle className="w-5 h-5 flex-shrink-0 mt-0.5" />
+            <div>
+              <p className="font-medium">Booking Failed</p>
+              <p className="text-sm">{error}</p>
+              <p className="text-sm mt-1">Make sure you have run the SQL schema in Supabase SQL Editor.</p>
+            </div>
           </div>
         )}
 
@@ -316,6 +324,19 @@ export default function BookingPage() {
                   />
                 </div>
               </div>
+            </div>
+
+            {/* Notes */}
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">Additional Notes (Optional)</label>
+              <textarea
+                name="notes"
+                value={formData.notes}
+                onChange={handleChange}
+                placeholder="Any special requests or instructions..."
+                rows={3}
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"
+              />
             </div>
 
             {/* Estimated Price */}

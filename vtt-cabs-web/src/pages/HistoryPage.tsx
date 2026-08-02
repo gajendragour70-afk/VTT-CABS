@@ -3,9 +3,10 @@ import { useNavigate } from 'react-router-dom';
 import { supabase, Booking } from '../lib/supabase';
 import { Calendar, Clock, MapPin, Car, Loader2, Plus } from 'lucide-react';
 
-const statusColors = {
+const statusColors: Record<string, string> = {
   pending: 'bg-yellow-100 text-yellow-800',
   confirmed: 'bg-blue-100 text-blue-800',
+  in_progress: 'bg-purple-100 text-purple-800',
   completed: 'bg-green-100 text-green-800',
   cancelled: 'bg-red-100 text-red-800',
 };
@@ -201,7 +202,7 @@ export default function HistoryPage() {
                     {/* Price */}
                     <div className="flex md:flex-col items-center md:items-end gap-4 md:gap-1">
                       <div className="text-right">
-                        <p className="text-2xl font-bold text-gray-900">₹{booking.total_amount}</p>
+                        <p className="text-2xl font-bold text-gray-900">₹{booking.estimated_price || booking.final_price || 0}</p>
                         <p className="text-sm text-gray-500 capitalize">{booking.vehicle_type}</p>
                       </div>
                     </div>
