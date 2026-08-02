@@ -31,6 +31,7 @@ import androidx.compose.material.icons.filled.Clear
 import androidx.compose.material.icons.filled.CreditCard
 import androidx.compose.material.icons.filled.DirectionsCar
 import androidx.compose.material.icons.filled.Description
+import androidx.compose.material.icons.filled.ExitToApp
 import androidx.compose.material.icons.filled.FilterList
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.HourglassTop
@@ -107,6 +108,8 @@ fun AdminDashboardScreen(
     var driverForReuploadModal by remember { mutableStateOf<DriverEntity?>(null) }
     var selectedDocsToRequest by remember { mutableStateOf<Set<String>>(emptySet()) }
 
+    var showLogoutConfirmDialog by remember { mutableStateOf(false) }
+
     val totalRevenue = allBookings.filter { it.bookingStatus == BookingStatus.COMPLETED }.sumOf { it.totalFare }
     val activeTripsCount = allBookings.count { it.bookingStatus == BookingStatus.IN_PROGRESS || it.bookingStatus == BookingStatus.ASSIGNED }
     val onlineDriversCount = allDrivers.count { it.isOnline && it.approvalStatus == DriverApprovalStatus.APPROVED }
@@ -140,11 +143,17 @@ fun AdminDashboardScreen(
         ) {
             Column(modifier = Modifier.padding(16.dp)) {
                 Row(
-                    verticalAlignment = Alignment.CenterVertically,
-                    modifier = Modifier.padding(bottom = 12.dp)
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.SpaceBetween,
+                    verticalAlignment = Alignment.CenterVertically
                 ) {
-                    Icon(Icons.Default.AdminPanelSettings, contentDescription = null, tint = Color.White)
-                    Text(" VTT Fleet & Dispatch Operations", fontWeight = FontWeight.Bold, color = Color.White, fontSize = 16.sp)
+                    Row(verticalAlignment = Alignment.CenterVertically) {
+                        Icon(Icons.Default.AdminPanelSettings, contentDescription = null, tint = Color.White)
+                        Text(" VTT Fleet & Dispatch Operations", fontWeight = FontWeight.Bold, color = Color.White, fontSize = 16.sp)
+                    }
+                    IconButton(onClick = { showLogoutConfirmDialog = true }) {
+                        Icon(Icons.Default.ExitToApp, contentDescription = "Logout", tint = Color.White)
+                    }
                 }
 
                 Row(
@@ -617,6 +626,31 @@ fun AdminDashboardScreen(
             confirmButton = {
                 TextButton(onClick = { selectedBookingForAssign = null }) {
                     Text("Close")
+                }
+            }
+        )
+    }
+
+    if (showLogoutConfirmDialog) {
+        AlertDialog(
+            onDismissRequest = { showLogoutConfirmDialog = false },
+            icon = { Icon(Icons.Default.ExitToApp, contentDescription = null, tint = VTTBlueDark) },
+            title = { Text("Logout Admin?", fontWeight = FontWeight.Bold, color = VTTBlueDark) },
+            text = { Text("Are you sure you want to logout from Admin Dashboard?", fontSize = 13.sp, color = Color.DarkGray) },
+            confirmButton = {
+                Button(
+                    onClick = {
+                        showLogoutConfirmDialog = false
+                        viewModel.logout()
+                    },
+                    colors = ButtonDefaults.buttonColors(containerColor = VTTDanger)
+                ) {
+                    Text("Logout", fontWeight = FontWeight.Bold)
+                }
+            },
+            dismissButton = {
+                TextButton(onClick = { showLogoutConfirmDialog = false }) {
+                    Text("Cancel", fontWeight = FontWeight.Bold)
                 }
             }
         )

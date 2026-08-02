@@ -347,11 +347,59 @@ class VttCabViewModel(application: Application) : AndroidViewModel(application) 
         viewModelScope.launch {
             val cleanId = identifier.trim()
 
-            // Admin panel is restricted to web
-            if (role == UserRole.ADMIN || cleanId.equals("admin@vtt.com", ignoreCase = true)) {
-                val msg = "Admin Operations Console is strictly available on web browser at https://admin.vttcabs.in. Mobile app is for Customers and Drivers only."
-                showToast(msg)
-                onResult(false, msg)
+            // Admin login - Company only authentication
+            if (role == UserRole.ADMIN) {
+                // Only allow company email domains for admin
+                val allowedDomains = listOf("vttcabs.com", "vttcabs.in", "vtt.com")
+                val emailDomain = if (cleanId.contains("@")) cleanId.substringAfter("@").lowercase() else ""
+                val isAllowedDomain = allowedDomains.any { cleanId.lowercase().endsWith("@$it") }
+                
+                if (!isAllowedDomain && !cleanId.equals("admin", ignoreCase = true)) {
+                    val msg = "Admin access is restricted to VTT CABS company accounts only. Please use your company email (e.g., admin@vttcabs.com)."
+                    showToast(msg)
+                    onResult(false, msg)
+                    return@launch
+                }
+
+                if (pass.isBlank()) {
+                    val msg = "Password is required for admin login."
+                    showToast(msg)
+                    onResult(false, msg)
+                    return@launch
+                }
+
+                // Check for default admin credentials
+                val adminEmail = "admin@vttcabs.com"
+                val adminPassword = "VTT@Admin2024"
+                val backupEmail = "admin@vttcabs.in"
+                val backupPassword = "vttadmin123"
+
+                val isValidAdmin = (cleanId.lowercase().equals(adminEmail, ignoreCase = true) && pass == adminPassword) ||
+                                  (cleanId.lowercase().equals(backupEmail, ignoreCase = true) && pass == backupPassword) ||
+                                  (cleanId.lowercase().equals("admin", ignoreCase = true) && pass == adminPassword)
+
+                if (!isValidAdmin) {
+                    val msg = "Invalid admin credentials. Please check your company email and password."
+                    showToast(msg)
+                    onResult(false, msg)
+                    return@launch
+                }
+
+                // Admin login successful
+                _currentUser.value = UserEntity(
+                    id = "admin_001",
+                    name = "VTT Dispatch Admin",
+                    email = cleanId,
+                    phone = "+91 1800123456",
+                    role = UserRole.ADMIN,
+                    password = pass
+                )
+                _currentRole.value = UserRole.ADMIN
+                _isLoggedIn.value = true
+                authPrefs.saveSession("admin_001", UserRole.ADMIN, cleanId)
+
+                showToast("Welcome, VTT Administrator!")
+                onResult(true, "Admin login successful")
                 return@launch
             }
 

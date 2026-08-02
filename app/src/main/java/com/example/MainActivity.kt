@@ -233,13 +233,7 @@ fun VttCabsApp(viewModel: VttCabViewModel) {
                         DriverDashboardScreen(viewModel = viewModel)
                     }
                     UserRole.ADMIN -> {
-                        com.example.ui.screens.auth.LoginSelectionScreen(
-                            viewModel = viewModel,
-                            onSelectRole = { role ->
-                                viewModel.switchRole(role)
-                                showAuthDialog = true
-                            }
-                        )
+                        com.example.ui.screens.admin.AdminDashboardScreen(viewModel = viewModel)
                     }
                 }
             }
