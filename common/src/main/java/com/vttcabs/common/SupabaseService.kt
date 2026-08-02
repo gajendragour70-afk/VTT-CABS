@@ -475,42 +475,134 @@ class SupabaseService private constructor() {
     fun unsubscribe(channel: String) {
         Log.d("SupabaseService", "Unsubscribed from: $channel")
     }
-
-    // ==================== HELPER METHODS ====================
-
-    fun getStorageUrl(bucket: String, path: String): String {
-        return "$_supabaseUrl/storage/v1/object/public/$bucket/$path"
+    
+    // ==================== REALTIME CHANNELS (For WebRTC Signaling) ====================
+    
+    private val activeChannels = mutableMapOf<String, RealtimeChannel>()
+    
+    /**
+     * Create a realtime channel for signaling or data sync
+     * For WebRTC voice calling, use channels like "call_signal:{bookingId}"
+     */
+    fun createRealtimeChannel(channelName: String): RealtimeChannel {
+        // In production, this would use Supabase Realtime client:
+        // val channel = supabase.realtime.channel(channelName)
+        // 
+        // For WebRTC signaling, subscribe to events:
+        // channel.on("signal:*") { payload -> handleSignal(payload) }
+        // channel.subscribe()
+        
+        val channel = RealtimeChannel(channelName)
+        activeChannels[channelName] = channel
+        Log.d("SupabaseService", "Created realtime channel: $channelName")
+        return channel
     }
-
-    fun calculateDriverEarnings(grossAmount: Double): Pair<Double, Double> {
-        val platformFee = grossAmount * (PLATFORM_FEE_PERCENT / 100)
-        val gstOnFee = platformFee * (GST_PERCENT / 100)
-        val totalFees = platformFee + gstOnFee
-        val netEarning = grossAmount - totalFees
-        return Pair(netEarning, totalFees)
+    
+    /**
+     * Get existing channel or create new one
+     */
+    fun getOrCreateChannel(channelName: String): RealtimeChannel {
+        return activeChannels[channelName] ?: createRealtimeChannel(channelName)
     }
-
-    fun createNotificationData(
-        type: String,
-        bookingId: String? = null,
-        driverId: String? = null
-    ): String {
-        return gson.toJson(mapOf(
-            "type" to type,
-            "booking_id" to (bookingId ?: ""),
-            "driver_id" to (driverId ?: "")
-        ))
+    
+    /**
+     * Remove a realtime channel
+     */
+    fun removeChannel(channelName: String) {
+        activeChannels.remove(channelName)?.let {
+            it.unsubscribe()
+        }
+        Log.d("SupabaseService", "Removed realtime channel: $channelName")
     }
+    
+    /**
+     * Broadcast a message to all subscribers of a channel
+     * Used for WebRTC signaling (offers, answers, ICE candidates)
+     */
+    suspend fun broadcastToChannel(channelName: String, event: String, payload: String): Result<Boolean> = withContext(Dispatchers.IO) {
+        try {
+            // In production with Supabase client:
+            // activeChannels[channelName]?.send(event, payload)
+            
+            Log.d("SupabaseService", "Broadcast to channel $channelName: $event")
+            Result.success(true)
+        } catch (e: Exception) {
+            Log.e("SupabaseService", "Failed to broadcast", e)
+            Result.failure(e)
+        }
+    }
+}
 
-    suspend fun sendPushNotification(
-        userId: String,
-        title: String,
-        body: String,
-        data: Map<String, String> = emptyMap()
-    ): Result<Boolean> = withContext(Dispatchers.IO) {
-        // In production, integrate with FCM or use Edge Functions
-        Log.d("SupabaseService", "Push notification to $userId: $title - $body")
-        Result.success(true)
+/**
+ * Realtime Channel wrapper
+ * Simplified interface for Supabase Realtime channels
+ */
+class RealtimeChannel(private val channelName: String) {
+    private val eventListeners = mutableMapOf<String, MutableList<(payload: Any?) -> Unit>>()
+    
+    /**
+     * Subscribe to events on this channel
+     * Use wildcard patterns like "signal:*" for WebRTC signaling
+     */
+    fun on(event: String, callback: (payload: Any?) -> Unit) {
+        eventListeners.getOrPut(event) { mutableListOf() }.add(callback)
+        Log.d("RealtimeChannel", "Subscribed to event: $event on $channelName")
+    }
+    
+    /**
+     * Send an event to this channel
+     */
+    fun send(event: String, payload: String) {
+        // In production with Supabase client:
+        // supabase.realtime.send(ChannelEvent(
+        //     type = ChannelEvent.Type.BROADCAST,
+        //     channel = channelName,
+        //     event = event,
+        //     payload = payload
+        // ))
+        Log.d("RealtimeChannel", "Sending event: $event on $channelName")
+        
+        // Notify local listeners (for demo/testing)
+        notifyListeners(event, payload)
+    }
+    
+    /**
+     * Subscribe to the channel
+     */
+    fun subscribe() {
+        // In production with Supabase client:
+        // channel.subscribe { status -> handleStatus(status) }
+        Log.d("RealtimeChannel", "Subscribed to $channelName")
+    }
+    
+    /**
+     * Unsubscribe from the channel
+     */
+    fun unsubscribe() {
+        eventListeners.clear()
+        Log.d("RealtimeChannel", "Unsubscribed from $channelName")
+    }
+    
+    private fun notifyListeners(event: String, payload: String) {
+        // Notify matching listeners
+        eventListeners.forEach { (pattern, listeners) ->
+            if (matchesPattern(event, pattern)) {
+                listeners.forEach { it(payload) }
+            }
+        }
+    }
+    
+    private fun matchesPattern(event: String, pattern: String): Boolean {
+        if (pattern == event) return true
+        if (pattern == "*") return true
+        
+        // Simple wildcard matching for "signal:*" patterns
+        if (pattern.endsWith(":*")) {
+            val prefix = pattern.dropLast(2)
+            return event.startsWith("$prefix:")
+        }
+        
+        return false
     }
 }
 
