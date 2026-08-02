@@ -211,7 +211,7 @@ class BookingService {
           callback({
             latitude: loc.latitude,
             longitude: loc.longitude,
-            timestamp: new Date(loc.updated_at).getTime(),
+            timestamp: new Date(loc.updatedAt).getTime(),
           });
         }
       )

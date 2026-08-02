@@ -1,4 +1,4 @@
-import { Routes, Route, Navigate } from 'react-router-dom';
+import { Routes, Route, Navigate, Outlet } from 'react-router-dom';
 import { useAuthStore } from './stores/authStore';
 
 // Layouts
@@ -17,25 +17,25 @@ import WalletPage from './pages/WalletPage';
 import NotFoundPage from './pages/NotFoundPage';
 
 // Protected Route Component
-function ProtectedRoute({ children }: { children: React.ReactNode }) {
+function ProtectedRoute() {
   const isAuthenticated = useAuthStore((state) => state.isAuthenticated);
   
   if (!isAuthenticated) {
     return <Navigate to="/login" replace />;
   }
   
-  return <MainLayout>{children}</MainLayout>;
+  return <MainLayout><Outlet /></MainLayout>;
 }
 
 // Auth Route Component
-function AuthRoute({ children }: { children: React.ReactNode }) {
+function AuthRoute() {
   const isAuthenticated = useAuthStore((state) => state.isAuthenticated);
   
   if (isAuthenticated) {
     return <Navigate to="/" replace />;
   }
   
-  return <AuthLayout>{children}</AuthLayout>;
+  return <AuthLayout><Outlet /></AuthLayout>;
 }
 
 function App() {
@@ -43,15 +43,19 @@ function App() {
     <Routes>
       {/* Public Routes */}
       <Route path="/" element={<HomePage />} />
-      <Route path="/login" element={<AuthRoute><LoginPage /></AuthRoute>} />
-      <Route path="/register" element={<AuthRoute><RegisterPage /></AuthRoute>} />
+      <Route element={<AuthRoute />}>
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/register" element={<RegisterPage />} />
+      </Route>
       
       {/* Protected Routes */}
-      <Route path="/book" element={<ProtectedRoute><BookingPage /></ProtectedRoute>} />
-      <Route path="/track/:bookingId" element={<ProtectedRoute><TrackRidePage /></ProtectedRoute>} />
-      <Route path="/history" element={<ProtectedRoute><HistoryPage /></ProtectedRoute>} />
-      <Route path="/profile" element={<ProtectedRoute><ProfilePage /></ProtectedRoute>} />
-      <Route path="/wallet" element={<ProtectedRoute><WalletPage /></ProtectedRoute>} />
+      <Route element={<ProtectedRoute />}>
+        <Route path="/book" element={<BookingPage />} />
+        <Route path="/track/:bookingId" element={<TrackRidePage />} />
+        <Route path="/history" element={<HistoryPage />} />
+        <Route path="/profile" element={<ProfilePage />} />
+        <Route path="/wallet" element={<WalletPage />} />
+      </Route>
       
       {/* 404 */}
       <Route path="*" element={<NotFoundPage />} />

@@ -1,6 +1,10 @@
 import { Outlet, Link } from 'react-router-dom';
 
-export default function AuthLayout() {
+interface AuthLayoutProps {
+  children?: React.ReactNode;
+}
+
+export default function AuthLayout({ children }: AuthLayoutProps) {
   return (
     <div className="min-h-screen flex">
       {/* Left Side - Branding */}
@@ -52,7 +56,7 @@ export default function AuthLayout() {
       {/* Right Side - Form */}
       <div className="flex-1 flex items-center justify-center p-8">
         <div className="w-full max-w-md">
-          <Outlet />
+          {children || <Outlet />}
         </div>
       </div>
     </div>
