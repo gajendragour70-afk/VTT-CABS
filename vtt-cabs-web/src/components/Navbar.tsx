@@ -1,107 +1,98 @@
-import { Link, useNavigate } from 'react-router-dom';
-import { Menu, X, User, LogOut, Wallet, History, MapPin } from 'lucide-react';
-import { useState } from 'react';
-import { useAuthStore } from '@/stores/authStore';
-import authService from '@/services/authService';
+import { Menu, X } from 'lucide-react';
 
-export default function Navbar() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isProfileOpen, setIsProfileOpen] = useState(false);
-  const { user, isAuthenticated, logout } = useAuthStore();
-  const navigate = useNavigate();
+interface NavbarProps {
+  scrolled: boolean;
+  mobileMenuOpen: boolean;
+  setMobileMenuOpen: (open: boolean) => void;
+  scrollToSection: (id: string) => void;
+}
 
-  const handleLogout = async () => {
-    await authService.signOut();
-    logout();
-    navigate('/');
+const navLinks = [
+  { label: 'About', id: 'about' },
+  { label: 'Services', id: 'services' },
+  { label: 'Fleet', id: 'fleet' },
+  { label: 'Why Us', id: 'why-us' },
+  { label: 'Reviews', id: 'reviews' },
+  { label: 'Contact', id: 'contact' },
+];
+
+export default function Navbar({ scrolled, mobileMenuOpen, setMobileMenuOpen, scrollToSection }: NavbarProps) {
+  const openApp = () => {
+    window.open('https://play.google.com/store/apps', '_blank');
   };
 
   return (
-    <nav className="bg-white shadow-sm sticky top-0 z-50">
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      scrolled ? 'bg-white shadow-lg' : 'bg-transparent'
+    }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-16">
+        <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <div className="flex items-center">
-            <Link to="/" className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold">V</span>
+            <button 
+              onClick={() => scrollToSection('')}
+              className="flex items-center gap-2"
+            >
+              <div className={`w-10 h-10 rounded-lg flex items-center justify-center ${
+                scrolled ? 'bg-blue-600' : 'bg-white'
+              }`}>
+                <span className={`text-lg font-bold ${scrolled ? 'text-white' : 'text-blue-600'}`}>V</span>
               </div>
-              <span className="text-xl font-bold text-gray-900">VTT CABS</span>
-            </Link>
+              <span className={`text-2xl font-bold ${scrolled ? 'text-gray-900' : 'text-white'}`}>
+                VTT CABS
+              </span>
+            </button>
           </div>
 
           {/* Desktop Navigation */}
-          {isAuthenticated && (
-            <div className="hidden md:flex items-center gap-4">
-              <Link
-                to="/book"
-                className="flex items-center gap-2 text-gray-600 hover:text-primary-600 transition-colors"
+          <div className="hidden lg:flex items-center gap-8">
+            {navLinks.map((link) => (
+              <button
+                key={link.id}
+                onClick={() => scrollToSection(link.id)}
+                className={`font-medium transition-colors ${
+                  scrolled 
+                    ? 'text-gray-600 hover:text-blue-600' 
+                    : 'text-white/90 hover:text-white'
+                }`}
               >
-                <MapPin className="w-5 h-5" />
-                <span>Book</span>
-              </Link>
-              <Link
-                to="/history"
-                className="flex items-center gap-2 text-gray-600 hover:text-primary-600 transition-colors"
-              >
-                <History className="w-5 h-5" />
-                <span>History</span>
-              </Link>
-              <Link
-                to="/wallet"
-                className="flex items-center gap-2 text-gray-600 hover:text-primary-600 transition-colors"
-              >
-                <Wallet className="w-5 h-5" />
-                <span>Wallet</span>
-              </Link>
-
-              {/* Profile Dropdown */}
-              <div className="relative">
-                <button
-                  onClick={() => setIsProfileOpen(!isProfileOpen)}
-                  className="flex items-center gap-2 p-2 rounded-lg hover:bg-gray-100 transition-colors"
-                >
-                  <div className="w-8 h-8 bg-primary-100 rounded-full flex items-center justify-center">
-                    <User className="w-5 h-5 text-primary-600" />
-                  </div>
-                </button>
-
-                {isProfileOpen && (
-                  <div className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border py-2">
-                    <div className="px-4 py-2 border-b">
-                      <p className="font-medium text-gray-900">{user?.fullName}</p>
-                      <p className="text-sm text-gray-500">{user?.email}</p>
-                    </div>
-                    <Link
-                      to="/profile"
-                      className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
-                      onClick={() => setIsProfileOpen(false)}
-                    >
-                      Profile
-                    </Link>
-                    <button
-                      onClick={handleLogout}
-                      className="w-full text-left px-4 py-2 text-red-600 hover:bg-red-50 flex items-center gap-2"
-                    >
-                      <LogOut className="w-4 h-4" />
-                      Logout
-                    </button>
-                  </div>
-                )}
-              </div>
-            </div>
-          )}
+                {link.label}
+              </button>
+            ))}
+            <button
+              onClick={openApp}
+              className={`px-6 py-2 rounded-full font-semibold transition-all transform hover:scale-105 ${
+                scrolled 
+                  ? 'bg-blue-600 text-white hover:bg-blue-700' 
+                  : 'bg-white text-blue-900 hover:bg-blue-50'
+              }`}
+            >
+              Download App
+            </button>
+          </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden flex items-center">
+          <div className="lg:hidden flex items-center gap-4">
             <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="p-2 rounded-lg hover:bg-gray-100"
+              onClick={openApp}
+              className={`px-4 py-2 rounded-full font-medium text-sm ${
+                scrolled 
+                  ? 'bg-blue-600 text-white' 
+                  : 'bg-white text-blue-900'
+              }`}
             >
-              {isMenuOpen ? (
-                <X className="w-6 h-6 text-gray-600" />
+              App
+            </button>
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className={`p-2 rounded-lg ${
+                scrolled ? 'text-gray-600' : 'text-white'
+              }`}
+            >
+              {mobileMenuOpen ? (
+                <X className="w-6 h-6" />
               ) : (
-                <Menu className="w-6 h-6 text-gray-600" />
+                <Menu className="w-6 h-6" />
               )}
             </button>
           </div>
@@ -109,50 +100,24 @@ export default function Navbar() {
       </div>
 
       {/* Mobile menu */}
-      {isMenuOpen && (
-        <div className="md:hidden bg-white border-t">
-          <div className="px-4 py-4 space-y-3">
-            {isAuthenticated ? (
-              <>
-                <Link
-                  to="/book"
-                  className="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-lg"
-                >
-                  Book a Cab
-                </Link>
-                <Link
-                  to="/history"
-                  className="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-lg"
-                >
-                  My Rides
-                </Link>
-                <Link
-                  to="/wallet"
-                  className="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-lg"
-                >
-                  Wallet
-                </Link>
-                <Link
-                  to="/profile"
-                  className="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-lg"
-                >
-                  Profile
-                </Link>
-                <button
-                  onClick={handleLogout}
-                  className="w-full text-left px-4 py-2 text-red-600 hover:bg-red-50 rounded-lg"
-                >
-                  Logout
-                </button>
-              </>
-            ) : (
-              <Link
-                to="/login"
-                className="block w-full px-4 py-2 bg-primary-600 text-white text-center rounded-lg"
+      {mobileMenuOpen && (
+        <div className="lg:hidden bg-white border-t shadow-lg">
+          <div className="px-4 py-4 space-y-2">
+            {navLinks.map((link) => (
+              <button
+                key={link.id}
+                onClick={() => scrollToSection(link.id)}
+                className="block w-full text-left px-4 py-3 text-gray-700 hover:bg-blue-50 rounded-lg font-medium transition-colors"
               >
-                Login
-              </Link>
-            )}
+                {link.label}
+              </button>
+            ))}
+            <button
+              onClick={openApp}
+              className="block w-full px-4 py-3 bg-blue-600 text-white text-center rounded-lg font-semibold mt-4"
+            >
+              Download App
+            </button>
           </div>
         </div>
       )}
