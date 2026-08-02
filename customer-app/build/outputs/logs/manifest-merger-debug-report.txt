@@ -1,0 +1,797 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /workspace/project/VTT-CABS/customer-app/src/main/AndroidManifest.xml:2:1-45:12
+INJECTED from /workspace/project/VTT-CABS/customer-app/src/main/AndroidManifest.xml:2:1-45:12
+INJECTED from /workspace/project/VTT-CABS/customer-app/src/main/AndroidManifest.xml:2:1-45:12
+INJECTED from /workspace/project/VTT-CABS/customer-app/src/main/AndroidManifest.xml:2:1-45:12
+MERGED from [:common] /workspace/project/VTT-CABS/common/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.appcompat:appcompat-resources:1.6.1] /home/openhands/.gradle/caches/8.11.1/transforms/c38cadeaa46b9a4f11cddee2be6ba7a3/transformed/appcompat-resources-1.6.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.appcompat:appcompat:1.6.1] /home/openhands/.gradle/caches/8.11.1/transforms/f195eed25e9acab9c8f46b921b44be05/transformed/appcompat-1.6.1/AndroidManifest.xml:17:1-22:12
+MERGED from [com.google.android.gms:play-services-maps:18.2.0] /home/openhands/.gradle/caches/8.11.1/transforms/a409a2419644d4806704c766ed7ca461/transformed/play-services-maps-18.2.0/AndroidManifest.xml:17:1-44:12
+MERGED from [com.google.android.gms:play-services-location:21.1.0] /home/openhands/.gradle/caches/8.11.1/transforms/2ec4ce7d1b64a30eb7e9e1071a8cdb08/transformed/play-services-location-21.1.0/AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.firebase:firebase-messaging:23.4.1] /home/openhands/.gradle/caches/8.11.1/transforms/23deb80556665fa3a76264a2f9fed7fc/transformed/firebase-messaging-23.4.1/AndroidManifest.xml:17:1-66:12
+MERGED from [com.google.android.gms:play-services-base:18.1.0] /home/openhands/.gradle/caches/8.11.1/transforms/42e3a097df95d2de6865c1353701f512/transformed/play-services-base-18.1.0/AndroidManifest.xml:16:1-24:12
+MERGED from [com.google.firebase:firebase-iid-interop:17.1.0] /home/openhands/.gradle/caches/8.11.1/transforms/cecc958d6eccdfc476796ada27d7a6b3/transformed/firebase-iid-interop-17.1.0/AndroidManifest.xml:2:1-10:12
+MERGED from [com.google.android.gms:play-services-cloud-messaging:17.1.0] /home/openhands/.gradle/caches/8.11.1/transforms/74774079a768243628bc430b2fcca1f3/transformed/play-services-cloud-messaging-17.1.0/AndroidManifest.xml:2:1-13:12
+MERGED from [com.google.firebase:firebase-installations:17.2.0] /home/openhands/.gradle/caches/8.11.1/transforms/42b05f4183eb8c6a784561aa81a4589d/transformed/firebase-installations-17.2.0/AndroidManifest.xml:2:1-24:12
+MERGED from [com.google.firebase:firebase-common-ktx:20.4.2] /home/openhands/.gradle/caches/8.11.1/transforms/9cc7b6ac4d29d7dd1e876c7756849572/transformed/firebase-common-ktx-20.4.2/AndroidManifest.xml:2:1-18:12
+MERGED from [com.google.firebase:firebase-common:20.4.2] /home/openhands/.gradle/caches/8.11.1/transforms/d02da3bf305e9b393b05474d6570e48b/transformed/firebase-common-20.4.2/AndroidManifest.xml:15:1-41:12
+MERGED from [com.google.firebase:firebase-installations-interop:17.1.1] /home/openhands/.gradle/caches/8.11.1/transforms/ea3f430f6477868e905bc9bf86e82d6f/transformed/firebase-installations-interop-17.1.1/AndroidManifest.xml:15:1-19:12
+MERGED from [androidx.navigation:navigation-common:2.7.7] /home/openhands/.gradle/caches/8.11.1/transforms/ec5daa61b130889853a7edcaaafb6e15/transformed/navigation-common-2.7.7/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.navigation:navigation-runtime:2.7.7] /home/openhands/.gradle/caches/8.11.1/transforms/5ce2654d852454ba6f3dd8b135d330f9/transformed/navigation-runtime-2.7.7/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.navigation:navigation-common-ktx:2.7.7] /home/openhands/.gradle/caches/8.11.1/transforms/66c72917b8e81fb7b5ccbafb8d369f4c/transformed/navigation-common-ktx-2.7.7/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.navigation:navigation-runtime-ktx:2.7.7] /home/openhands/.gradle/caches/8.11.1/transforms/af1077c53fa40f0debe20987349bc956/transformed/navigation-runtime-ktx-2.7.7/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.navigation:navigation-compose:2.7.7] /home/openhands/.gradle/caches/8.11.1/transforms/6b935b6f4940ea94dcf46d76106f0622/transformed/navigation-compose-2.7.7/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.material3:material3-android:1.2.0] /home/openhands/.gradle/caches/8.11.1/transforms/0b264ab191351a9812f2f672756abe67/transformed/material3-release/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.compose.material:material-android:1.6.1] /home/openhands/.gradle/caches/8.11.1/transforms/b5fe6d24c2d5687603ef279a50a1f68a/transformed/material-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.material:material-icons-core-android:1.6.1] /home/openhands/.gradle/caches/8.11.1/transforms/347ec194207c3cbc481a9947073b68f3/transformed/material-icons-core-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.material:material-icons-extended-android:1.6.1] /home/openhands/.gradle/caches/8.11.1/transforms/a10e037972c20d5023dfd736aa94041d/transformed/material-icons-extended-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.material:material-ripple-android:1.6.1] /home/openhands/.gradle/caches/8.11.1/transforms/e8e415af571d3d1ec2ed18c812e7ac1b/transformed/material-ripple-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.foundation:foundation-android:1.6.1] /home/openhands/.gradle/caches/8.11.1/transforms/31527cde12c43e2dc5747c2c09afee60/transformed/foundation-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.foundation:foundation-layout-android:1.6.1] /home/openhands/.gradle/caches/8.11.1/transforms/28606ba336f05736831fe553bea4b1b3/transformed/foundation-layout-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.animation:animation-core-android:1.6.1] /home/openhands/.gradle/caches/8.11.1/transforms/e141e9ecafd267d59b6800042e7ce1a5/transformed/animation-core-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.animation:animation-android:1.6.1] /home/openhands/.gradle/caches/8.11.1/transforms/b34843f7f484676d223e5981899d0fb9/transformed/animation-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-tooling-data-android:1.6.1] /home/openhands/.gradle/caches/8.11.1/transforms/09c30ac62cbcd38545bb608797760d5d/transformed/ui-tooling-data-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-unit-android:1.6.1] /home/openhands/.gradle/caches/8.11.1/transforms/aa1697633a9e598cc7761d227c4860c4/transformed/ui-unit-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-geometry-android:1.6.1] /home/openhands/.gradle/caches/8.11.1/transforms/a4ff0bd7fb4eca26ef3fc615ff245732/transformed/ui-geometry-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-util-android:1.6.1] /home/openhands/.gradle/caches/8.11.1/transforms/96d4e88135d1062698570b5fbf5b63aa/transformed/ui-util-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-text-android:1.6.1] /home/openhands/.gradle/caches/8.11.1/transforms/9e3face1f1a20fb74e1f4ef96fc1010f/transformed/ui-text-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-tooling-preview-android:1.6.1] /home/openhands/.gradle/caches/8.11.1/transforms/45637aa027f650f05d7f13ecb722992d/transformed/ui-tooling-preview-release/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.compose.ui:ui-tooling-android:1.6.1] /home/openhands/.gradle/caches/8.11.1/transforms/bbf0adc14e625517f06fcda383708822/transformed/ui-tooling-release/AndroidManifest.xml:17:1-28:12
+MERGED from [androidx.compose.ui:ui-graphics-android:1.6.1] /home/openhands/.gradle/caches/8.11.1/transforms/bbd1efb86264928f177af516a8ac0a82/transformed/ui-graphics-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-test-manifest:1.6.1] /home/openhands/.gradle/caches/8.11.1/transforms/8967d44031ed53a646f9cc90fec86082/transformed/ui-test-manifest-1.6.1/AndroidManifest.xml:17:1-28:12
+MERGED from [androidx.compose.ui:ui-android:1.6.1] /home/openhands/.gradle/caches/8.11.1/transforms/56f0f05d0b88b773be642feee7e7cdde/transformed/ui-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.fragment:fragment:1.3.6] /home/openhands/.gradle/caches/8.11.1/transforms/25079e8b8a419c4f0d60632285c88f2c/transformed/fragment-1.3.6/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.activity:activity:1.8.2] /home/openhands/.gradle/caches/8.11.1/transforms/2e687e10649c2ca1f348d03a6c8fe933/transformed/activity-1.8.2/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.activity:activity-ktx:1.8.2] /home/openhands/.gradle/caches/8.11.1/transforms/3343f14c0d9480bb22b0e9c609a52a27/transformed/activity-ktx-1.8.2/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.activity:activity-compose:1.8.2] /home/openhands/.gradle/caches/8.11.1/transforms/6efe764f0795d5e60a256bc2b2c23c86/transformed/activity-compose-1.8.2/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.savedstate:savedstate-ktx:1.2.1] /home/openhands/.gradle/caches/8.11.1/transforms/5b53a67f6172bb7c7aba61509b053f97/transformed/savedstate-ktx-1.2.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.savedstate:savedstate:1.2.1] /home/openhands/.gradle/caches/8.11.1/transforms/e12db890e30bc191f4ae23f33e124449/transformed/savedstate-1.2.1/AndroidManifest.xml:17:1-22:12
+MERGED from [io.github.jan-tennert.supabase:realtime-kt-android-debug:2.2.2] /home/openhands/.gradle/caches/8.11.1/transforms/ebacb1f18da8e3c255ca3f7d3175ea15/transformed/realtime-kt-debug/AndroidManifest.xml:2:1-7:12
+MERGED from [io.github.jan-tennert.supabase:postgrest-kt-android-debug:2.2.2] /home/openhands/.gradle/caches/8.11.1/transforms/e8247780be56045f279e4f5a51af5d41/transformed/postgrest-kt-debug/AndroidManifest.xml:2:1-7:12
+MERGED from [io.github.jan-tennert.supabase:gotrue-kt-android-debug:2.2.2] /home/openhands/.gradle/caches/8.11.1/transforms/b5a782c0b5f6b18a9e94799c874cd9c3/transformed/gotrue-kt-debug/AndroidManifest.xml:2:1-20:12
+MERGED from [io.github.jan-tennert.supabase:supabase-kt-android-debug:2.2.2] /home/openhands/.gradle/caches/8.11.1/transforms/41bf72f5575d1e3a85c53760162f0e43/transformed/supabase-kt-debug/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.emoji2:emoji2-views-helper:1.3.0] /home/openhands/.gradle/caches/8.11.1/transforms/88a08a21879b540d6fc7401de89ad93e/transformed/emoji2-views-helper-1.3.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.emoji2:emoji2:1.3.0] /home/openhands/.gradle/caches/8.11.1/transforms/0d1b1898082115b914c59965e08d17f8/transformed/emoji2-1.3.0/AndroidManifest.xml:17:1-35:12
+MERGED from [androidx.lifecycle:lifecycle-process:2.7.0] /home/openhands/.gradle/caches/8.11.1/transforms/9a83b3682f56bae74916ac84be086a49/transformed/lifecycle-process-2.7.0/AndroidManifest.xml:17:1-35:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.7.0] /home/openhands/.gradle/caches/8.11.1/transforms/1d0a5406ae4dc026a7e080b91b63757a/transformed/lifecycle-livedata-core-2.7.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.7.0] /home/openhands/.gradle/caches/8.11.1/transforms/72eab511f6fbaabd6ff362a2a13731fe/transformed/lifecycle-livedata-core-ktx-2.7.0/AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.android.gms:play-services-stats:17.0.2] /home/openhands/.gradle/caches/8.11.1/transforms/2e3aeb0b54c646510826d6336b7f4cb8/transformed/play-services-stats-17.0.2/AndroidManifest.xml:2:1-9:12
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /home/openhands/.gradle/caches/8.11.1/transforms/96d2637edecb22f8bb5b23d6efd86460/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] /home/openhands/.gradle/caches/8.11.1/transforms/735ec9cd78ae5d622415294887adbdfa/transformed/loader-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.7.0] /home/openhands/.gradle/caches/8.11.1/transforms/777228780d103a7ef17dc1610f4248ee/transformed/lifecycle-livedata-2.7.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.7.0] /home/openhands/.gradle/caches/8.11.1/transforms/f9ea497baeb91e61946c223d0916fcb9/transformed/lifecycle-viewmodel-savedstate-2.7.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.7.0] /home/openhands/.gradle/caches/8.11.1/transforms/418627c6df7042989f52bc2a7e3f0321/transformed/lifecycle-viewmodel-2.7.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.7.0] /home/openhands/.gradle/caches/8.11.1/transforms/bec9e1d3538aef89a128aab412c82692/transformed/lifecycle-runtime-2.7.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-ktx:2.7.0] /home/openhands/.gradle/caches/8.11.1/transforms/747a7e01b01e3b054ed1ad1a6682a904/transformed/lifecycle-livedata-ktx-2.7.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0] /home/openhands/.gradle/caches/8.11.1/transforms/a294f58f6576cf9b6288682bf4cf6fa2/transformed/lifecycle-viewmodel-ktx-2.7.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.lifecycle:lifecycle-runtime-compose:2.7.0] /home/openhands/.gradle/caches/8.11.1/transforms/aa3d5fc661a47ff99a643190213affd8/transformed/lifecycle-runtime-compose-2.7.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-compose:2.7.0] /home/openhands/.gradle/caches/8.11.1/transforms/8e019f3402f4f70374851e997716c29e/transformed/lifecycle-viewmodel-compose-2.7.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.7.0] /home/openhands/.gradle/caches/8.11.1/transforms/24f9b2c92ece5ee0598efe8299d9c667/transformed/lifecycle-runtime-ktx-2.7.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.room:room-runtime:2.6.1] /home/openhands/.gradle/caches/8.11.1/transforms/2d45dfac9673f31d13880a3e8bde25d1/transformed/room-runtime-2.6.1/AndroidManifest.xml:17:1-31:12
+MERGED from [androidx.room:room-ktx:2.6.1] /home/openhands/.gradle/caches/8.11.1/transforms/f85daf746cbbb87f84efa600684667f9/transformed/room-ktx-2.6.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.compose.runtime:runtime-saveable-android:1.6.1] /home/openhands/.gradle/caches/8.11.1/transforms/c06b62645c38fa77e4601ff14acc44f1/transformed/runtime-saveable-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.runtime:runtime-android:1.6.1] /home/openhands/.gradle/caches/8.11.1/transforms/d63f95274ef60bcd85f766012a0e8172/transformed/runtime-release/AndroidManifest.xml:2:1-7:12
+MERGED from [com.russhwolf:multiplatform-settings-coroutines-android-debug:1.1.1] /home/openhands/.gradle/caches/8.11.1/transforms/bbc02775437f86872f919fcaf226e23c/transformed/multiplatform-settings-coroutines-debug/AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.android.gms:play-services-tasks:18.0.2] /home/openhands/.gradle/caches/8.11.1/transforms/5b7dfb0bb727af07286e955ab84b2fd8/transformed/play-services-tasks-18.0.2/AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.firebase:firebase-measurement-connector:19.0.0] /home/openhands/.gradle/caches/8.11.1/transforms/abd1acb9dd7643d829b7354899ac1b01/transformed/firebase-measurement-connector-19.0.0/AndroidManifest.xml:17:1-25:12
+MERGED from [com.google.android.gms:play-services-basement:18.1.0] /home/openhands/.gradle/caches/8.11.1/transforms/5f5671063623ffa2af5e79b690defb10/transformed/play-services-basement-18.1.0/AndroidManifest.xml:16:1-26:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /home/openhands/.gradle/caches/8.11.1/transforms/43abd4e1bfc68e126de24cef2ce5e661/transformed/drawerlayout-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.browser:browser:1.7.0] /home/openhands/.gradle/caches/8.11.1/transforms/2ca881a09e922a476de5028e3dc00df0/transformed/browser-1.7.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.autofill:autofill:1.0.0] /home/openhands/.gradle/caches/8.11.1/transforms/6b4eedbd1aed65da4926cbd6ab0c92af/transformed/autofill-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] /home/openhands/.gradle/caches/8.11.1/transforms/55531c7cb1fdc93e9baec223e1ede1e8/transformed/viewpager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /home/openhands/.gradle/caches/8.11.1/transforms/3e765717d5c298186c98a0d6d857b722/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /home/openhands/.gradle/caches/8.11.1/transforms/5d77802dbf08c366c700c9f0231b4ee1/transformed/vectordrawable-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.customview:customview:1.0.0] /home/openhands/.gradle/caches/8.11.1/transforms/7fbd0cfbeca5ad7a7c440e2534852ba2/transformed/customview-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core:1.12.0] /home/openhands/.gradle/caches/8.11.1/transforms/05d04e3e4b58bd8ca19d14896d603423/transformed/core-1.12.0/AndroidManifest.xml:17:1-30:12
+MERGED from [androidx.customview:customview-poolingcontainer:1.0.0] /home/openhands/.gradle/caches/8.11.1/transforms/ebf0b0df8061bcfc22f01c9b84cd0235/transformed/customview-poolingcontainer-1.0.0/AndroidManifest.xml:17:1-23:12
+MERGED from [androidx.core:core-ktx:1.12.0] /home/openhands/.gradle/caches/8.11.1/transforms/824213c74d361406acec0d4fabb24160/transformed/core-ktx-1.12.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.sqlite:sqlite-framework:2.4.0] /home/openhands/.gradle/caches/8.11.1/transforms/cb071b5596e010ad115bbed2540b101c/transformed/sqlite-framework-2.4.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.sqlite:sqlite:2.4.0] /home/openhands/.gradle/caches/8.11.1/transforms/7752989f34aec1514d1973b8f583da3c/transformed/sqlite-2.4.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.annotation:annotation-experimental:1.4.0] /home/openhands/.gradle/caches/8.11.1/transforms/d51d090c26712015d7e6a9a7f99cf4e1/transformed/annotation-experimental-1.4.0/AndroidManifest.xml:2:1-7:12
+MERGED from [com.russhwolf:multiplatform-settings-no-arg-android-debug:1.1.1] /home/openhands/.gradle/caches/8.11.1/transforms/f5b493170afe68ab5da38c03ee84738d/transformed/multiplatform-settings-no-arg-debug/AndroidManifest.xml:17:1-35:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/openhands/.gradle/caches/8.11.1/transforms/c9c0f5a6c49e0805a0678dadbe26ad0b/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.arch.core:core-runtime:2.2.0] /home/openhands/.gradle/caches/8.11.1/transforms/3db2756b4d50f724f067bb570d391ffc/transformed/core-runtime-2.2.0/AndroidManifest.xml:17:1-22:12
+MERGED from [com.google.firebase:firebase-datatransport:18.1.7] /home/openhands/.gradle/caches/8.11.1/transforms/e745f78f058e27e0070066159d91058d/transformed/firebase-datatransport-18.1.7/AndroidManifest.xml:15:1-33:12
+MERGED from [com.google.android.datatransport:transport-backend-cct:3.1.8] /home/openhands/.gradle/caches/8.11.1/transforms/689b6cc0ebcf1ab72064222bc8d478ba/transformed/transport-backend-cct-3.1.8/AndroidManifest.xml:15:1-37:12
+MERGED from [com.google.android.datatransport:transport-runtime:3.1.8] /home/openhands/.gradle/caches/8.11.1/transforms/63e4912a4f7f44dc108915e93e23bab0/transformed/transport-runtime-3.1.8/AndroidManifest.xml:15:1-41:12
+MERGED from [com.google.android.datatransport:transport-api:3.1.0] /home/openhands/.gradle/caches/8.11.1/transforms/381b8757efacb1f9cce2c4a7f9af56da/transformed/transport-api-3.1.0/AndroidManifest.xml:15:1-20:12
+MERGED from [com.google.firebase:firebase-encoders-json:18.0.0] /home/openhands/.gradle/caches/8.11.1/transforms/50abead35743585040ffce73e7caade7/transformed/firebase-encoders-json-18.0.0/AndroidManifest.xml:15:1-23:12
+MERGED from [com.google.firebase:firebase-components:17.1.5] /home/openhands/.gradle/caches/8.11.1/transforms/48442dec3ce87915abd537ca4fba8852/transformed/firebase-components-17.1.5/AndroidManifest.xml:15:1-20:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/openhands/.gradle/caches/8.11.1/transforms/2bf7a652f44e7bde87012b9d8e411c9b/transformed/cursoradapter-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] /home/openhands/.gradle/caches/8.11.1/transforms/d4d629fb3348b3fa6b0194f49c78e860/transformed/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/openhands/.gradle/caches/8.11.1/transforms/a92d4c703ccab45414435e8de8661b50/transformed/profileinstaller-1.3.0/AndroidManifest.xml:17:1-55:12
+MERGED from [androidx.startup:startup-runtime:1.1.1] /home/openhands/.gradle/caches/8.11.1/transforms/ed0b778491664e26562e1918139327ea/transformed/startup-runtime-1.1.1/AndroidManifest.xml:17:1-33:12
+MERGED from [androidx.tracing:tracing:1.0.0] /home/openhands/.gradle/caches/8.11.1/transforms/1c3665ad525d2731b41abf3b91464e48/transformed/tracing-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.documentfile:documentfile:1.0.0] /home/openhands/.gradle/caches/8.11.1/transforms/bf5d88ba73282385b0bbaf006b5c36e1/transformed/documentfile-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/openhands/.gradle/caches/8.11.1/transforms/23adc1df84e5b9f6332ae8fce672b6da/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.print:print:1.0.0] /home/openhands/.gradle/caches/8.11.1/transforms/1328f0bdb46f380ee4bc29efa2a7fda7/transformed/print-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [com.soywiz.korlibs.krypto:krypto-android:4.0.10] /home/openhands/.gradle/caches/8.11.1/transforms/fe752cd973dde1f219bc718470ec0fea/transformed/krypto-debug/AndroidManifest.xml:2:1-9:12
+MERGED from [com.russhwolf:multiplatform-settings-android-debug:1.1.1] /home/openhands/.gradle/caches/8.11.1/transforms/0b2bbc6e2a3c9592c9f12da164a5ed14/transformed/multiplatform-settings-debug/AndroidManifest.xml:2:1-7:12
+MERGED from [co.touchlab:kermit-android-debug:2.0.3] /home/openhands/.gradle/caches/8.11.1/transforms/ba6966db9676d12f4a1bfea9ca266bbb/transformed/kermit-debug/AndroidManifest.xml:2:1-7:12
+MERGED from [co.touchlab:kermit-core-android-debug:2.0.3] /home/openhands/.gradle/caches/8.11.1/transforms/5e0d9fdb91e0df80fa5461a3f9594209/transformed/kermit-core-debug/AndroidManifest.xml:2:1-7:12
+	package
+		INJECTED from /workspace/project/VTT-CABS/customer-app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /workspace/project/VTT-CABS/customer-app/src/main/AndroidManifest.xml
+	xmlns:tools
+		ADDED from /workspace/project/VTT-CABS/customer-app/src/main/AndroidManifest.xml:3:5-51
+	android:versionCode
+		INJECTED from /workspace/project/VTT-CABS/customer-app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /workspace/project/VTT-CABS/customer-app/src/main/AndroidManifest.xml:2:11-69
+uses-permission#android.permission.INTERNET
+ADDED from /workspace/project/VTT-CABS/customer-app/src/main/AndroidManifest.xml:5:5-67
+MERGED from [com.google.android.gms:play-services-maps:18.2.0] /home/openhands/.gradle/caches/8.11.1/transforms/a409a2419644d4806704c766ed7ca461/transformed/play-services-maps-18.2.0/AndroidManifest.xml:24:5-67
+MERGED from [com.google.android.gms:play-services-maps:18.2.0] /home/openhands/.gradle/caches/8.11.1/transforms/a409a2419644d4806704c766ed7ca461/transformed/play-services-maps-18.2.0/AndroidManifest.xml:24:5-67
+MERGED from [com.google.android.gms:play-services-cloud-messaging:17.1.0] /home/openhands/.gradle/caches/8.11.1/transforms/74774079a768243628bc430b2fcca1f3/transformed/play-services-cloud-messaging-17.1.0/AndroidManifest.xml:8:5-67
+MERGED from [com.google.android.gms:play-services-cloud-messaging:17.1.0] /home/openhands/.gradle/caches/8.11.1/transforms/74774079a768243628bc430b2fcca1f3/transformed/play-services-cloud-messaging-17.1.0/AndroidManifest.xml:8:5-67
+MERGED from [com.google.firebase:firebase-installations:17.2.0] /home/openhands/.gradle/caches/8.11.1/transforms/42b05f4183eb8c6a784561aa81a4589d/transformed/firebase-installations-17.2.0/AndroidManifest.xml:8:5-67
+MERGED from [com.google.firebase:firebase-installations:17.2.0] /home/openhands/.gradle/caches/8.11.1/transforms/42b05f4183eb8c6a784561aa81a4589d/transformed/firebase-installations-17.2.0/AndroidManifest.xml:8:5-67
+MERGED from [com.google.android.datatransport:transport-backend-cct:3.1.8] /home/openhands/.gradle/caches/8.11.1/transforms/689b6cc0ebcf1ab72064222bc8d478ba/transformed/transport-backend-cct-3.1.8/AndroidManifest.xml:25:5-67
+MERGED from [com.google.android.datatransport:transport-backend-cct:3.1.8] /home/openhands/.gradle/caches/8.11.1/transforms/689b6cc0ebcf1ab72064222bc8d478ba/transformed/transport-backend-cct-3.1.8/AndroidManifest.xml:25:5-67
+	android:name
+		ADDED from /workspace/project/VTT-CABS/customer-app/src/main/AndroidManifest.xml:5:22-64
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from /workspace/project/VTT-CABS/customer-app/src/main/AndroidManifest.xml:6:5-79
+MERGED from [com.google.android.gms:play-services-maps:18.2.0] /home/openhands/.gradle/caches/8.11.1/transforms/a409a2419644d4806704c766ed7ca461/transformed/play-services-maps-18.2.0/AndroidManifest.xml:23:5-79
+MERGED from [com.google.android.gms:play-services-maps:18.2.0] /home/openhands/.gradle/caches/8.11.1/transforms/a409a2419644d4806704c766ed7ca461/transformed/play-services-maps-18.2.0/AndroidManifest.xml:23:5-79
+MERGED from [com.google.firebase:firebase-messaging:23.4.1] /home/openhands/.gradle/caches/8.11.1/transforms/23deb80556665fa3a76264a2f9fed7fc/transformed/firebase-messaging-23.4.1/AndroidManifest.xml:22:5-79
+MERGED from [com.google.firebase:firebase-messaging:23.4.1] /home/openhands/.gradle/caches/8.11.1/transforms/23deb80556665fa3a76264a2f9fed7fc/transformed/firebase-messaging-23.4.1/AndroidManifest.xml:22:5-79
+MERGED from [com.google.android.gms:play-services-cloud-messaging:17.1.0] /home/openhands/.gradle/caches/8.11.1/transforms/74774079a768243628bc430b2fcca1f3/transformed/play-services-cloud-messaging-17.1.0/AndroidManifest.xml:7:5-79
+MERGED from [com.google.android.gms:play-services-cloud-messaging:17.1.0] /home/openhands/.gradle/caches/8.11.1/transforms/74774079a768243628bc430b2fcca1f3/transformed/play-services-cloud-messaging-17.1.0/AndroidManifest.xml:7:5-79
+MERGED from [com.google.firebase:firebase-installations:17.2.0] /home/openhands/.gradle/caches/8.11.1/transforms/42b05f4183eb8c6a784561aa81a4589d/transformed/firebase-installations-17.2.0/AndroidManifest.xml:7:5-79
+MERGED from [com.google.firebase:firebase-installations:17.2.0] /home/openhands/.gradle/caches/8.11.1/transforms/42b05f4183eb8c6a784561aa81a4589d/transformed/firebase-installations-17.2.0/AndroidManifest.xml:7:5-79
+MERGED from [com.google.android.datatransport:transport-backend-cct:3.1.8] /home/openhands/.gradle/caches/8.11.1/transforms/689b6cc0ebcf1ab72064222bc8d478ba/transformed/transport-backend-cct-3.1.8/AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.datatransport:transport-backend-cct:3.1.8] /home/openhands/.gradle/caches/8.11.1/transforms/689b6cc0ebcf1ab72064222bc8d478ba/transformed/transport-backend-cct-3.1.8/AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.datatransport:transport-runtime:3.1.8] /home/openhands/.gradle/caches/8.11.1/transforms/63e4912a4f7f44dc108915e93e23bab0/transformed/transport-runtime-3.1.8/AndroidManifest.xml:22:5-79
+MERGED from [com.google.android.datatransport:transport-runtime:3.1.8] /home/openhands/.gradle/caches/8.11.1/transforms/63e4912a4f7f44dc108915e93e23bab0/transformed/transport-runtime-3.1.8/AndroidManifest.xml:22:5-79
+	android:name
+		ADDED from /workspace/project/VTT-CABS/customer-app/src/main/AndroidManifest.xml:6:22-76
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from /workspace/project/VTT-CABS/customer-app/src/main/AndroidManifest.xml:7:5-79
+	android:name
+		ADDED from /workspace/project/VTT-CABS/customer-app/src/main/AndroidManifest.xml:7:22-76
+uses-permission#android.permission.ACCESS_COARSE_LOCATION
+ADDED from /workspace/project/VTT-CABS/customer-app/src/main/AndroidManifest.xml:8:5-81
+	android:name
+		ADDED from /workspace/project/VTT-CABS/customer-app/src/main/AndroidManifest.xml:8:22-78
+uses-permission#android.permission.POST_NOTIFICATIONS
+ADDED from /workspace/project/VTT-CABS/customer-app/src/main/AndroidManifest.xml:9:5-77
+MERGED from [com.google.firebase:firebase-messaging:23.4.1] /home/openhands/.gradle/caches/8.11.1/transforms/23deb80556665fa3a76264a2f9fed7fc/transformed/firebase-messaging-23.4.1/AndroidManifest.xml:23:5-77
+MERGED from [com.google.firebase:firebase-messaging:23.4.1] /home/openhands/.gradle/caches/8.11.1/transforms/23deb80556665fa3a76264a2f9fed7fc/transformed/firebase-messaging-23.4.1/AndroidManifest.xml:23:5-77
+	android:name
+		ADDED from /workspace/project/VTT-CABS/customer-app/src/main/AndroidManifest.xml:9:22-74
+application
+ADDED from /workspace/project/VTT-CABS/customer-app/src/main/AndroidManifest.xml:11:5-43:19
+INJECTED from /workspace/project/VTT-CABS/customer-app/src/main/AndroidManifest.xml:11:5-43:19
+MERGED from [com.google.android.gms:play-services-maps:18.2.0] /home/openhands/.gradle/caches/8.11.1/transforms/a409a2419644d4806704c766ed7ca461/transformed/play-services-maps-18.2.0/AndroidManifest.xml:36:5-42:19
+MERGED from [com.google.android.gms:play-services-maps:18.2.0] /home/openhands/.gradle/caches/8.11.1/transforms/a409a2419644d4806704c766ed7ca461/transformed/play-services-maps-18.2.0/AndroidManifest.xml:36:5-42:19
+MERGED from [com.google.android.gms:play-services-location:21.1.0] /home/openhands/.gradle/caches/8.11.1/transforms/2ec4ce7d1b64a30eb7e9e1071a8cdb08/transformed/play-services-location-21.1.0/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-location:21.1.0] /home/openhands/.gradle/caches/8.11.1/transforms/2ec4ce7d1b64a30eb7e9e1071a8cdb08/transformed/play-services-location-21.1.0/AndroidManifest.xml:7:5-20
+MERGED from [com.google.firebase:firebase-messaging:23.4.1] /home/openhands/.gradle/caches/8.11.1/transforms/23deb80556665fa3a76264a2f9fed7fc/transformed/firebase-messaging-23.4.1/AndroidManifest.xml:28:5-64:19
+MERGED from [com.google.firebase:firebase-messaging:23.4.1] /home/openhands/.gradle/caches/8.11.1/transforms/23deb80556665fa3a76264a2f9fed7fc/transformed/firebase-messaging-23.4.1/AndroidManifest.xml:28:5-64:19
+MERGED from [com.google.android.gms:play-services-base:18.1.0] /home/openhands/.gradle/caches/8.11.1/transforms/42e3a097df95d2de6865c1353701f512/transformed/play-services-base-18.1.0/AndroidManifest.xml:19:5-23:19
+MERGED from [com.google.android.gms:play-services-base:18.1.0] /home/openhands/.gradle/caches/8.11.1/transforms/42e3a097df95d2de6865c1353701f512/transformed/play-services-base-18.1.0/AndroidManifest.xml:19:5-23:19
+MERGED from [com.google.firebase:firebase-iid-interop:17.1.0] /home/openhands/.gradle/caches/8.11.1/transforms/cecc958d6eccdfc476796ada27d7a6b3/transformed/firebase-iid-interop-17.1.0/AndroidManifest.xml:7:5-8:19
+MERGED from [com.google.firebase:firebase-iid-interop:17.1.0] /home/openhands/.gradle/caches/8.11.1/transforms/cecc958d6eccdfc476796ada27d7a6b3/transformed/firebase-iid-interop-17.1.0/AndroidManifest.xml:7:5-8:19
+MERGED from [com.google.firebase:firebase-installations:17.2.0] /home/openhands/.gradle/caches/8.11.1/transforms/42b05f4183eb8c6a784561aa81a4589d/transformed/firebase-installations-17.2.0/AndroidManifest.xml:11:5-22:19
+MERGED from [com.google.firebase:firebase-installations:17.2.0] /home/openhands/.gradle/caches/8.11.1/transforms/42b05f4183eb8c6a784561aa81a4589d/transformed/firebase-installations-17.2.0/AndroidManifest.xml:11:5-22:19
+MERGED from [com.google.firebase:firebase-common-ktx:20.4.2] /home/openhands/.gradle/caches/8.11.1/transforms/9cc7b6ac4d29d7dd1e876c7756849572/transformed/firebase-common-ktx-20.4.2/AndroidManifest.xml:8:5-16:19
+MERGED from [com.google.firebase:firebase-common-ktx:20.4.2] /home/openhands/.gradle/caches/8.11.1/transforms/9cc7b6ac4d29d7dd1e876c7756849572/transformed/firebase-common-ktx-20.4.2/AndroidManifest.xml:8:5-16:19
+MERGED from [com.google.firebase:firebase-common:20.4.2] /home/openhands/.gradle/caches/8.11.1/transforms/d02da3bf305e9b393b05474d6570e48b/transformed/firebase-common-20.4.2/AndroidManifest.xml:22:5-39:19
+MERGED from [com.google.firebase:firebase-common:20.4.2] /home/openhands/.gradle/caches/8.11.1/transforms/d02da3bf305e9b393b05474d6570e48b/transformed/firebase-common-20.4.2/AndroidManifest.xml:22:5-39:19
+MERGED from [androidx.compose.ui:ui-tooling-android:1.6.1] /home/openhands/.gradle/caches/8.11.1/transforms/bbf0adc14e625517f06fcda383708822/transformed/ui-tooling-release/AndroidManifest.xml:22:5-26:19
+MERGED from [androidx.compose.ui:ui-tooling-android:1.6.1] /home/openhands/.gradle/caches/8.11.1/transforms/bbf0adc14e625517f06fcda383708822/transformed/ui-tooling-release/AndroidManifest.xml:22:5-26:19
+MERGED from [androidx.compose.ui:ui-test-manifest:1.6.1] /home/openhands/.gradle/caches/8.11.1/transforms/8967d44031ed53a646f9cc90fec86082/transformed/ui-test-manifest-1.6.1/AndroidManifest.xml:22:5-26:19
+MERGED from [androidx.compose.ui:ui-test-manifest:1.6.1] /home/openhands/.gradle/caches/8.11.1/transforms/8967d44031ed53a646f9cc90fec86082/transformed/ui-test-manifest-1.6.1/AndroidManifest.xml:22:5-26:19
+MERGED from [io.github.jan-tennert.supabase:gotrue-kt-android-debug:2.2.2] /home/openhands/.gradle/caches/8.11.1/transforms/b5a782c0b5f6b18a9e94799c874cd9c3/transformed/gotrue-kt-debug/AndroidManifest.xml:8:5-18:19
+MERGED from [io.github.jan-tennert.supabase:gotrue-kt-android-debug:2.2.2] /home/openhands/.gradle/caches/8.11.1/transforms/b5a782c0b5f6b18a9e94799c874cd9c3/transformed/gotrue-kt-debug/AndroidManifest.xml:8:5-18:19
+MERGED from [androidx.emoji2:emoji2:1.3.0] /home/openhands/.gradle/caches/8.11.1/transforms/0d1b1898082115b914c59965e08d17f8/transformed/emoji2-1.3.0/AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.emoji2:emoji2:1.3.0] /home/openhands/.gradle/caches/8.11.1/transforms/0d1b1898082115b914c59965e08d17f8/transformed/emoji2-1.3.0/AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.lifecycle:lifecycle-process:2.7.0] /home/openhands/.gradle/caches/8.11.1/transforms/9a83b3682f56bae74916ac84be086a49/transformed/lifecycle-process-2.7.0/AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.lifecycle:lifecycle-process:2.7.0] /home/openhands/.gradle/caches/8.11.1/transforms/9a83b3682f56bae74916ac84be086a49/transformed/lifecycle-process-2.7.0/AndroidManifest.xml:23:5-33:19
+MERGED from [com.google.android.gms:play-services-stats:17.0.2] /home/openhands/.gradle/caches/8.11.1/transforms/2e3aeb0b54c646510826d6336b7f4cb8/transformed/play-services-stats-17.0.2/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-stats:17.0.2] /home/openhands/.gradle/caches/8.11.1/transforms/2e3aeb0b54c646510826d6336b7f4cb8/transformed/play-services-stats-17.0.2/AndroidManifest.xml:7:5-20
+MERGED from [androidx.room:room-runtime:2.6.1] /home/openhands/.gradle/caches/8.11.1/transforms/2d45dfac9673f31d13880a3e8bde25d1/transformed/room-runtime-2.6.1/AndroidManifest.xml:23:5-29:19
+MERGED from [androidx.room:room-runtime:2.6.1] /home/openhands/.gradle/caches/8.11.1/transforms/2d45dfac9673f31d13880a3e8bde25d1/transformed/room-runtime-2.6.1/AndroidManifest.xml:23:5-29:19
+MERGED from [com.google.android.gms:play-services-tasks:18.0.2] /home/openhands/.gradle/caches/8.11.1/transforms/5b7dfb0bb727af07286e955ab84b2fd8/transformed/play-services-tasks-18.0.2/AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-tasks:18.0.2] /home/openhands/.gradle/caches/8.11.1/transforms/5b7dfb0bb727af07286e955ab84b2fd8/transformed/play-services-tasks-18.0.2/AndroidManifest.xml:5:5-20
+MERGED from [com.google.firebase:firebase-measurement-connector:19.0.0] /home/openhands/.gradle/caches/8.11.1/transforms/abd1acb9dd7643d829b7354899ac1b01/transformed/firebase-measurement-connector-19.0.0/AndroidManifest.xml:22:5-23:19
+MERGED from [com.google.firebase:firebase-measurement-connector:19.0.0] /home/openhands/.gradle/caches/8.11.1/transforms/abd1acb9dd7643d829b7354899ac1b01/transformed/firebase-measurement-connector-19.0.0/AndroidManifest.xml:22:5-23:19
+MERGED from [com.google.android.gms:play-services-basement:18.1.0] /home/openhands/.gradle/caches/8.11.1/transforms/5f5671063623ffa2af5e79b690defb10/transformed/play-services-basement-18.1.0/AndroidManifest.xml:20:5-24:19
+MERGED from [com.google.android.gms:play-services-basement:18.1.0] /home/openhands/.gradle/caches/8.11.1/transforms/5f5671063623ffa2af5e79b690defb10/transformed/play-services-basement-18.1.0/AndroidManifest.xml:20:5-24:19
+MERGED from [androidx.core:core:1.12.0] /home/openhands/.gradle/caches/8.11.1/transforms/05d04e3e4b58bd8ca19d14896d603423/transformed/core-1.12.0/AndroidManifest.xml:28:5-89
+MERGED from [androidx.core:core:1.12.0] /home/openhands/.gradle/caches/8.11.1/transforms/05d04e3e4b58bd8ca19d14896d603423/transformed/core-1.12.0/AndroidManifest.xml:28:5-89
+MERGED from [com.russhwolf:multiplatform-settings-no-arg-android-debug:1.1.1] /home/openhands/.gradle/caches/8.11.1/transforms/f5b493170afe68ab5da38c03ee84738d/transformed/multiplatform-settings-no-arg-debug/AndroidManifest.xml:23:5-33:19
+MERGED from [com.russhwolf:multiplatform-settings-no-arg-android-debug:1.1.1] /home/openhands/.gradle/caches/8.11.1/transforms/f5b493170afe68ab5da38c03ee84738d/transformed/multiplatform-settings-no-arg-debug/AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/openhands/.gradle/caches/8.11.1/transforms/c9c0f5a6c49e0805a0678dadbe26ad0b/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/openhands/.gradle/caches/8.11.1/transforms/c9c0f5a6c49e0805a0678dadbe26ad0b/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
+MERGED from [com.google.firebase:firebase-datatransport:18.1.7] /home/openhands/.gradle/caches/8.11.1/transforms/e745f78f058e27e0070066159d91058d/transformed/firebase-datatransport-18.1.7/AndroidManifest.xml:23:5-31:19
+MERGED from [com.google.firebase:firebase-datatransport:18.1.7] /home/openhands/.gradle/caches/8.11.1/transforms/e745f78f058e27e0070066159d91058d/transformed/firebase-datatransport-18.1.7/AndroidManifest.xml:23:5-31:19
+MERGED from [com.google.android.datatransport:transport-backend-cct:3.1.8] /home/openhands/.gradle/caches/8.11.1/transforms/689b6cc0ebcf1ab72064222bc8d478ba/transformed/transport-backend-cct-3.1.8/AndroidManifest.xml:27:5-35:19
+MERGED from [com.google.android.datatransport:transport-backend-cct:3.1.8] /home/openhands/.gradle/caches/8.11.1/transforms/689b6cc0ebcf1ab72064222bc8d478ba/transformed/transport-backend-cct-3.1.8/AndroidManifest.xml:27:5-35:19
+MERGED from [com.google.android.datatransport:transport-runtime:3.1.8] /home/openhands/.gradle/caches/8.11.1/transforms/63e4912a4f7f44dc108915e93e23bab0/transformed/transport-runtime-3.1.8/AndroidManifest.xml:25:5-39:19
+MERGED from [com.google.android.datatransport:transport-runtime:3.1.8] /home/openhands/.gradle/caches/8.11.1/transforms/63e4912a4f7f44dc108915e93e23bab0/transformed/transport-runtime-3.1.8/AndroidManifest.xml:25:5-39:19
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/openhands/.gradle/caches/8.11.1/transforms/a92d4c703ccab45414435e8de8661b50/transformed/profileinstaller-1.3.0/AndroidManifest.xml:23:5-53:19
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/openhands/.gradle/caches/8.11.1/transforms/a92d4c703ccab45414435e8de8661b50/transformed/profileinstaller-1.3.0/AndroidManifest.xml:23:5-53:19
+MERGED from [androidx.startup:startup-runtime:1.1.1] /home/openhands/.gradle/caches/8.11.1/transforms/ed0b778491664e26562e1918139327ea/transformed/startup-runtime-1.1.1/AndroidManifest.xml:25:5-31:19
+MERGED from [androidx.startup:startup-runtime:1.1.1] /home/openhands/.gradle/caches/8.11.1/transforms/ed0b778491664e26562e1918139327ea/transformed/startup-runtime-1.1.1/AndroidManifest.xml:25:5-31:19
+	android:extractNativeLibs
+		INJECTED from /workspace/project/VTT-CABS/customer-app/src/main/AndroidManifest.xml
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.12.0] /home/openhands/.gradle/caches/8.11.1/transforms/05d04e3e4b58bd8ca19d14896d603423/transformed/core-1.12.0/AndroidManifest.xml:28:18-86
+	android:supportsRtl
+		ADDED from /workspace/project/VTT-CABS/customer-app/src/main/AndroidManifest.xml:17:9-35
+	android:label
+		ADDED from /workspace/project/VTT-CABS/customer-app/src/main/AndroidManifest.xml:15:9-41
+	android:roundIcon
+		ADDED from /workspace/project/VTT-CABS/customer-app/src/main/AndroidManifest.xml:16:9-54
+	tools:targetApi
+		ADDED from /workspace/project/VTT-CABS/customer-app/src/main/AndroidManifest.xml:20:9-29
+	android:icon
+		ADDED from /workspace/project/VTT-CABS/customer-app/src/main/AndroidManifest.xml:14:9-43
+	android:allowBackup
+		ADDED from /workspace/project/VTT-CABS/customer-app/src/main/AndroidManifest.xml:13:9-35
+	android:theme
+		ADDED from /workspace/project/VTT-CABS/customer-app/src/main/AndroidManifest.xml:18:9-45
+	android:usesCleartextTraffic
+		ADDED from /workspace/project/VTT-CABS/customer-app/src/main/AndroidManifest.xml:19:9-44
+	android:name
+		ADDED from /workspace/project/VTT-CABS/customer-app/src/main/AndroidManifest.xml:12:9-39
+meta-data#com.google.android.geo.API_KEY
+ADDED from /workspace/project/VTT-CABS/customer-app/src/main/AndroidManifest.xml:22:9-24:55
+	android:value
+		ADDED from /workspace/project/VTT-CABS/customer-app/src/main/AndroidManifest.xml:24:13-52
+	android:name
+		ADDED from /workspace/project/VTT-CABS/customer-app/src/main/AndroidManifest.xml:23:13-58
+activity#com.vttcabs.customer.MainActivity
+ADDED from /workspace/project/VTT-CABS/customer-app/src/main/AndroidManifest.xml:26:9-34:20
+	android:exported
+		ADDED from /workspace/project/VTT-CABS/customer-app/src/main/AndroidManifest.xml:28:13-36
+	android:theme
+		ADDED from /workspace/project/VTT-CABS/customer-app/src/main/AndroidManifest.xml:29:13-49
+	android:name
+		ADDED from /workspace/project/VTT-CABS/customer-app/src/main/AndroidManifest.xml:27:13-41
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /workspace/project/VTT-CABS/customer-app/src/main/AndroidManifest.xml:30:13-33:29
+action#android.intent.action.MAIN
+ADDED from /workspace/project/VTT-CABS/customer-app/src/main/AndroidManifest.xml:31:17-69
+	android:name
+		ADDED from /workspace/project/VTT-CABS/customer-app/src/main/AndroidManifest.xml:31:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /workspace/project/VTT-CABS/customer-app/src/main/AndroidManifest.xml:32:17-77
+	android:name
+		ADDED from /workspace/project/VTT-CABS/customer-app/src/main/AndroidManifest.xml:32:27-74
+service#com.vttcabs.customer.VttFirebaseMessagingService
+ADDED from /workspace/project/VTT-CABS/customer-app/src/main/AndroidManifest.xml:36:9-42:19
+	android:exported
+		ADDED from /workspace/project/VTT-CABS/customer-app/src/main/AndroidManifest.xml:38:13-37
+	android:name
+		ADDED from /workspace/project/VTT-CABS/customer-app/src/main/AndroidManifest.xml:37:13-56
+intent-filter#action:name:com.google.firebase.MESSAGING_EVENT
+ADDED from /workspace/project/VTT-CABS/customer-app/src/main/AndroidManifest.xml:39:13-41:29
+action#com.google.firebase.MESSAGING_EVENT
+ADDED from /workspace/project/VTT-CABS/customer-app/src/main/AndroidManifest.xml:40:17-78
+	android:name
+		ADDED from /workspace/project/VTT-CABS/customer-app/src/main/AndroidManifest.xml:40:25-75
+uses-sdk
+INJECTED from /workspace/project/VTT-CABS/customer-app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /workspace/project/VTT-CABS/customer-app/src/main/AndroidManifest.xml
+INJECTED from /workspace/project/VTT-CABS/customer-app/src/main/AndroidManifest.xml
+MERGED from [:common] /workspace/project/VTT-CABS/common/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:5:5-44
+MERGED from [:common] /workspace/project/VTT-CABS/common/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:5:5-44
+MERGED from [androidx.appcompat:appcompat-resources:1.6.1] /home/openhands/.gradle/caches/8.11.1/transforms/c38cadeaa46b9a4f11cddee2be6ba7a3/transformed/appcompat-resources-1.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat-resources:1.6.1] /home/openhands/.gradle/caches/8.11.1/transforms/c38cadeaa46b9a4f11cddee2be6ba7a3/transformed/appcompat-resources-1.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat:1.6.1] /home/openhands/.gradle/caches/8.11.1/transforms/f195eed25e9acab9c8f46b921b44be05/transformed/appcompat-1.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat:1.6.1] /home/openhands/.gradle/caches/8.11.1/transforms/f195eed25e9acab9c8f46b921b44be05/transformed/appcompat-1.6.1/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-maps:18.2.0] /home/openhands/.gradle/caches/8.11.1/transforms/a409a2419644d4806704c766ed7ca461/transformed/play-services-maps-18.2.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-maps:18.2.0] /home/openhands/.gradle/caches/8.11.1/transforms/a409a2419644d4806704c766ed7ca461/transformed/play-services-maps-18.2.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-location:21.1.0] /home/openhands/.gradle/caches/8.11.1/transforms/2ec4ce7d1b64a30eb7e9e1071a8cdb08/transformed/play-services-location-21.1.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-location:21.1.0] /home/openhands/.gradle/caches/8.11.1/transforms/2ec4ce7d1b64a30eb7e9e1071a8cdb08/transformed/play-services-location-21.1.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-messaging:23.4.1] /home/openhands/.gradle/caches/8.11.1/transforms/23deb80556665fa3a76264a2f9fed7fc/transformed/firebase-messaging-23.4.1/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-messaging:23.4.1] /home/openhands/.gradle/caches/8.11.1/transforms/23deb80556665fa3a76264a2f9fed7fc/transformed/firebase-messaging-23.4.1/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-base:18.1.0] /home/openhands/.gradle/caches/8.11.1/transforms/42e3a097df95d2de6865c1353701f512/transformed/play-services-base-18.1.0/AndroidManifest.xml:18:5-43
+MERGED from [com.google.android.gms:play-services-base:18.1.0] /home/openhands/.gradle/caches/8.11.1/transforms/42e3a097df95d2de6865c1353701f512/transformed/play-services-base-18.1.0/AndroidManifest.xml:18:5-43
+MERGED from [com.google.firebase:firebase-iid-interop:17.1.0] /home/openhands/.gradle/caches/8.11.1/transforms/cecc958d6eccdfc476796ada27d7a6b3/transformed/firebase-iid-interop-17.1.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-iid-interop:17.1.0] /home/openhands/.gradle/caches/8.11.1/transforms/cecc958d6eccdfc476796ada27d7a6b3/transformed/firebase-iid-interop-17.1.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-cloud-messaging:17.1.0] /home/openhands/.gradle/caches/8.11.1/transforms/74774079a768243628bc430b2fcca1f3/transformed/play-services-cloud-messaging-17.1.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-cloud-messaging:17.1.0] /home/openhands/.gradle/caches/8.11.1/transforms/74774079a768243628bc430b2fcca1f3/transformed/play-services-cloud-messaging-17.1.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-installations:17.2.0] /home/openhands/.gradle/caches/8.11.1/transforms/42b05f4183eb8c6a784561aa81a4589d/transformed/firebase-installations-17.2.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-installations:17.2.0] /home/openhands/.gradle/caches/8.11.1/transforms/42b05f4183eb8c6a784561aa81a4589d/transformed/firebase-installations-17.2.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-common-ktx:20.4.2] /home/openhands/.gradle/caches/8.11.1/transforms/9cc7b6ac4d29d7dd1e876c7756849572/transformed/firebase-common-ktx-20.4.2/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-common-ktx:20.4.2] /home/openhands/.gradle/caches/8.11.1/transforms/9cc7b6ac4d29d7dd1e876c7756849572/transformed/firebase-common-ktx-20.4.2/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-common:20.4.2] /home/openhands/.gradle/caches/8.11.1/transforms/d02da3bf305e9b393b05474d6570e48b/transformed/firebase-common-20.4.2/AndroidManifest.xml:19:5-44
+MERGED from [com.google.firebase:firebase-common:20.4.2] /home/openhands/.gradle/caches/8.11.1/transforms/d02da3bf305e9b393b05474d6570e48b/transformed/firebase-common-20.4.2/AndroidManifest.xml:19:5-44
+MERGED from [com.google.firebase:firebase-installations-interop:17.1.1] /home/openhands/.gradle/caches/8.11.1/transforms/ea3f430f6477868e905bc9bf86e82d6f/transformed/firebase-installations-interop-17.1.1/AndroidManifest.xml:17:5-44
+MERGED from [com.google.firebase:firebase-installations-interop:17.1.1] /home/openhands/.gradle/caches/8.11.1/transforms/ea3f430f6477868e905bc9bf86e82d6f/transformed/firebase-installations-interop-17.1.1/AndroidManifest.xml:17:5-44
+MERGED from [androidx.navigation:navigation-common:2.7.7] /home/openhands/.gradle/caches/8.11.1/transforms/ec5daa61b130889853a7edcaaafb6e15/transformed/navigation-common-2.7.7/AndroidManifest.xml:20:5-44
+MERGED from [androidx.navigation:navigation-common:2.7.7] /home/openhands/.gradle/caches/8.11.1/transforms/ec5daa61b130889853a7edcaaafb6e15/transformed/navigation-common-2.7.7/AndroidManifest.xml:20:5-44
+MERGED from [androidx.navigation:navigation-runtime:2.7.7] /home/openhands/.gradle/caches/8.11.1/transforms/5ce2654d852454ba6f3dd8b135d330f9/transformed/navigation-runtime-2.7.7/AndroidManifest.xml:20:5-44
+MERGED from [androidx.navigation:navigation-runtime:2.7.7] /home/openhands/.gradle/caches/8.11.1/transforms/5ce2654d852454ba6f3dd8b135d330f9/transformed/navigation-runtime-2.7.7/AndroidManifest.xml:20:5-44
+MERGED from [androidx.navigation:navigation-common-ktx:2.7.7] /home/openhands/.gradle/caches/8.11.1/transforms/66c72917b8e81fb7b5ccbafb8d369f4c/transformed/navigation-common-ktx-2.7.7/AndroidManifest.xml:5:5-44
+MERGED from [androidx.navigation:navigation-common-ktx:2.7.7] /home/openhands/.gradle/caches/8.11.1/transforms/66c72917b8e81fb7b5ccbafb8d369f4c/transformed/navigation-common-ktx-2.7.7/AndroidManifest.xml:5:5-44
+MERGED from [androidx.navigation:navigation-runtime-ktx:2.7.7] /home/openhands/.gradle/caches/8.11.1/transforms/af1077c53fa40f0debe20987349bc956/transformed/navigation-runtime-ktx-2.7.7/AndroidManifest.xml:5:5-44
+MERGED from [androidx.navigation:navigation-runtime-ktx:2.7.7] /home/openhands/.gradle/caches/8.11.1/transforms/af1077c53fa40f0debe20987349bc956/transformed/navigation-runtime-ktx-2.7.7/AndroidManifest.xml:5:5-44
+MERGED from [androidx.navigation:navigation-compose:2.7.7] /home/openhands/.gradle/caches/8.11.1/transforms/6b935b6f4940ea94dcf46d76106f0622/transformed/navigation-compose-2.7.7/AndroidManifest.xml:5:5-44
+MERGED from [androidx.navigation:navigation-compose:2.7.7] /home/openhands/.gradle/caches/8.11.1/transforms/6b935b6f4940ea94dcf46d76106f0622/transformed/navigation-compose-2.7.7/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material3:material3-android:1.2.0] /home/openhands/.gradle/caches/8.11.1/transforms/0b264ab191351a9812f2f672756abe67/transformed/material3-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.material3:material3-android:1.2.0] /home/openhands/.gradle/caches/8.11.1/transforms/0b264ab191351a9812f2f672756abe67/transformed/material3-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.material:material-android:1.6.1] /home/openhands/.gradle/caches/8.11.1/transforms/b5fe6d24c2d5687603ef279a50a1f68a/transformed/material-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material:material-android:1.6.1] /home/openhands/.gradle/caches/8.11.1/transforms/b5fe6d24c2d5687603ef279a50a1f68a/transformed/material-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material:material-icons-core-android:1.6.1] /home/openhands/.gradle/caches/8.11.1/transforms/347ec194207c3cbc481a9947073b68f3/transformed/material-icons-core-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material:material-icons-core-android:1.6.1] /home/openhands/.gradle/caches/8.11.1/transforms/347ec194207c3cbc481a9947073b68f3/transformed/material-icons-core-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material:material-icons-extended-android:1.6.1] /home/openhands/.gradle/caches/8.11.1/transforms/a10e037972c20d5023dfd736aa94041d/transformed/material-icons-extended-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material:material-icons-extended-android:1.6.1] /home/openhands/.gradle/caches/8.11.1/transforms/a10e037972c20d5023dfd736aa94041d/transformed/material-icons-extended-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material:material-ripple-android:1.6.1] /home/openhands/.gradle/caches/8.11.1/transforms/e8e415af571d3d1ec2ed18c812e7ac1b/transformed/material-ripple-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material:material-ripple-android:1.6.1] /home/openhands/.gradle/caches/8.11.1/transforms/e8e415af571d3d1ec2ed18c812e7ac1b/transformed/material-ripple-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.foundation:foundation-android:1.6.1] /home/openhands/.gradle/caches/8.11.1/transforms/31527cde12c43e2dc5747c2c09afee60/transformed/foundation-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.foundation:foundation-android:1.6.1] /home/openhands/.gradle/caches/8.11.1/transforms/31527cde12c43e2dc5747c2c09afee60/transformed/foundation-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.foundation:foundation-layout-android:1.6.1] /home/openhands/.gradle/caches/8.11.1/transforms/28606ba336f05736831fe553bea4b1b3/transformed/foundation-layout-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.foundation:foundation-layout-android:1.6.1] /home/openhands/.gradle/caches/8.11.1/transforms/28606ba336f05736831fe553bea4b1b3/transformed/foundation-layout-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.animation:animation-core-android:1.6.1] /home/openhands/.gradle/caches/8.11.1/transforms/e141e9ecafd267d59b6800042e7ce1a5/transformed/animation-core-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.animation:animation-core-android:1.6.1] /home/openhands/.gradle/caches/8.11.1/transforms/e141e9ecafd267d59b6800042e7ce1a5/transformed/animation-core-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.animation:animation-android:1.6.1] /home/openhands/.gradle/caches/8.11.1/transforms/b34843f7f484676d223e5981899d0fb9/transformed/animation-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.animation:animation-android:1.6.1] /home/openhands/.gradle/caches/8.11.1/transforms/b34843f7f484676d223e5981899d0fb9/transformed/animation-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-tooling-data-android:1.6.1] /home/openhands/.gradle/caches/8.11.1/transforms/09c30ac62cbcd38545bb608797760d5d/transformed/ui-tooling-data-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-tooling-data-android:1.6.1] /home/openhands/.gradle/caches/8.11.1/transforms/09c30ac62cbcd38545bb608797760d5d/transformed/ui-tooling-data-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-unit-android:1.6.1] /home/openhands/.gradle/caches/8.11.1/transforms/aa1697633a9e598cc7761d227c4860c4/transformed/ui-unit-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-unit-android:1.6.1] /home/openhands/.gradle/caches/8.11.1/transforms/aa1697633a9e598cc7761d227c4860c4/transformed/ui-unit-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-geometry-android:1.6.1] /home/openhands/.gradle/caches/8.11.1/transforms/a4ff0bd7fb4eca26ef3fc615ff245732/transformed/ui-geometry-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-geometry-android:1.6.1] /home/openhands/.gradle/caches/8.11.1/transforms/a4ff0bd7fb4eca26ef3fc615ff245732/transformed/ui-geometry-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-util-android:1.6.1] /home/openhands/.gradle/caches/8.11.1/transforms/96d4e88135d1062698570b5fbf5b63aa/transformed/ui-util-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-util-android:1.6.1] /home/openhands/.gradle/caches/8.11.1/transforms/96d4e88135d1062698570b5fbf5b63aa/transformed/ui-util-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-text-android:1.6.1] /home/openhands/.gradle/caches/8.11.1/transforms/9e3face1f1a20fb74e1f4ef96fc1010f/transformed/ui-text-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-text-android:1.6.1] /home/openhands/.gradle/caches/8.11.1/transforms/9e3face1f1a20fb74e1f4ef96fc1010f/transformed/ui-text-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-tooling-preview-android:1.6.1] /home/openhands/.gradle/caches/8.11.1/transforms/45637aa027f650f05d7f13ecb722992d/transformed/ui-tooling-preview-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.ui:ui-tooling-preview-android:1.6.1] /home/openhands/.gradle/caches/8.11.1/transforms/45637aa027f650f05d7f13ecb722992d/transformed/ui-tooling-preview-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.ui:ui-tooling-android:1.6.1] /home/openhands/.gradle/caches/8.11.1/transforms/bbf0adc14e625517f06fcda383708822/transformed/ui-tooling-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.ui:ui-tooling-android:1.6.1] /home/openhands/.gradle/caches/8.11.1/transforms/bbf0adc14e625517f06fcda383708822/transformed/ui-tooling-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.ui:ui-graphics-android:1.6.1] /home/openhands/.gradle/caches/8.11.1/transforms/bbd1efb86264928f177af516a8ac0a82/transformed/ui-graphics-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-graphics-android:1.6.1] /home/openhands/.gradle/caches/8.11.1/transforms/bbd1efb86264928f177af516a8ac0a82/transformed/ui-graphics-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-test-manifest:1.6.1] /home/openhands/.gradle/caches/8.11.1/transforms/8967d44031ed53a646f9cc90fec86082/transformed/ui-test-manifest-1.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.ui:ui-test-manifest:1.6.1] /home/openhands/.gradle/caches/8.11.1/transforms/8967d44031ed53a646f9cc90fec86082/transformed/ui-test-manifest-1.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.ui:ui-android:1.6.1] /home/openhands/.gradle/caches/8.11.1/transforms/56f0f05d0b88b773be642feee7e7cdde/transformed/ui-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-android:1.6.1] /home/openhands/.gradle/caches/8.11.1/transforms/56f0f05d0b88b773be642feee7e7cdde/transformed/ui-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.fragment:fragment:1.3.6] /home/openhands/.gradle/caches/8.11.1/transforms/25079e8b8a419c4f0d60632285c88f2c/transformed/fragment-1.3.6/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.3.6] /home/openhands/.gradle/caches/8.11.1/transforms/25079e8b8a419c4f0d60632285c88f2c/transformed/fragment-1.3.6/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.8.2] /home/openhands/.gradle/caches/8.11.1/transforms/2e687e10649c2ca1f348d03a6c8fe933/transformed/activity-1.8.2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.8.2] /home/openhands/.gradle/caches/8.11.1/transforms/2e687e10649c2ca1f348d03a6c8fe933/transformed/activity-1.8.2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity-ktx:1.8.2] /home/openhands/.gradle/caches/8.11.1/transforms/3343f14c0d9480bb22b0e9c609a52a27/transformed/activity-ktx-1.8.2/AndroidManifest.xml:5:5-44
+MERGED from [androidx.activity:activity-ktx:1.8.2] /home/openhands/.gradle/caches/8.11.1/transforms/3343f14c0d9480bb22b0e9c609a52a27/transformed/activity-ktx-1.8.2/AndroidManifest.xml:5:5-44
+MERGED from [androidx.activity:activity-compose:1.8.2] /home/openhands/.gradle/caches/8.11.1/transforms/6efe764f0795d5e60a256bc2b2c23c86/transformed/activity-compose-1.8.2/AndroidManifest.xml:5:5-44
+MERGED from [androidx.activity:activity-compose:1.8.2] /home/openhands/.gradle/caches/8.11.1/transforms/6efe764f0795d5e60a256bc2b2c23c86/transformed/activity-compose-1.8.2/AndroidManifest.xml:5:5-44
+MERGED from [androidx.savedstate:savedstate-ktx:1.2.1] /home/openhands/.gradle/caches/8.11.1/transforms/5b53a67f6172bb7c7aba61509b053f97/transformed/savedstate-ktx-1.2.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate-ktx:1.2.1] /home/openhands/.gradle/caches/8.11.1/transforms/5b53a67f6172bb7c7aba61509b053f97/transformed/savedstate-ktx-1.2.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate:1.2.1] /home/openhands/.gradle/caches/8.11.1/transforms/e12db890e30bc191f4ae23f33e124449/transformed/savedstate-1.2.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate:1.2.1] /home/openhands/.gradle/caches/8.11.1/transforms/e12db890e30bc191f4ae23f33e124449/transformed/savedstate-1.2.1/AndroidManifest.xml:20:5-44
+MERGED from [io.github.jan-tennert.supabase:realtime-kt-android-debug:2.2.2] /home/openhands/.gradle/caches/8.11.1/transforms/ebacb1f18da8e3c255ca3f7d3175ea15/transformed/realtime-kt-debug/AndroidManifest.xml:5:5-44
+MERGED from [io.github.jan-tennert.supabase:realtime-kt-android-debug:2.2.2] /home/openhands/.gradle/caches/8.11.1/transforms/ebacb1f18da8e3c255ca3f7d3175ea15/transformed/realtime-kt-debug/AndroidManifest.xml:5:5-44
+MERGED from [io.github.jan-tennert.supabase:postgrest-kt-android-debug:2.2.2] /home/openhands/.gradle/caches/8.11.1/transforms/e8247780be56045f279e4f5a51af5d41/transformed/postgrest-kt-debug/AndroidManifest.xml:5:5-44
+MERGED from [io.github.jan-tennert.supabase:postgrest-kt-android-debug:2.2.2] /home/openhands/.gradle/caches/8.11.1/transforms/e8247780be56045f279e4f5a51af5d41/transformed/postgrest-kt-debug/AndroidManifest.xml:5:5-44
+MERGED from [io.github.jan-tennert.supabase:gotrue-kt-android-debug:2.2.2] /home/openhands/.gradle/caches/8.11.1/transforms/b5a782c0b5f6b18a9e94799c874cd9c3/transformed/gotrue-kt-debug/AndroidManifest.xml:6:5-44
+MERGED from [io.github.jan-tennert.supabase:gotrue-kt-android-debug:2.2.2] /home/openhands/.gradle/caches/8.11.1/transforms/b5a782c0b5f6b18a9e94799c874cd9c3/transformed/gotrue-kt-debug/AndroidManifest.xml:6:5-44
+MERGED from [io.github.jan-tennert.supabase:supabase-kt-android-debug:2.2.2] /home/openhands/.gradle/caches/8.11.1/transforms/41bf72f5575d1e3a85c53760162f0e43/transformed/supabase-kt-debug/AndroidManifest.xml:5:5-44
+MERGED from [io.github.jan-tennert.supabase:supabase-kt-android-debug:2.2.2] /home/openhands/.gradle/caches/8.11.1/transforms/41bf72f5575d1e3a85c53760162f0e43/transformed/supabase-kt-debug/AndroidManifest.xml:5:5-44
+MERGED from [androidx.emoji2:emoji2-views-helper:1.3.0] /home/openhands/.gradle/caches/8.11.1/transforms/88a08a21879b540d6fc7401de89ad93e/transformed/emoji2-views-helper-1.3.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.emoji2:emoji2-views-helper:1.3.0] /home/openhands/.gradle/caches/8.11.1/transforms/88a08a21879b540d6fc7401de89ad93e/transformed/emoji2-views-helper-1.3.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.emoji2:emoji2:1.3.0] /home/openhands/.gradle/caches/8.11.1/transforms/0d1b1898082115b914c59965e08d17f8/transformed/emoji2-1.3.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.emoji2:emoji2:1.3.0] /home/openhands/.gradle/caches/8.11.1/transforms/0d1b1898082115b914c59965e08d17f8/transformed/emoji2-1.3.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.lifecycle:lifecycle-process:2.7.0] /home/openhands/.gradle/caches/8.11.1/transforms/9a83b3682f56bae74916ac84be086a49/transformed/lifecycle-process-2.7.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.lifecycle:lifecycle-process:2.7.0] /home/openhands/.gradle/caches/8.11.1/transforms/9a83b3682f56bae74916ac84be086a49/transformed/lifecycle-process-2.7.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.7.0] /home/openhands/.gradle/caches/8.11.1/transforms/1d0a5406ae4dc026a7e080b91b63757a/transformed/lifecycle-livedata-core-2.7.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.7.0] /home/openhands/.gradle/caches/8.11.1/transforms/1d0a5406ae4dc026a7e080b91b63757a/transformed/lifecycle-livedata-core-2.7.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.7.0] /home/openhands/.gradle/caches/8.11.1/transforms/72eab511f6fbaabd6ff362a2a13731fe/transformed/lifecycle-livedata-core-ktx-2.7.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.7.0] /home/openhands/.gradle/caches/8.11.1/transforms/72eab511f6fbaabd6ff362a2a13731fe/transformed/lifecycle-livedata-core-ktx-2.7.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-stats:17.0.2] /home/openhands/.gradle/caches/8.11.1/transforms/2e3aeb0b54c646510826d6336b7f4cb8/transformed/play-services-stats-17.0.2/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-stats:17.0.2] /home/openhands/.gradle/caches/8.11.1/transforms/2e3aeb0b54c646510826d6336b7f4cb8/transformed/play-services-stats-17.0.2/AndroidManifest.xml:5:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /home/openhands/.gradle/caches/8.11.1/transforms/96d2637edecb22f8bb5b23d6efd86460/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /home/openhands/.gradle/caches/8.11.1/transforms/96d2637edecb22f8bb5b23d6efd86460/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /home/openhands/.gradle/caches/8.11.1/transforms/735ec9cd78ae5d622415294887adbdfa/transformed/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /home/openhands/.gradle/caches/8.11.1/transforms/735ec9cd78ae5d622415294887adbdfa/transformed/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.7.0] /home/openhands/.gradle/caches/8.11.1/transforms/777228780d103a7ef17dc1610f4248ee/transformed/lifecycle-livedata-2.7.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.7.0] /home/openhands/.gradle/caches/8.11.1/transforms/777228780d103a7ef17dc1610f4248ee/transformed/lifecycle-livedata-2.7.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.7.0] /home/openhands/.gradle/caches/8.11.1/transforms/f9ea497baeb91e61946c223d0916fcb9/transformed/lifecycle-viewmodel-savedstate-2.7.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.7.0] /home/openhands/.gradle/caches/8.11.1/transforms/f9ea497baeb91e61946c223d0916fcb9/transformed/lifecycle-viewmodel-savedstate-2.7.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.7.0] /home/openhands/.gradle/caches/8.11.1/transforms/418627c6df7042989f52bc2a7e3f0321/transformed/lifecycle-viewmodel-2.7.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.7.0] /home/openhands/.gradle/caches/8.11.1/transforms/418627c6df7042989f52bc2a7e3f0321/transformed/lifecycle-viewmodel-2.7.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.7.0] /home/openhands/.gradle/caches/8.11.1/transforms/bec9e1d3538aef89a128aab412c82692/transformed/lifecycle-runtime-2.7.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.7.0] /home/openhands/.gradle/caches/8.11.1/transforms/bec9e1d3538aef89a128aab412c82692/transformed/lifecycle-runtime-2.7.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-ktx:2.7.0] /home/openhands/.gradle/caches/8.11.1/transforms/747a7e01b01e3b054ed1ad1a6682a904/transformed/lifecycle-livedata-ktx-2.7.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-ktx:2.7.0] /home/openhands/.gradle/caches/8.11.1/transforms/747a7e01b01e3b054ed1ad1a6682a904/transformed/lifecycle-livedata-ktx-2.7.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0] /home/openhands/.gradle/caches/8.11.1/transforms/a294f58f6576cf9b6288682bf4cf6fa2/transformed/lifecycle-viewmodel-ktx-2.7.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0] /home/openhands/.gradle/caches/8.11.1/transforms/a294f58f6576cf9b6288682bf4cf6fa2/transformed/lifecycle-viewmodel-ktx-2.7.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-compose:2.7.0] /home/openhands/.gradle/caches/8.11.1/transforms/aa3d5fc661a47ff99a643190213affd8/transformed/lifecycle-runtime-compose-2.7.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-compose:2.7.0] /home/openhands/.gradle/caches/8.11.1/transforms/aa3d5fc661a47ff99a643190213affd8/transformed/lifecycle-runtime-compose-2.7.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-compose:2.7.0] /home/openhands/.gradle/caches/8.11.1/transforms/8e019f3402f4f70374851e997716c29e/transformed/lifecycle-viewmodel-compose-2.7.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-compose:2.7.0] /home/openhands/.gradle/caches/8.11.1/transforms/8e019f3402f4f70374851e997716c29e/transformed/lifecycle-viewmodel-compose-2.7.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.7.0] /home/openhands/.gradle/caches/8.11.1/transforms/24f9b2c92ece5ee0598efe8299d9c667/transformed/lifecycle-runtime-ktx-2.7.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.7.0] /home/openhands/.gradle/caches/8.11.1/transforms/24f9b2c92ece5ee0598efe8299d9c667/transformed/lifecycle-runtime-ktx-2.7.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.room:room-runtime:2.6.1] /home/openhands/.gradle/caches/8.11.1/transforms/2d45dfac9673f31d13880a3e8bde25d1/transformed/room-runtime-2.6.1/AndroidManifest.xml:21:5-44
+MERGED from [androidx.room:room-runtime:2.6.1] /home/openhands/.gradle/caches/8.11.1/transforms/2d45dfac9673f31d13880a3e8bde25d1/transformed/room-runtime-2.6.1/AndroidManifest.xml:21:5-44
+MERGED from [androidx.room:room-ktx:2.6.1] /home/openhands/.gradle/caches/8.11.1/transforms/f85daf746cbbb87f84efa600684667f9/transformed/room-ktx-2.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.room:room-ktx:2.6.1] /home/openhands/.gradle/caches/8.11.1/transforms/f85daf746cbbb87f84efa600684667f9/transformed/room-ktx-2.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.runtime:runtime-saveable-android:1.6.1] /home/openhands/.gradle/caches/8.11.1/transforms/c06b62645c38fa77e4601ff14acc44f1/transformed/runtime-saveable-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.runtime:runtime-saveable-android:1.6.1] /home/openhands/.gradle/caches/8.11.1/transforms/c06b62645c38fa77e4601ff14acc44f1/transformed/runtime-saveable-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.runtime:runtime-android:1.6.1] /home/openhands/.gradle/caches/8.11.1/transforms/d63f95274ef60bcd85f766012a0e8172/transformed/runtime-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.runtime:runtime-android:1.6.1] /home/openhands/.gradle/caches/8.11.1/transforms/d63f95274ef60bcd85f766012a0e8172/transformed/runtime-release/AndroidManifest.xml:5:5-44
+MERGED from [com.russhwolf:multiplatform-settings-coroutines-android-debug:1.1.1] /home/openhands/.gradle/caches/8.11.1/transforms/bbc02775437f86872f919fcaf226e23c/transformed/multiplatform-settings-coroutines-debug/AndroidManifest.xml:5:5-44
+MERGED from [com.russhwolf:multiplatform-settings-coroutines-android-debug:1.1.1] /home/openhands/.gradle/caches/8.11.1/transforms/bbc02775437f86872f919fcaf226e23c/transformed/multiplatform-settings-coroutines-debug/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-tasks:18.0.2] /home/openhands/.gradle/caches/8.11.1/transforms/5b7dfb0bb727af07286e955ab84b2fd8/transformed/play-services-tasks-18.0.2/AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-tasks:18.0.2] /home/openhands/.gradle/caches/8.11.1/transforms/5b7dfb0bb727af07286e955ab84b2fd8/transformed/play-services-tasks-18.0.2/AndroidManifest.xml:4:5-43
+MERGED from [com.google.firebase:firebase-measurement-connector:19.0.0] /home/openhands/.gradle/caches/8.11.1/transforms/abd1acb9dd7643d829b7354899ac1b01/transformed/firebase-measurement-connector-19.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-measurement-connector:19.0.0] /home/openhands/.gradle/caches/8.11.1/transforms/abd1acb9dd7643d829b7354899ac1b01/transformed/firebase-measurement-connector-19.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-basement:18.1.0] /home/openhands/.gradle/caches/8.11.1/transforms/5f5671063623ffa2af5e79b690defb10/transformed/play-services-basement-18.1.0/AndroidManifest.xml:18:5-43
+MERGED from [com.google.android.gms:play-services-basement:18.1.0] /home/openhands/.gradle/caches/8.11.1/transforms/5f5671063623ffa2af5e79b690defb10/transformed/play-services-basement-18.1.0/AndroidManifest.xml:18:5-43
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /home/openhands/.gradle/caches/8.11.1/transforms/43abd4e1bfc68e126de24cef2ce5e661/transformed/drawerlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /home/openhands/.gradle/caches/8.11.1/transforms/43abd4e1bfc68e126de24cef2ce5e661/transformed/drawerlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.browser:browser:1.7.0] /home/openhands/.gradle/caches/8.11.1/transforms/2ca881a09e922a476de5028e3dc00df0/transformed/browser-1.7.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.browser:browser:1.7.0] /home/openhands/.gradle/caches/8.11.1/transforms/2ca881a09e922a476de5028e3dc00df0/transformed/browser-1.7.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.autofill:autofill:1.0.0] /home/openhands/.gradle/caches/8.11.1/transforms/6b4eedbd1aed65da4926cbd6ab0c92af/transformed/autofill-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.autofill:autofill:1.0.0] /home/openhands/.gradle/caches/8.11.1/transforms/6b4eedbd1aed65da4926cbd6ab0c92af/transformed/autofill-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager:viewpager:1.0.0] /home/openhands/.gradle/caches/8.11.1/transforms/55531c7cb1fdc93e9baec223e1ede1e8/transformed/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /home/openhands/.gradle/caches/8.11.1/transforms/55531c7cb1fdc93e9baec223e1ede1e8/transformed/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /home/openhands/.gradle/caches/8.11.1/transforms/3e765717d5c298186c98a0d6d857b722/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /home/openhands/.gradle/caches/8.11.1/transforms/3e765717d5c298186c98a0d6d857b722/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /home/openhands/.gradle/caches/8.11.1/transforms/5d77802dbf08c366c700c9f0231b4ee1/transformed/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /home/openhands/.gradle/caches/8.11.1/transforms/5d77802dbf08c366c700c9f0231b4ee1/transformed/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.customview:customview:1.0.0] /home/openhands/.gradle/caches/8.11.1/transforms/7fbd0cfbeca5ad7a7c440e2534852ba2/transformed/customview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] /home/openhands/.gradle/caches/8.11.1/transforms/7fbd0cfbeca5ad7a7c440e2534852ba2/transformed/customview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.12.0] /home/openhands/.gradle/caches/8.11.1/transforms/05d04e3e4b58bd8ca19d14896d603423/transformed/core-1.12.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.12.0] /home/openhands/.gradle/caches/8.11.1/transforms/05d04e3e4b58bd8ca19d14896d603423/transformed/core-1.12.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview-poolingcontainer:1.0.0] /home/openhands/.gradle/caches/8.11.1/transforms/ebf0b0df8061bcfc22f01c9b84cd0235/transformed/customview-poolingcontainer-1.0.0/AndroidManifest.xml:20:5-21:38
+MERGED from [androidx.customview:customview-poolingcontainer:1.0.0] /home/openhands/.gradle/caches/8.11.1/transforms/ebf0b0df8061bcfc22f01c9b84cd0235/transformed/customview-poolingcontainer-1.0.0/AndroidManifest.xml:20:5-21:38
+MERGED from [androidx.core:core-ktx:1.12.0] /home/openhands/.gradle/caches/8.11.1/transforms/824213c74d361406acec0d4fabb24160/transformed/core-ktx-1.12.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.core:core-ktx:1.12.0] /home/openhands/.gradle/caches/8.11.1/transforms/824213c74d361406acec0d4fabb24160/transformed/core-ktx-1.12.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.sqlite:sqlite-framework:2.4.0] /home/openhands/.gradle/caches/8.11.1/transforms/cb071b5596e010ad115bbed2540b101c/transformed/sqlite-framework-2.4.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.sqlite:sqlite-framework:2.4.0] /home/openhands/.gradle/caches/8.11.1/transforms/cb071b5596e010ad115bbed2540b101c/transformed/sqlite-framework-2.4.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.sqlite:sqlite:2.4.0] /home/openhands/.gradle/caches/8.11.1/transforms/7752989f34aec1514d1973b8f583da3c/transformed/sqlite-2.4.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.sqlite:sqlite:2.4.0] /home/openhands/.gradle/caches/8.11.1/transforms/7752989f34aec1514d1973b8f583da3c/transformed/sqlite-2.4.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.4.0] /home/openhands/.gradle/caches/8.11.1/transforms/d51d090c26712015d7e6a9a7f99cf4e1/transformed/annotation-experimental-1.4.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.4.0] /home/openhands/.gradle/caches/8.11.1/transforms/d51d090c26712015d7e6a9a7f99cf4e1/transformed/annotation-experimental-1.4.0/AndroidManifest.xml:5:5-44
+MERGED from [com.russhwolf:multiplatform-settings-no-arg-android-debug:1.1.1] /home/openhands/.gradle/caches/8.11.1/transforms/f5b493170afe68ab5da38c03ee84738d/transformed/multiplatform-settings-no-arg-debug/AndroidManifest.xml:21:5-44
+MERGED from [com.russhwolf:multiplatform-settings-no-arg-android-debug:1.1.1] /home/openhands/.gradle/caches/8.11.1/transforms/f5b493170afe68ab5da38c03ee84738d/transformed/multiplatform-settings-no-arg-debug/AndroidManifest.xml:21:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/openhands/.gradle/caches/8.11.1/transforms/c9c0f5a6c49e0805a0678dadbe26ad0b/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/openhands/.gradle/caches/8.11.1/transforms/c9c0f5a6c49e0805a0678dadbe26ad0b/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.2.0] /home/openhands/.gradle/caches/8.11.1/transforms/3db2756b4d50f724f067bb570d391ffc/transformed/core-runtime-2.2.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.2.0] /home/openhands/.gradle/caches/8.11.1/transforms/3db2756b4d50f724f067bb570d391ffc/transformed/core-runtime-2.2.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-datatransport:18.1.7] /home/openhands/.gradle/caches/8.11.1/transforms/e745f78f058e27e0070066159d91058d/transformed/firebase-datatransport-18.1.7/AndroidManifest.xml:18:5-20:41
+MERGED from [com.google.firebase:firebase-datatransport:18.1.7] /home/openhands/.gradle/caches/8.11.1/transforms/e745f78f058e27e0070066159d91058d/transformed/firebase-datatransport-18.1.7/AndroidManifest.xml:18:5-20:41
+MERGED from [com.google.android.datatransport:transport-backend-cct:3.1.8] /home/openhands/.gradle/caches/8.11.1/transforms/689b6cc0ebcf1ab72064222bc8d478ba/transformed/transport-backend-cct-3.1.8/AndroidManifest.xml:18:5-20:41
+MERGED from [com.google.android.datatransport:transport-backend-cct:3.1.8] /home/openhands/.gradle/caches/8.11.1/transforms/689b6cc0ebcf1ab72064222bc8d478ba/transformed/transport-backend-cct-3.1.8/AndroidManifest.xml:18:5-20:41
+MERGED from [com.google.android.datatransport:transport-runtime:3.1.8] /home/openhands/.gradle/caches/8.11.1/transforms/63e4912a4f7f44dc108915e93e23bab0/transformed/transport-runtime-3.1.8/AndroidManifest.xml:18:5-20:41
+MERGED from [com.google.android.datatransport:transport-runtime:3.1.8] /home/openhands/.gradle/caches/8.11.1/transforms/63e4912a4f7f44dc108915e93e23bab0/transformed/transport-runtime-3.1.8/AndroidManifest.xml:18:5-20:41
+MERGED from [com.google.android.datatransport:transport-api:3.1.0] /home/openhands/.gradle/caches/8.11.1/transforms/381b8757efacb1f9cce2c4a7f9af56da/transformed/transport-api-3.1.0/AndroidManifest.xml:18:5-44
+MERGED from [com.google.android.datatransport:transport-api:3.1.0] /home/openhands/.gradle/caches/8.11.1/transforms/381b8757efacb1f9cce2c4a7f9af56da/transformed/transport-api-3.1.0/AndroidManifest.xml:18:5-44
+MERGED from [com.google.firebase:firebase-encoders-json:18.0.0] /home/openhands/.gradle/caches/8.11.1/transforms/50abead35743585040ffce73e7caade7/transformed/firebase-encoders-json-18.0.0/AndroidManifest.xml:19:5-21:41
+MERGED from [com.google.firebase:firebase-encoders-json:18.0.0] /home/openhands/.gradle/caches/8.11.1/transforms/50abead35743585040ffce73e7caade7/transformed/firebase-encoders-json-18.0.0/AndroidManifest.xml:19:5-21:41
+MERGED from [com.google.firebase:firebase-components:17.1.5] /home/openhands/.gradle/caches/8.11.1/transforms/48442dec3ce87915abd537ca4fba8852/transformed/firebase-components-17.1.5/AndroidManifest.xml:18:5-44
+MERGED from [com.google.firebase:firebase-components:17.1.5] /home/openhands/.gradle/caches/8.11.1/transforms/48442dec3ce87915abd537ca4fba8852/transformed/firebase-components-17.1.5/AndroidManifest.xml:18:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/openhands/.gradle/caches/8.11.1/transforms/2bf7a652f44e7bde87012b9d8e411c9b/transformed/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/openhands/.gradle/caches/8.11.1/transforms/2bf7a652f44e7bde87012b9d8e411c9b/transformed/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /home/openhands/.gradle/caches/8.11.1/transforms/d4d629fb3348b3fa6b0194f49c78e860/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /home/openhands/.gradle/caches/8.11.1/transforms/d4d629fb3348b3fa6b0194f49c78e860/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/openhands/.gradle/caches/8.11.1/transforms/a92d4c703ccab45414435e8de8661b50/transformed/profileinstaller-1.3.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/openhands/.gradle/caches/8.11.1/transforms/a92d4c703ccab45414435e8de8661b50/transformed/profileinstaller-1.3.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.startup:startup-runtime:1.1.1] /home/openhands/.gradle/caches/8.11.1/transforms/ed0b778491664e26562e1918139327ea/transformed/startup-runtime-1.1.1/AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.startup:startup-runtime:1.1.1] /home/openhands/.gradle/caches/8.11.1/transforms/ed0b778491664e26562e1918139327ea/transformed/startup-runtime-1.1.1/AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.tracing:tracing:1.0.0] /home/openhands/.gradle/caches/8.11.1/transforms/1c3665ad525d2731b41abf3b91464e48/transformed/tracing-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.tracing:tracing:1.0.0] /home/openhands/.gradle/caches/8.11.1/transforms/1c3665ad525d2731b41abf3b91464e48/transformed/tracing-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.documentfile:documentfile:1.0.0] /home/openhands/.gradle/caches/8.11.1/transforms/bf5d88ba73282385b0bbaf006b5c36e1/transformed/documentfile-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] /home/openhands/.gradle/caches/8.11.1/transforms/bf5d88ba73282385b0bbaf006b5c36e1/transformed/documentfile-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/openhands/.gradle/caches/8.11.1/transforms/23adc1df84e5b9f6332ae8fce672b6da/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/openhands/.gradle/caches/8.11.1/transforms/23adc1df84e5b9f6332ae8fce672b6da/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /home/openhands/.gradle/caches/8.11.1/transforms/1328f0bdb46f380ee4bc29efa2a7fda7/transformed/print-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /home/openhands/.gradle/caches/8.11.1/transforms/1328f0bdb46f380ee4bc29efa2a7fda7/transformed/print-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.soywiz.korlibs.krypto:krypto-android:4.0.10] /home/openhands/.gradle/caches/8.11.1/transforms/fe752cd973dde1f219bc718470ec0fea/transformed/krypto-debug/AndroidManifest.xml:5:5-7:41
+MERGED from [com.soywiz.korlibs.krypto:krypto-android:4.0.10] /home/openhands/.gradle/caches/8.11.1/transforms/fe752cd973dde1f219bc718470ec0fea/transformed/krypto-debug/AndroidManifest.xml:5:5-7:41
+MERGED from [com.russhwolf:multiplatform-settings-android-debug:1.1.1] /home/openhands/.gradle/caches/8.11.1/transforms/0b2bbc6e2a3c9592c9f12da164a5ed14/transformed/multiplatform-settings-debug/AndroidManifest.xml:5:5-44
+MERGED from [com.russhwolf:multiplatform-settings-android-debug:1.1.1] /home/openhands/.gradle/caches/8.11.1/transforms/0b2bbc6e2a3c9592c9f12da164a5ed14/transformed/multiplatform-settings-debug/AndroidManifest.xml:5:5-44
+MERGED from [co.touchlab:kermit-android-debug:2.0.3] /home/openhands/.gradle/caches/8.11.1/transforms/ba6966db9676d12f4a1bfea9ca266bbb/transformed/kermit-debug/AndroidManifest.xml:5:5-44
+MERGED from [co.touchlab:kermit-android-debug:2.0.3] /home/openhands/.gradle/caches/8.11.1/transforms/ba6966db9676d12f4a1bfea9ca266bbb/transformed/kermit-debug/AndroidManifest.xml:5:5-44
+MERGED from [co.touchlab:kermit-core-android-debug:2.0.3] /home/openhands/.gradle/caches/8.11.1/transforms/5e0d9fdb91e0df80fa5461a3f9594209/transformed/kermit-core-debug/AndroidManifest.xml:5:5-44
+MERGED from [co.touchlab:kermit-core-android-debug:2.0.3] /home/openhands/.gradle/caches/8.11.1/transforms/5e0d9fdb91e0df80fa5461a3f9594209/transformed/kermit-core-debug/AndroidManifest.xml:5:5-44
+	android:targetSdkVersion
+		INJECTED from /workspace/project/VTT-CABS/customer-app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /workspace/project/VTT-CABS/customer-app/src/main/AndroidManifest.xml
+uses-feature#0x00020000
+ADDED from [com.google.android.gms:play-services-maps:18.2.0] /home/openhands/.gradle/caches/8.11.1/transforms/a409a2419644d4806704c766ed7ca461/transformed/play-services-maps-18.2.0/AndroidManifest.xml:26:5-28:35
+	android:glEsVersion
+		ADDED from [com.google.android.gms:play-services-maps:18.2.0] /home/openhands/.gradle/caches/8.11.1/transforms/a409a2419644d4806704c766ed7ca461/transformed/play-services-maps-18.2.0/AndroidManifest.xml:27:9-41
+	android:required
+		ADDED from [com.google.android.gms:play-services-maps:18.2.0] /home/openhands/.gradle/caches/8.11.1/transforms/a409a2419644d4806704c766ed7ca461/transformed/play-services-maps-18.2.0/AndroidManifest.xml:28:9-32
+queries
+ADDED from [com.google.android.gms:play-services-maps:18.2.0] /home/openhands/.gradle/caches/8.11.1/transforms/a409a2419644d4806704c766ed7ca461/transformed/play-services-maps-18.2.0/AndroidManifest.xml:30:5-34:15
+package#com.google.android.apps.maps
+ADDED from [com.google.android.gms:play-services-maps:18.2.0] /home/openhands/.gradle/caches/8.11.1/transforms/a409a2419644d4806704c766ed7ca461/transformed/play-services-maps-18.2.0/AndroidManifest.xml:33:9-64
+	android:name
+		ADDED from [com.google.android.gms:play-services-maps:18.2.0] /home/openhands/.gradle/caches/8.11.1/transforms/a409a2419644d4806704c766ed7ca461/transformed/play-services-maps-18.2.0/AndroidManifest.xml:33:18-61
+uses-library#org.apache.http.legacy
+ADDED from [com.google.android.gms:play-services-maps:18.2.0] /home/openhands/.gradle/caches/8.11.1/transforms/a409a2419644d4806704c766ed7ca461/transformed/play-services-maps-18.2.0/AndroidManifest.xml:39:9-41:40
+	android:required
+		ADDED from [com.google.android.gms:play-services-maps:18.2.0] /home/openhands/.gradle/caches/8.11.1/transforms/a409a2419644d4806704c766ed7ca461/transformed/play-services-maps-18.2.0/AndroidManifest.xml:41:13-37
+	android:name
+		ADDED from [com.google.android.gms:play-services-maps:18.2.0] /home/openhands/.gradle/caches/8.11.1/transforms/a409a2419644d4806704c766ed7ca461/transformed/play-services-maps-18.2.0/AndroidManifest.xml:40:13-50
+uses-permission#android.permission.WAKE_LOCK
+ADDED from [com.google.firebase:firebase-messaging:23.4.1] /home/openhands/.gradle/caches/8.11.1/transforms/23deb80556665fa3a76264a2f9fed7fc/transformed/firebase-messaging-23.4.1/AndroidManifest.xml:24:5-68
+MERGED from [com.google.android.gms:play-services-cloud-messaging:17.1.0] /home/openhands/.gradle/caches/8.11.1/transforms/74774079a768243628bc430b2fcca1f3/transformed/play-services-cloud-messaging-17.1.0/AndroidManifest.xml:9:5-68
+MERGED from [com.google.android.gms:play-services-cloud-messaging:17.1.0] /home/openhands/.gradle/caches/8.11.1/transforms/74774079a768243628bc430b2fcca1f3/transformed/play-services-cloud-messaging-17.1.0/AndroidManifest.xml:9:5-68
+	android:name
+		ADDED from [com.google.firebase:firebase-messaging:23.4.1] /home/openhands/.gradle/caches/8.11.1/transforms/23deb80556665fa3a76264a2f9fed7fc/transformed/firebase-messaging-23.4.1/AndroidManifest.xml:24:22-65
+uses-permission#com.google.android.c2dm.permission.RECEIVE
+ADDED from [com.google.firebase:firebase-messaging:23.4.1] /home/openhands/.gradle/caches/8.11.1/transforms/23deb80556665fa3a76264a2f9fed7fc/transformed/firebase-messaging-23.4.1/AndroidManifest.xml:26:5-82
+MERGED from [com.google.android.gms:play-services-cloud-messaging:17.1.0] /home/openhands/.gradle/caches/8.11.1/transforms/74774079a768243628bc430b2fcca1f3/transformed/play-services-cloud-messaging-17.1.0/AndroidManifest.xml:11:5-82
+MERGED from [com.google.android.gms:play-services-cloud-messaging:17.1.0] /home/openhands/.gradle/caches/8.11.1/transforms/74774079a768243628bc430b2fcca1f3/transformed/play-services-cloud-messaging-17.1.0/AndroidManifest.xml:11:5-82
+	android:name
+		ADDED from [com.google.firebase:firebase-messaging:23.4.1] /home/openhands/.gradle/caches/8.11.1/transforms/23deb80556665fa3a76264a2f9fed7fc/transformed/firebase-messaging-23.4.1/AndroidManifest.xml:26:22-79
+receiver#com.google.firebase.iid.FirebaseInstanceIdReceiver
+ADDED from [com.google.firebase:firebase-messaging:23.4.1] /home/openhands/.gradle/caches/8.11.1/transforms/23deb80556665fa3a76264a2f9fed7fc/transformed/firebase-messaging-23.4.1/AndroidManifest.xml:29:9-40:20
+	android:exported
+		ADDED from [com.google.firebase:firebase-messaging:23.4.1] /home/openhands/.gradle/caches/8.11.1/transforms/23deb80556665fa3a76264a2f9fed7fc/transformed/firebase-messaging-23.4.1/AndroidManifest.xml:31:13-36
+	android:permission
+		ADDED from [com.google.firebase:firebase-messaging:23.4.1] /home/openhands/.gradle/caches/8.11.1/transforms/23deb80556665fa3a76264a2f9fed7fc/transformed/firebase-messaging-23.4.1/AndroidManifest.xml:32:13-73
+	android:name
+		ADDED from [com.google.firebase:firebase-messaging:23.4.1] /home/openhands/.gradle/caches/8.11.1/transforms/23deb80556665fa3a76264a2f9fed7fc/transformed/firebase-messaging-23.4.1/AndroidManifest.xml:30:13-78
+intent-filter#action:name:com.google.android.c2dm.intent.RECEIVE
+ADDED from [com.google.firebase:firebase-messaging:23.4.1] /home/openhands/.gradle/caches/8.11.1/transforms/23deb80556665fa3a76264a2f9fed7fc/transformed/firebase-messaging-23.4.1/AndroidManifest.xml:33:13-35:29
+action#com.google.android.c2dm.intent.RECEIVE
+ADDED from [com.google.firebase:firebase-messaging:23.4.1] /home/openhands/.gradle/caches/8.11.1/transforms/23deb80556665fa3a76264a2f9fed7fc/transformed/firebase-messaging-23.4.1/AndroidManifest.xml:34:17-81
+	android:name
+		ADDED from [com.google.firebase:firebase-messaging:23.4.1] /home/openhands/.gradle/caches/8.11.1/transforms/23deb80556665fa3a76264a2f9fed7fc/transformed/firebase-messaging-23.4.1/AndroidManifest.xml:34:25-78
+meta-data#com.google.android.gms.cloudmessaging.FINISHED_AFTER_HANDLED
+ADDED from [com.google.firebase:firebase-messaging:23.4.1] /home/openhands/.gradle/caches/8.11.1/transforms/23deb80556665fa3a76264a2f9fed7fc/transformed/firebase-messaging-23.4.1/AndroidManifest.xml:37:13-39:40
+	android:value
+		ADDED from [com.google.firebase:firebase-messaging:23.4.1] /home/openhands/.gradle/caches/8.11.1/transforms/23deb80556665fa3a76264a2f9fed7fc/transformed/firebase-messaging-23.4.1/AndroidManifest.xml:39:17-37
+	android:name
+		ADDED from [com.google.firebase:firebase-messaging:23.4.1] /home/openhands/.gradle/caches/8.11.1/transforms/23deb80556665fa3a76264a2f9fed7fc/transformed/firebase-messaging-23.4.1/AndroidManifest.xml:38:17-92
+service#com.google.firebase.messaging.FirebaseMessagingService
+ADDED from [com.google.firebase:firebase-messaging:23.4.1] /home/openhands/.gradle/caches/8.11.1/transforms/23deb80556665fa3a76264a2f9fed7fc/transformed/firebase-messaging-23.4.1/AndroidManifest.xml:46:9-53:19
+	android:exported
+		ADDED from [com.google.firebase:firebase-messaging:23.4.1] /home/openhands/.gradle/caches/8.11.1/transforms/23deb80556665fa3a76264a2f9fed7fc/transformed/firebase-messaging-23.4.1/AndroidManifest.xml:49:13-37
+	android:directBootAware
+		ADDED from [com.google.firebase:firebase-messaging:23.4.1] /home/openhands/.gradle/caches/8.11.1/transforms/23deb80556665fa3a76264a2f9fed7fc/transformed/firebase-messaging-23.4.1/AndroidManifest.xml:48:13-43
+	android:name
+		ADDED from [com.google.firebase:firebase-messaging:23.4.1] /home/openhands/.gradle/caches/8.11.1/transforms/23deb80556665fa3a76264a2f9fed7fc/transformed/firebase-messaging-23.4.1/AndroidManifest.xml:47:13-82
+service#com.google.firebase.components.ComponentDiscoveryService
+ADDED from [com.google.firebase:firebase-messaging:23.4.1] /home/openhands/.gradle/caches/8.11.1/transforms/23deb80556665fa3a76264a2f9fed7fc/transformed/firebase-messaging-23.4.1/AndroidManifest.xml:54:9-63:19
+MERGED from [com.google.firebase:firebase-installations:17.2.0] /home/openhands/.gradle/caches/8.11.1/transforms/42b05f4183eb8c6a784561aa81a4589d/transformed/firebase-installations-17.2.0/AndroidManifest.xml:12:9-21:19
+MERGED from [com.google.firebase:firebase-installations:17.2.0] /home/openhands/.gradle/caches/8.11.1/transforms/42b05f4183eb8c6a784561aa81a4589d/transformed/firebase-installations-17.2.0/AndroidManifest.xml:12:9-21:19
+MERGED from [com.google.firebase:firebase-common-ktx:20.4.2] /home/openhands/.gradle/caches/8.11.1/transforms/9cc7b6ac4d29d7dd1e876c7756849572/transformed/firebase-common-ktx-20.4.2/AndroidManifest.xml:9:9-15:19
+MERGED from [com.google.firebase:firebase-common-ktx:20.4.2] /home/openhands/.gradle/caches/8.11.1/transforms/9cc7b6ac4d29d7dd1e876c7756849572/transformed/firebase-common-ktx-20.4.2/AndroidManifest.xml:9:9-15:19
+MERGED from [com.google.firebase:firebase-common:20.4.2] /home/openhands/.gradle/caches/8.11.1/transforms/d02da3bf305e9b393b05474d6570e48b/transformed/firebase-common-20.4.2/AndroidManifest.xml:30:9-38:19
+MERGED from [com.google.firebase:firebase-common:20.4.2] /home/openhands/.gradle/caches/8.11.1/transforms/d02da3bf305e9b393b05474d6570e48b/transformed/firebase-common-20.4.2/AndroidManifest.xml:30:9-38:19
+MERGED from [com.google.firebase:firebase-datatransport:18.1.7] /home/openhands/.gradle/caches/8.11.1/transforms/e745f78f058e27e0070066159d91058d/transformed/firebase-datatransport-18.1.7/AndroidManifest.xml:24:9-30:19
+MERGED from [com.google.firebase:firebase-datatransport:18.1.7] /home/openhands/.gradle/caches/8.11.1/transforms/e745f78f058e27e0070066159d91058d/transformed/firebase-datatransport-18.1.7/AndroidManifest.xml:24:9-30:19
+	android:exported
+		ADDED from [com.google.firebase:firebase-messaging:23.4.1] /home/openhands/.gradle/caches/8.11.1/transforms/23deb80556665fa3a76264a2f9fed7fc/transformed/firebase-messaging-23.4.1/AndroidManifest.xml:56:13-37
+	tools:targetApi
+		ADDED from [com.google.firebase:firebase-common:20.4.2] /home/openhands/.gradle/caches/8.11.1/transforms/d02da3bf305e9b393b05474d6570e48b/transformed/firebase-common-20.4.2/AndroidManifest.xml:34:13-32
+	android:directBootAware
+		ADDED from [com.google.firebase:firebase-common:20.4.2] /home/openhands/.gradle/caches/8.11.1/transforms/d02da3bf305e9b393b05474d6570e48b/transformed/firebase-common-20.4.2/AndroidManifest.xml:32:13-43
+	android:name
+		ADDED from [com.google.firebase:firebase-messaging:23.4.1] /home/openhands/.gradle/caches/8.11.1/transforms/23deb80556665fa3a76264a2f9fed7fc/transformed/firebase-messaging-23.4.1/AndroidManifest.xml:55:13-84
+meta-data#com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingKtxRegistrar
+ADDED from [com.google.firebase:firebase-messaging:23.4.1] /home/openhands/.gradle/caches/8.11.1/transforms/23deb80556665fa3a76264a2f9fed7fc/transformed/firebase-messaging-23.4.1/AndroidManifest.xml:57:13-59:85
+	android:value
+		ADDED from [com.google.firebase:firebase-messaging:23.4.1] /home/openhands/.gradle/caches/8.11.1/transforms/23deb80556665fa3a76264a2f9fed7fc/transformed/firebase-messaging-23.4.1/AndroidManifest.xml:59:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-messaging:23.4.1] /home/openhands/.gradle/caches/8.11.1/transforms/23deb80556665fa3a76264a2f9fed7fc/transformed/firebase-messaging-23.4.1/AndroidManifest.xml:58:17-122
+meta-data#com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingRegistrar
+ADDED from [com.google.firebase:firebase-messaging:23.4.1] /home/openhands/.gradle/caches/8.11.1/transforms/23deb80556665fa3a76264a2f9fed7fc/transformed/firebase-messaging-23.4.1/AndroidManifest.xml:60:13-62:85
+	android:value
+		ADDED from [com.google.firebase:firebase-messaging:23.4.1] /home/openhands/.gradle/caches/8.11.1/transforms/23deb80556665fa3a76264a2f9fed7fc/transformed/firebase-messaging-23.4.1/AndroidManifest.xml:62:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-messaging:23.4.1] /home/openhands/.gradle/caches/8.11.1/transforms/23deb80556665fa3a76264a2f9fed7fc/transformed/firebase-messaging-23.4.1/AndroidManifest.xml:61:17-119
+activity#com.google.android.gms.common.api.GoogleApiActivity
+ADDED from [com.google.android.gms:play-services-base:18.1.0] /home/openhands/.gradle/caches/8.11.1/transforms/42e3a097df95d2de6865c1353701f512/transformed/play-services-base-18.1.0/AndroidManifest.xml:20:9-22:45
+	android:exported
+		ADDED from [com.google.android.gms:play-services-base:18.1.0] /home/openhands/.gradle/caches/8.11.1/transforms/42e3a097df95d2de6865c1353701f512/transformed/play-services-base-18.1.0/AndroidManifest.xml:22:19-43
+	android:theme
+		ADDED from [com.google.android.gms:play-services-base:18.1.0] /home/openhands/.gradle/caches/8.11.1/transforms/42e3a097df95d2de6865c1353701f512/transformed/play-services-base-18.1.0/AndroidManifest.xml:21:19-78
+	android:name
+		ADDED from [com.google.android.gms:play-services-base:18.1.0] /home/openhands/.gradle/caches/8.11.1/transforms/42e3a097df95d2de6865c1353701f512/transformed/play-services-base-18.1.0/AndroidManifest.xml:20:19-85
+meta-data#com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsKtxRegistrar
+ADDED from [com.google.firebase:firebase-installations:17.2.0] /home/openhands/.gradle/caches/8.11.1/transforms/42b05f4183eb8c6a784561aa81a4589d/transformed/firebase-installations-17.2.0/AndroidManifest.xml:15:13-17:85
+	android:value
+		ADDED from [com.google.firebase:firebase-installations:17.2.0] /home/openhands/.gradle/caches/8.11.1/transforms/42b05f4183eb8c6a784561aa81a4589d/transformed/firebase-installations-17.2.0/AndroidManifest.xml:17:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-installations:17.2.0] /home/openhands/.gradle/caches/8.11.1/transforms/42b05f4183eb8c6a784561aa81a4589d/transformed/firebase-installations-17.2.0/AndroidManifest.xml:16:17-130
+meta-data#com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar
+ADDED from [com.google.firebase:firebase-installations:17.2.0] /home/openhands/.gradle/caches/8.11.1/transforms/42b05f4183eb8c6a784561aa81a4589d/transformed/firebase-installations-17.2.0/AndroidManifest.xml:18:13-20:85
+	android:value
+		ADDED from [com.google.firebase:firebase-installations:17.2.0] /home/openhands/.gradle/caches/8.11.1/transforms/42b05f4183eb8c6a784561aa81a4589d/transformed/firebase-installations-17.2.0/AndroidManifest.xml:20:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-installations:17.2.0] /home/openhands/.gradle/caches/8.11.1/transforms/42b05f4183eb8c6a784561aa81a4589d/transformed/firebase-installations-17.2.0/AndroidManifest.xml:19:17-127
+meta-data#com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonLegacyRegistrar
+ADDED from [com.google.firebase:firebase-common-ktx:20.4.2] /home/openhands/.gradle/caches/8.11.1/transforms/9cc7b6ac4d29d7dd1e876c7756849572/transformed/firebase-common-ktx-20.4.2/AndroidManifest.xml:12:13-14:85
+	android:value
+		ADDED from [com.google.firebase:firebase-common-ktx:20.4.2] /home/openhands/.gradle/caches/8.11.1/transforms/9cc7b6ac4d29d7dd1e876c7756849572/transformed/firebase-common-ktx-20.4.2/AndroidManifest.xml:14:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-common-ktx:20.4.2] /home/openhands/.gradle/caches/8.11.1/transforms/9cc7b6ac4d29d7dd1e876c7756849572/transformed/firebase-common-ktx-20.4.2/AndroidManifest.xml:13:17-116
+provider#com.google.firebase.provider.FirebaseInitProvider
+ADDED from [com.google.firebase:firebase-common:20.4.2] /home/openhands/.gradle/caches/8.11.1/transforms/d02da3bf305e9b393b05474d6570e48b/transformed/firebase-common-20.4.2/AndroidManifest.xml:23:9-28:39
+	android:authorities
+		ADDED from [com.google.firebase:firebase-common:20.4.2] /home/openhands/.gradle/caches/8.11.1/transforms/d02da3bf305e9b393b05474d6570e48b/transformed/firebase-common-20.4.2/AndroidManifest.xml:25:13-72
+	android:exported
+		ADDED from [com.google.firebase:firebase-common:20.4.2] /home/openhands/.gradle/caches/8.11.1/transforms/d02da3bf305e9b393b05474d6570e48b/transformed/firebase-common-20.4.2/AndroidManifest.xml:27:13-37
+	android:directBootAware
+		ADDED from [com.google.firebase:firebase-common:20.4.2] /home/openhands/.gradle/caches/8.11.1/transforms/d02da3bf305e9b393b05474d6570e48b/transformed/firebase-common-20.4.2/AndroidManifest.xml:26:13-43
+	android:initOrder
+		ADDED from [com.google.firebase:firebase-common:20.4.2] /home/openhands/.gradle/caches/8.11.1/transforms/d02da3bf305e9b393b05474d6570e48b/transformed/firebase-common-20.4.2/AndroidManifest.xml:28:13-36
+	android:name
+		ADDED from [com.google.firebase:firebase-common:20.4.2] /home/openhands/.gradle/caches/8.11.1/transforms/d02da3bf305e9b393b05474d6570e48b/transformed/firebase-common-20.4.2/AndroidManifest.xml:24:13-77
+meta-data#com.google.firebase.components:com.google.firebase.FirebaseCommonKtxRegistrar
+ADDED from [com.google.firebase:firebase-common:20.4.2] /home/openhands/.gradle/caches/8.11.1/transforms/d02da3bf305e9b393b05474d6570e48b/transformed/firebase-common-20.4.2/AndroidManifest.xml:35:13-37:85
+	android:value
+		ADDED from [com.google.firebase:firebase-common:20.4.2] /home/openhands/.gradle/caches/8.11.1/transforms/d02da3bf305e9b393b05474d6570e48b/transformed/firebase-common-20.4.2/AndroidManifest.xml:37:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-common:20.4.2] /home/openhands/.gradle/caches/8.11.1/transforms/d02da3bf305e9b393b05474d6570e48b/transformed/firebase-common-20.4.2/AndroidManifest.xml:36:17-109
+activity#androidx.compose.ui.tooling.PreviewActivity
+ADDED from [androidx.compose.ui:ui-tooling-android:1.6.1] /home/openhands/.gradle/caches/8.11.1/transforms/bbf0adc14e625517f06fcda383708822/transformed/ui-tooling-release/AndroidManifest.xml:23:9-25:39
+	android:exported
+		ADDED from [androidx.compose.ui:ui-tooling-android:1.6.1] /home/openhands/.gradle/caches/8.11.1/transforms/bbf0adc14e625517f06fcda383708822/transformed/ui-tooling-release/AndroidManifest.xml:25:13-36
+	android:name
+		ADDED from [androidx.compose.ui:ui-tooling-android:1.6.1] /home/openhands/.gradle/caches/8.11.1/transforms/bbf0adc14e625517f06fcda383708822/transformed/ui-tooling-release/AndroidManifest.xml:24:13-71
+activity#androidx.activity.ComponentActivity
+ADDED from [androidx.compose.ui:ui-test-manifest:1.6.1] /home/openhands/.gradle/caches/8.11.1/transforms/8967d44031ed53a646f9cc90fec86082/transformed/ui-test-manifest-1.6.1/AndroidManifest.xml:23:9-25:39
+	android:exported
+		ADDED from [androidx.compose.ui:ui-test-manifest:1.6.1] /home/openhands/.gradle/caches/8.11.1/transforms/8967d44031ed53a646f9cc90fec86082/transformed/ui-test-manifest-1.6.1/AndroidManifest.xml:25:13-36
+	android:name
+		ADDED from [androidx.compose.ui:ui-test-manifest:1.6.1] /home/openhands/.gradle/caches/8.11.1/transforms/8967d44031ed53a646f9cc90fec86082/transformed/ui-test-manifest-1.6.1/AndroidManifest.xml:24:13-63
+provider#androidx.startup.InitializationProvider
+ADDED from [io.github.jan-tennert.supabase:gotrue-kt-android-debug:2.2.2] /home/openhands/.gradle/caches/8.11.1/transforms/b5a782c0b5f6b18a9e94799c874cd9c3/transformed/gotrue-kt-debug/AndroidManifest.xml:9:9-17:20
+MERGED from [androidx.emoji2:emoji2:1.3.0] /home/openhands/.gradle/caches/8.11.1/transforms/0d1b1898082115b914c59965e08d17f8/transformed/emoji2-1.3.0/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.emoji2:emoji2:1.3.0] /home/openhands/.gradle/caches/8.11.1/transforms/0d1b1898082115b914c59965e08d17f8/transformed/emoji2-1.3.0/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.lifecycle:lifecycle-process:2.7.0] /home/openhands/.gradle/caches/8.11.1/transforms/9a83b3682f56bae74916ac84be086a49/transformed/lifecycle-process-2.7.0/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.lifecycle:lifecycle-process:2.7.0] /home/openhands/.gradle/caches/8.11.1/transforms/9a83b3682f56bae74916ac84be086a49/transformed/lifecycle-process-2.7.0/AndroidManifest.xml:24:9-32:20
+MERGED from [com.russhwolf:multiplatform-settings-no-arg-android-debug:1.1.1] /home/openhands/.gradle/caches/8.11.1/transforms/f5b493170afe68ab5da38c03ee84738d/transformed/multiplatform-settings-no-arg-debug/AndroidManifest.xml:24:9-32:20
+MERGED from [com.russhwolf:multiplatform-settings-no-arg-android-debug:1.1.1] /home/openhands/.gradle/caches/8.11.1/transforms/f5b493170afe68ab5da38c03ee84738d/transformed/multiplatform-settings-no-arg-debug/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/openhands/.gradle/caches/8.11.1/transforms/a92d4c703ccab45414435e8de8661b50/transformed/profileinstaller-1.3.0/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/openhands/.gradle/caches/8.11.1/transforms/a92d4c703ccab45414435e8de8661b50/transformed/profileinstaller-1.3.0/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.startup:startup-runtime:1.1.1] /home/openhands/.gradle/caches/8.11.1/transforms/ed0b778491664e26562e1918139327ea/transformed/startup-runtime-1.1.1/AndroidManifest.xml:26:9-30:34
+MERGED from [androidx.startup:startup-runtime:1.1.1] /home/openhands/.gradle/caches/8.11.1/transforms/ed0b778491664e26562e1918139327ea/transformed/startup-runtime-1.1.1/AndroidManifest.xml:26:9-30:34
+	tools:node
+		ADDED from [io.github.jan-tennert.supabase:gotrue-kt-android-debug:2.2.2] /home/openhands/.gradle/caches/8.11.1/transforms/b5a782c0b5f6b18a9e94799c874cd9c3/transformed/gotrue-kt-debug/AndroidManifest.xml:13:13-31
+	android:authorities
+		ADDED from [io.github.jan-tennert.supabase:gotrue-kt-android-debug:2.2.2] /home/openhands/.gradle/caches/8.11.1/transforms/b5a782c0b5f6b18a9e94799c874cd9c3/transformed/gotrue-kt-debug/AndroidManifest.xml:11:13-68
+	android:exported
+		ADDED from [io.github.jan-tennert.supabase:gotrue-kt-android-debug:2.2.2] /home/openhands/.gradle/caches/8.11.1/transforms/b5a782c0b5f6b18a9e94799c874cd9c3/transformed/gotrue-kt-debug/AndroidManifest.xml:12:13-37
+	android:name
+		ADDED from [io.github.jan-tennert.supabase:gotrue-kt-android-debug:2.2.2] /home/openhands/.gradle/caches/8.11.1/transforms/b5a782c0b5f6b18a9e94799c874cd9c3/transformed/gotrue-kt-debug/AndroidManifest.xml:10:13-67
+meta-data#io.github.jan.supabase.gotrue.SupabaseInitializer
+ADDED from [io.github.jan-tennert.supabase:gotrue-kt-android-debug:2.2.2] /home/openhands/.gradle/caches/8.11.1/transforms/b5a782c0b5f6b18a9e94799c874cd9c3/transformed/gotrue-kt-debug/AndroidManifest.xml:14:13-16:52
+	android:value
+		ADDED from [io.github.jan-tennert.supabase:gotrue-kt-android-debug:2.2.2] /home/openhands/.gradle/caches/8.11.1/transforms/b5a782c0b5f6b18a9e94799c874cd9c3/transformed/gotrue-kt-debug/AndroidManifest.xml:16:17-49
+	android:name
+		ADDED from [io.github.jan-tennert.supabase:gotrue-kt-android-debug:2.2.2] /home/openhands/.gradle/caches/8.11.1/transforms/b5a782c0b5f6b18a9e94799c874cd9c3/transformed/gotrue-kt-debug/AndroidManifest.xml:15:17-81
+meta-data#androidx.emoji2.text.EmojiCompatInitializer
+ADDED from [androidx.emoji2:emoji2:1.3.0] /home/openhands/.gradle/caches/8.11.1/transforms/0d1b1898082115b914c59965e08d17f8/transformed/emoji2-1.3.0/AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.emoji2:emoji2:1.3.0] /home/openhands/.gradle/caches/8.11.1/transforms/0d1b1898082115b914c59965e08d17f8/transformed/emoji2-1.3.0/AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.emoji2:emoji2:1.3.0] /home/openhands/.gradle/caches/8.11.1/transforms/0d1b1898082115b914c59965e08d17f8/transformed/emoji2-1.3.0/AndroidManifest.xml:30:17-75
+meta-data#androidx.lifecycle.ProcessLifecycleInitializer
+ADDED from [androidx.lifecycle:lifecycle-process:2.7.0] /home/openhands/.gradle/caches/8.11.1/transforms/9a83b3682f56bae74916ac84be086a49/transformed/lifecycle-process-2.7.0/AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.lifecycle:lifecycle-process:2.7.0] /home/openhands/.gradle/caches/8.11.1/transforms/9a83b3682f56bae74916ac84be086a49/transformed/lifecycle-process-2.7.0/AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.lifecycle:lifecycle-process:2.7.0] /home/openhands/.gradle/caches/8.11.1/transforms/9a83b3682f56bae74916ac84be086a49/transformed/lifecycle-process-2.7.0/AndroidManifest.xml:30:17-78
+service#androidx.room.MultiInstanceInvalidationService
+ADDED from [androidx.room:room-runtime:2.6.1] /home/openhands/.gradle/caches/8.11.1/transforms/2d45dfac9673f31d13880a3e8bde25d1/transformed/room-runtime-2.6.1/AndroidManifest.xml:24:9-28:63
+	android:exported
+		ADDED from [androidx.room:room-runtime:2.6.1] /home/openhands/.gradle/caches/8.11.1/transforms/2d45dfac9673f31d13880a3e8bde25d1/transformed/room-runtime-2.6.1/AndroidManifest.xml:27:13-37
+	tools:ignore
+		ADDED from [androidx.room:room-runtime:2.6.1] /home/openhands/.gradle/caches/8.11.1/transforms/2d45dfac9673f31d13880a3e8bde25d1/transformed/room-runtime-2.6.1/AndroidManifest.xml:28:13-60
+	android:directBootAware
+		ADDED from [androidx.room:room-runtime:2.6.1] /home/openhands/.gradle/caches/8.11.1/transforms/2d45dfac9673f31d13880a3e8bde25d1/transformed/room-runtime-2.6.1/AndroidManifest.xml:26:13-43
+	android:name
+		ADDED from [androidx.room:room-runtime:2.6.1] /home/openhands/.gradle/caches/8.11.1/transforms/2d45dfac9673f31d13880a3e8bde25d1/transformed/room-runtime-2.6.1/AndroidManifest.xml:25:13-74
+meta-data#com.google.android.gms.version
+ADDED from [com.google.android.gms:play-services-basement:18.1.0] /home/openhands/.gradle/caches/8.11.1/transforms/5f5671063623ffa2af5e79b690defb10/transformed/play-services-basement-18.1.0/AndroidManifest.xml:21:9-23:69
+	android:value
+		ADDED from [com.google.android.gms:play-services-basement:18.1.0] /home/openhands/.gradle/caches/8.11.1/transforms/5f5671063623ffa2af5e79b690defb10/transformed/play-services-basement-18.1.0/AndroidManifest.xml:23:13-66
+	android:name
+		ADDED from [com.google.android.gms:play-services-basement:18.1.0] /home/openhands/.gradle/caches/8.11.1/transforms/5f5671063623ffa2af5e79b690defb10/transformed/play-services-basement-18.1.0/AndroidManifest.xml:22:13-58
+permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.12.0] /home/openhands/.gradle/caches/8.11.1/transforms/05d04e3e4b58bd8ca19d14896d603423/transformed/core-1.12.0/AndroidManifest.xml:22:5-24:47
+	android:protectionLevel
+		ADDED from [androidx.core:core:1.12.0] /home/openhands/.gradle/caches/8.11.1/transforms/05d04e3e4b58bd8ca19d14896d603423/transformed/core-1.12.0/AndroidManifest.xml:24:9-44
+	android:name
+		ADDED from [androidx.core:core:1.12.0] /home/openhands/.gradle/caches/8.11.1/transforms/05d04e3e4b58bd8ca19d14896d603423/transformed/core-1.12.0/AndroidManifest.xml:23:9-81
+permission#com.vttcabs.customer.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.12.0] /home/openhands/.gradle/caches/8.11.1/transforms/05d04e3e4b58bd8ca19d14896d603423/transformed/core-1.12.0/AndroidManifest.xml:22:5-24:47
+	android:protectionLevel
+		ADDED from [androidx.core:core:1.12.0] /home/openhands/.gradle/caches/8.11.1/transforms/05d04e3e4b58bd8ca19d14896d603423/transformed/core-1.12.0/AndroidManifest.xml:24:9-44
+	android:name
+		ADDED from [androidx.core:core:1.12.0] /home/openhands/.gradle/caches/8.11.1/transforms/05d04e3e4b58bd8ca19d14896d603423/transformed/core-1.12.0/AndroidManifest.xml:23:9-81
+uses-permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.12.0] /home/openhands/.gradle/caches/8.11.1/transforms/05d04e3e4b58bd8ca19d14896d603423/transformed/core-1.12.0/AndroidManifest.xml:26:5-97
+	android:name
+		ADDED from [androidx.core:core:1.12.0] /home/openhands/.gradle/caches/8.11.1/transforms/05d04e3e4b58bd8ca19d14896d603423/transformed/core-1.12.0/AndroidManifest.xml:26:22-94
+uses-permission#com.vttcabs.customer.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.12.0] /home/openhands/.gradle/caches/8.11.1/transforms/05d04e3e4b58bd8ca19d14896d603423/transformed/core-1.12.0/AndroidManifest.xml:26:5-97
+	android:name
+		ADDED from [androidx.core:core:1.12.0] /home/openhands/.gradle/caches/8.11.1/transforms/05d04e3e4b58bd8ca19d14896d603423/transformed/core-1.12.0/AndroidManifest.xml:26:22-94
+meta-data#com.russhwolf.settings.SettingsInitializer
+ADDED from [com.russhwolf:multiplatform-settings-no-arg-android-debug:1.1.1] /home/openhands/.gradle/caches/8.11.1/transforms/f5b493170afe68ab5da38c03ee84738d/transformed/multiplatform-settings-no-arg-debug/AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [com.russhwolf:multiplatform-settings-no-arg-android-debug:1.1.1] /home/openhands/.gradle/caches/8.11.1/transforms/f5b493170afe68ab5da38c03ee84738d/transformed/multiplatform-settings-no-arg-debug/AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [com.russhwolf:multiplatform-settings-no-arg-android-debug:1.1.1] /home/openhands/.gradle/caches/8.11.1/transforms/f5b493170afe68ab5da38c03ee84738d/transformed/multiplatform-settings-no-arg-debug/AndroidManifest.xml:30:17-74
+meta-data#com.google.firebase.components:com.google.firebase.datatransport.TransportRegistrar
+ADDED from [com.google.firebase:firebase-datatransport:18.1.7] /home/openhands/.gradle/caches/8.11.1/transforms/e745f78f058e27e0070066159d91058d/transformed/firebase-datatransport-18.1.7/AndroidManifest.xml:27:13-29:85
+	android:value
+		ADDED from [com.google.firebase:firebase-datatransport:18.1.7] /home/openhands/.gradle/caches/8.11.1/transforms/e745f78f058e27e0070066159d91058d/transformed/firebase-datatransport-18.1.7/AndroidManifest.xml:29:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-datatransport:18.1.7] /home/openhands/.gradle/caches/8.11.1/transforms/e745f78f058e27e0070066159d91058d/transformed/firebase-datatransport-18.1.7/AndroidManifest.xml:28:17-115
+service#com.google.android.datatransport.runtime.backends.TransportBackendDiscovery
+ADDED from [com.google.android.datatransport:transport-backend-cct:3.1.8] /home/openhands/.gradle/caches/8.11.1/transforms/689b6cc0ebcf1ab72064222bc8d478ba/transformed/transport-backend-cct-3.1.8/AndroidManifest.xml:28:9-34:19
+MERGED from [com.google.android.datatransport:transport-runtime:3.1.8] /home/openhands/.gradle/caches/8.11.1/transforms/63e4912a4f7f44dc108915e93e23bab0/transformed/transport-runtime-3.1.8/AndroidManifest.xml:36:9-38:40
+MERGED from [com.google.android.datatransport:transport-runtime:3.1.8] /home/openhands/.gradle/caches/8.11.1/transforms/63e4912a4f7f44dc108915e93e23bab0/transformed/transport-runtime-3.1.8/AndroidManifest.xml:36:9-38:40
+	android:exported
+		ADDED from [com.google.android.datatransport:transport-backend-cct:3.1.8] /home/openhands/.gradle/caches/8.11.1/transforms/689b6cc0ebcf1ab72064222bc8d478ba/transformed/transport-backend-cct-3.1.8/AndroidManifest.xml:30:13-37
+	android:name
+		ADDED from [com.google.android.datatransport:transport-backend-cct:3.1.8] /home/openhands/.gradle/caches/8.11.1/transforms/689b6cc0ebcf1ab72064222bc8d478ba/transformed/transport-backend-cct-3.1.8/AndroidManifest.xml:29:13-103
+meta-data#backend:com.google.android.datatransport.cct.CctBackendFactory
+ADDED from [com.google.android.datatransport:transport-backend-cct:3.1.8] /home/openhands/.gradle/caches/8.11.1/transforms/689b6cc0ebcf1ab72064222bc8d478ba/transformed/transport-backend-cct-3.1.8/AndroidManifest.xml:31:13-33:39
+	android:value
+		ADDED from [com.google.android.datatransport:transport-backend-cct:3.1.8] /home/openhands/.gradle/caches/8.11.1/transforms/689b6cc0ebcf1ab72064222bc8d478ba/transformed/transport-backend-cct-3.1.8/AndroidManifest.xml:33:17-36
+	android:name
+		ADDED from [com.google.android.datatransport:transport-backend-cct:3.1.8] /home/openhands/.gradle/caches/8.11.1/transforms/689b6cc0ebcf1ab72064222bc8d478ba/transformed/transport-backend-cct-3.1.8/AndroidManifest.xml:32:17-94
+service#com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService
+ADDED from [com.google.android.datatransport:transport-runtime:3.1.8] /home/openhands/.gradle/caches/8.11.1/transforms/63e4912a4f7f44dc108915e93e23bab0/transformed/transport-runtime-3.1.8/AndroidManifest.xml:26:9-30:19
+	android:exported
+		ADDED from [com.google.android.datatransport:transport-runtime:3.1.8] /home/openhands/.gradle/caches/8.11.1/transforms/63e4912a4f7f44dc108915e93e23bab0/transformed/transport-runtime-3.1.8/AndroidManifest.xml:28:13-37
+	android:permission
+		ADDED from [com.google.android.datatransport:transport-runtime:3.1.8] /home/openhands/.gradle/caches/8.11.1/transforms/63e4912a4f7f44dc108915e93e23bab0/transformed/transport-runtime-3.1.8/AndroidManifest.xml:29:13-69
+	android:name
+		ADDED from [com.google.android.datatransport:transport-runtime:3.1.8] /home/openhands/.gradle/caches/8.11.1/transforms/63e4912a4f7f44dc108915e93e23bab0/transformed/transport-runtime-3.1.8/AndroidManifest.xml:27:13-117
+receiver#com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver
+ADDED from [com.google.android.datatransport:transport-runtime:3.1.8] /home/openhands/.gradle/caches/8.11.1/transforms/63e4912a4f7f44dc108915e93e23bab0/transformed/transport-runtime-3.1.8/AndroidManifest.xml:32:9-34:40
+	android:exported
+		ADDED from [com.google.android.datatransport:transport-runtime:3.1.8] /home/openhands/.gradle/caches/8.11.1/transforms/63e4912a4f7f44dc108915e93e23bab0/transformed/transport-runtime-3.1.8/AndroidManifest.xml:34:13-37
+	android:name
+		ADDED from [com.google.android.datatransport:transport-runtime:3.1.8] /home/openhands/.gradle/caches/8.11.1/transforms/63e4912a4f7f44dc108915e93e23bab0/transformed/transport-runtime-3.1.8/AndroidManifest.xml:33:13-132
+meta-data#androidx.profileinstaller.ProfileInstallerInitializer
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/openhands/.gradle/caches/8.11.1/transforms/a92d4c703ccab45414435e8de8661b50/transformed/profileinstaller-1.3.0/AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/openhands/.gradle/caches/8.11.1/transforms/a92d4c703ccab45414435e8de8661b50/transformed/profileinstaller-1.3.0/AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/openhands/.gradle/caches/8.11.1/transforms/a92d4c703ccab45414435e8de8661b50/transformed/profileinstaller-1.3.0/AndroidManifest.xml:30:17-85
+receiver#androidx.profileinstaller.ProfileInstallReceiver
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/openhands/.gradle/caches/8.11.1/transforms/a92d4c703ccab45414435e8de8661b50/transformed/profileinstaller-1.3.0/AndroidManifest.xml:34:9-52:20
+	android:enabled
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/openhands/.gradle/caches/8.11.1/transforms/a92d4c703ccab45414435e8de8661b50/transformed/profileinstaller-1.3.0/AndroidManifest.xml:37:13-35
+	android:exported
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/openhands/.gradle/caches/8.11.1/transforms/a92d4c703ccab45414435e8de8661b50/transformed/profileinstaller-1.3.0/AndroidManifest.xml:38:13-36
+	android:permission
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/openhands/.gradle/caches/8.11.1/transforms/a92d4c703ccab45414435e8de8661b50/transformed/profileinstaller-1.3.0/AndroidManifest.xml:39:13-57
+	android:directBootAware
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/openhands/.gradle/caches/8.11.1/transforms/a92d4c703ccab45414435e8de8661b50/transformed/profileinstaller-1.3.0/AndroidManifest.xml:36:13-44
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/openhands/.gradle/caches/8.11.1/transforms/a92d4c703ccab45414435e8de8661b50/transformed/profileinstaller-1.3.0/AndroidManifest.xml:35:13-76
+intent-filter#action:name:androidx.profileinstaller.action.INSTALL_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/openhands/.gradle/caches/8.11.1/transforms/a92d4c703ccab45414435e8de8661b50/transformed/profileinstaller-1.3.0/AndroidManifest.xml:40:13-42:29
+action#androidx.profileinstaller.action.INSTALL_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/openhands/.gradle/caches/8.11.1/transforms/a92d4c703ccab45414435e8de8661b50/transformed/profileinstaller-1.3.0/AndroidManifest.xml:41:17-91
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/openhands/.gradle/caches/8.11.1/transforms/a92d4c703ccab45414435e8de8661b50/transformed/profileinstaller-1.3.0/AndroidManifest.xml:41:25-88
+intent-filter#action:name:androidx.profileinstaller.action.SKIP_FILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/openhands/.gradle/caches/8.11.1/transforms/a92d4c703ccab45414435e8de8661b50/transformed/profileinstaller-1.3.0/AndroidManifest.xml:43:13-45:29
+action#androidx.profileinstaller.action.SKIP_FILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/openhands/.gradle/caches/8.11.1/transforms/a92d4c703ccab45414435e8de8661b50/transformed/profileinstaller-1.3.0/AndroidManifest.xml:44:17-85
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/openhands/.gradle/caches/8.11.1/transforms/a92d4c703ccab45414435e8de8661b50/transformed/profileinstaller-1.3.0/AndroidManifest.xml:44:25-82
+intent-filter#action:name:androidx.profileinstaller.action.SAVE_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/openhands/.gradle/caches/8.11.1/transforms/a92d4c703ccab45414435e8de8661b50/transformed/profileinstaller-1.3.0/AndroidManifest.xml:46:13-48:29
+action#androidx.profileinstaller.action.SAVE_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/openhands/.gradle/caches/8.11.1/transforms/a92d4c703ccab45414435e8de8661b50/transformed/profileinstaller-1.3.0/AndroidManifest.xml:47:17-88
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/openhands/.gradle/caches/8.11.1/transforms/a92d4c703ccab45414435e8de8661b50/transformed/profileinstaller-1.3.0/AndroidManifest.xml:47:25-85
+intent-filter#action:name:androidx.profileinstaller.action.BENCHMARK_OPERATION
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/openhands/.gradle/caches/8.11.1/transforms/a92d4c703ccab45414435e8de8661b50/transformed/profileinstaller-1.3.0/AndroidManifest.xml:49:13-51:29
+action#androidx.profileinstaller.action.BENCHMARK_OPERATION
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/openhands/.gradle/caches/8.11.1/transforms/a92d4c703ccab45414435e8de8661b50/transformed/profileinstaller-1.3.0/AndroidManifest.xml:50:17-95
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/openhands/.gradle/caches/8.11.1/transforms/a92d4c703ccab45414435e8de8661b50/transformed/profileinstaller-1.3.0/AndroidManifest.xml:50:25-92

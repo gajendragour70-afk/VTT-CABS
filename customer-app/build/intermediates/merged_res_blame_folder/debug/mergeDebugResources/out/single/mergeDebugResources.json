@@ -1,0 +1,34 @@
+[
+    {
+        "merged": "com.vttcabs.customer.customer-app-debug-70:/mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "com.vttcabs.customer.customer-app-main-72:/mipmap-mdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.vttcabs.customer.customer-app-debug-70:/mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "com.vttcabs.customer.customer-app-main-72:/mipmap-hdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.vttcabs.customer.customer-app-debug-70:/mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "com.vttcabs.customer.customer-app-main-72:/mipmap-mdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.vttcabs.customer.customer-app-debug-70:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.vttcabs.customer.customer-app-main-72:/mipmap-xxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.vttcabs.customer.customer-app-debug-70:/mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "com.vttcabs.customer.customer-app-main-72:/mipmap-xxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.vttcabs.customer.customer-app-debug-70:/mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "com.vttcabs.customer.customer-app-main-72:/mipmap-xhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.vttcabs.customer.customer-app-debug-70:/mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "com.vttcabs.customer.customer-app-main-72:/mipmap-hdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.vttcabs.customer.customer-app-debug-70:/mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "com.vttcabs.customer.customer-app-main-72:/mipmap-xhdpi/ic_launcher_round.webp"
+    }
+]

@@ -1,0 +1,186 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.vttcabs.admin"
+4    android:versionCode="1"
+5    android:versionName="1.0.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="24"
+9        android:targetSdkVersion="34" />
+10
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->/workspace/project/VTT-CABS/admin-app/src/main/AndroidManifest.xml:4:5-67
+11-->/workspace/project/VTT-CABS/admin-app/src/main/AndroidManifest.xml:4:22-64
+12    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+12-->/workspace/project/VTT-CABS/admin-app/src/main/AndroidManifest.xml:5:5-79
+12-->/workspace/project/VTT-CABS/admin-app/src/main/AndroidManifest.xml:5:22-76
+13
+14    <uses-feature
+14-->[com.google.android.gms:play-services-maps:18.2.0] /home/openhands/.gradle/caches/8.11.1/transforms/a409a2419644d4806704c766ed7ca461/transformed/play-services-maps-18.2.0/AndroidManifest.xml:26:5-28:35
+15        android:glEsVersion="0x00020000"
+15-->[com.google.android.gms:play-services-maps:18.2.0] /home/openhands/.gradle/caches/8.11.1/transforms/a409a2419644d4806704c766ed7ca461/transformed/play-services-maps-18.2.0/AndroidManifest.xml:27:9-41
+16        android:required="true" />
+16-->[com.google.android.gms:play-services-maps:18.2.0] /home/openhands/.gradle/caches/8.11.1/transforms/a409a2419644d4806704c766ed7ca461/transformed/play-services-maps-18.2.0/AndroidManifest.xml:28:9-32
+17
+18    <queries>
+18-->[com.google.android.gms:play-services-maps:18.2.0] /home/openhands/.gradle/caches/8.11.1/transforms/a409a2419644d4806704c766ed7ca461/transformed/play-services-maps-18.2.0/AndroidManifest.xml:30:5-34:15
+19
+20        <!-- Needs to be explicitly declared on Android R+ -->
+21        <package android:name="com.google.android.apps.maps" />
+21-->[com.google.android.gms:play-services-maps:18.2.0] /home/openhands/.gradle/caches/8.11.1/transforms/a409a2419644d4806704c766ed7ca461/transformed/play-services-maps-18.2.0/AndroidManifest.xml:33:9-64
+21-->[com.google.android.gms:play-services-maps:18.2.0] /home/openhands/.gradle/caches/8.11.1/transforms/a409a2419644d4806704c766ed7ca461/transformed/play-services-maps-18.2.0/AndroidManifest.xml:33:18-61
+22    </queries>
+23
+24    <permission
+24-->[androidx.core:core:1.12.0] /home/openhands/.gradle/caches/8.11.1/transforms/05d04e3e4b58bd8ca19d14896d603423/transformed/core-1.12.0/AndroidManifest.xml:22:5-24:47
+25        android:name="com.vttcabs.admin.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+25-->[androidx.core:core:1.12.0] /home/openhands/.gradle/caches/8.11.1/transforms/05d04e3e4b58bd8ca19d14896d603423/transformed/core-1.12.0/AndroidManifest.xml:23:9-81
+26        android:protectionLevel="signature" />
+26-->[androidx.core:core:1.12.0] /home/openhands/.gradle/caches/8.11.1/transforms/05d04e3e4b58bd8ca19d14896d603423/transformed/core-1.12.0/AndroidManifest.xml:24:9-44
+27
+28    <uses-permission android:name="com.vttcabs.admin.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+28-->[androidx.core:core:1.12.0] /home/openhands/.gradle/caches/8.11.1/transforms/05d04e3e4b58bd8ca19d14896d603423/transformed/core-1.12.0/AndroidManifest.xml:26:5-97
+28-->[androidx.core:core:1.12.0] /home/openhands/.gradle/caches/8.11.1/transforms/05d04e3e4b58bd8ca19d14896d603423/transformed/core-1.12.0/AndroidManifest.xml:26:22-94
+29
+30    <application
+30-->/workspace/project/VTT-CABS/admin-app/src/main/AndroidManifest.xml:7:5-26:19
+31        android:name="com.vttcabs.admin.VttAdminApp"
+31-->/workspace/project/VTT-CABS/admin-app/src/main/AndroidManifest.xml:8:9-36
+32        android:allowBackup="true"
+32-->/workspace/project/VTT-CABS/admin-app/src/main/AndroidManifest.xml:9:9-35
+33        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+33-->[androidx.core:core:1.12.0] /home/openhands/.gradle/caches/8.11.1/transforms/05d04e3e4b58bd8ca19d14896d603423/transformed/core-1.12.0/AndroidManifest.xml:28:18-86
+34        android:debuggable="true"
+35        android:extractNativeLibs="false"
+36        android:icon="@mipmap/ic_launcher"
+36-->/workspace/project/VTT-CABS/admin-app/src/main/AndroidManifest.xml:10:9-43
+37        android:label="@string/app_name"
+37-->/workspace/project/VTT-CABS/admin-app/src/main/AndroidManifest.xml:11:9-41
+38        android:roundIcon="@mipmap/ic_launcher_round"
+38-->/workspace/project/VTT-CABS/admin-app/src/main/AndroidManifest.xml:12:9-54
+39        android:supportsRtl="true"
+39-->/workspace/project/VTT-CABS/admin-app/src/main/AndroidManifest.xml:13:9-35
+40        android:theme="@style/Theme.VttCabs"
+40-->/workspace/project/VTT-CABS/admin-app/src/main/AndroidManifest.xml:14:9-45
+41        android:usesCleartextTraffic="true" >
+41-->/workspace/project/VTT-CABS/admin-app/src/main/AndroidManifest.xml:15:9-44
+42        <activity
+42-->/workspace/project/VTT-CABS/admin-app/src/main/AndroidManifest.xml:17:9-25:20
+43            android:name="com.vttcabs.admin.MainActivity"
+43-->/workspace/project/VTT-CABS/admin-app/src/main/AndroidManifest.xml:18:13-41
+44            android:exported="true"
+44-->/workspace/project/VTT-CABS/admin-app/src/main/AndroidManifest.xml:19:13-36
+45            android:theme="@style/Theme.VttCabs" >
+45-->/workspace/project/VTT-CABS/admin-app/src/main/AndroidManifest.xml:20:13-49
+46            <intent-filter>
+46-->/workspace/project/VTT-CABS/admin-app/src/main/AndroidManifest.xml:21:13-24:29
+47                <action android:name="android.intent.action.MAIN" />
+47-->/workspace/project/VTT-CABS/admin-app/src/main/AndroidManifest.xml:22:17-69
+47-->/workspace/project/VTT-CABS/admin-app/src/main/AndroidManifest.xml:22:25-66
+48
+49                <category android:name="android.intent.category.LAUNCHER" />
+49-->/workspace/project/VTT-CABS/admin-app/src/main/AndroidManifest.xml:23:17-77
+49-->/workspace/project/VTT-CABS/admin-app/src/main/AndroidManifest.xml:23:27-74
+50            </intent-filter>
+51        </activity>
+52        <!-- Needs to be explicitly declared on P+ -->
+53        <uses-library
+53-->[com.google.android.gms:play-services-maps:18.2.0] /home/openhands/.gradle/caches/8.11.1/transforms/a409a2419644d4806704c766ed7ca461/transformed/play-services-maps-18.2.0/AndroidManifest.xml:39:9-41:40
+54            android:name="org.apache.http.legacy"
+54-->[com.google.android.gms:play-services-maps:18.2.0] /home/openhands/.gradle/caches/8.11.1/transforms/a409a2419644d4806704c766ed7ca461/transformed/play-services-maps-18.2.0/AndroidManifest.xml:40:13-50
+55            android:required="false" />
+55-->[com.google.android.gms:play-services-maps:18.2.0] /home/openhands/.gradle/caches/8.11.1/transforms/a409a2419644d4806704c766ed7ca461/transformed/play-services-maps-18.2.0/AndroidManifest.xml:41:13-37
+56
+57        <activity
+57-->[com.google.android.gms:play-services-base:18.1.0] /home/openhands/.gradle/caches/8.11.1/transforms/42e3a097df95d2de6865c1353701f512/transformed/play-services-base-18.1.0/AndroidManifest.xml:20:9-22:45
+58            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+58-->[com.google.android.gms:play-services-base:18.1.0] /home/openhands/.gradle/caches/8.11.1/transforms/42e3a097df95d2de6865c1353701f512/transformed/play-services-base-18.1.0/AndroidManifest.xml:20:19-85
+59            android:exported="false"
+59-->[com.google.android.gms:play-services-base:18.1.0] /home/openhands/.gradle/caches/8.11.1/transforms/42e3a097df95d2de6865c1353701f512/transformed/play-services-base-18.1.0/AndroidManifest.xml:22:19-43
+60            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+60-->[com.google.android.gms:play-services-base:18.1.0] /home/openhands/.gradle/caches/8.11.1/transforms/42e3a097df95d2de6865c1353701f512/transformed/play-services-base-18.1.0/AndroidManifest.xml:21:19-78
+61
+62        <meta-data
+62-->[com.google.android.gms:play-services-basement:18.1.0] /home/openhands/.gradle/caches/8.11.1/transforms/5f5671063623ffa2af5e79b690defb10/transformed/play-services-basement-18.1.0/AndroidManifest.xml:21:9-23:69
+63            android:name="com.google.android.gms.version"
+63-->[com.google.android.gms:play-services-basement:18.1.0] /home/openhands/.gradle/caches/8.11.1/transforms/5f5671063623ffa2af5e79b690defb10/transformed/play-services-basement-18.1.0/AndroidManifest.xml:22:13-58
+64            android:value="@integer/google_play_services_version" />
+64-->[com.google.android.gms:play-services-basement:18.1.0] /home/openhands/.gradle/caches/8.11.1/transforms/5f5671063623ffa2af5e79b690defb10/transformed/play-services-basement-18.1.0/AndroidManifest.xml:23:13-66
+65
+66        <provider
+66-->[androidx.emoji2:emoji2:1.3.0] /home/openhands/.gradle/caches/8.11.1/transforms/0d1b1898082115b914c59965e08d17f8/transformed/emoji2-1.3.0/AndroidManifest.xml:24:9-32:20
+67            android:name="androidx.startup.InitializationProvider"
+67-->[androidx.emoji2:emoji2:1.3.0] /home/openhands/.gradle/caches/8.11.1/transforms/0d1b1898082115b914c59965e08d17f8/transformed/emoji2-1.3.0/AndroidManifest.xml:25:13-67
+68            android:authorities="com.vttcabs.admin.androidx-startup"
+68-->[androidx.emoji2:emoji2:1.3.0] /home/openhands/.gradle/caches/8.11.1/transforms/0d1b1898082115b914c59965e08d17f8/transformed/emoji2-1.3.0/AndroidManifest.xml:26:13-68
+69            android:exported="false" >
+69-->[androidx.emoji2:emoji2:1.3.0] /home/openhands/.gradle/caches/8.11.1/transforms/0d1b1898082115b914c59965e08d17f8/transformed/emoji2-1.3.0/AndroidManifest.xml:27:13-37
+70            <meta-data
+70-->[androidx.emoji2:emoji2:1.3.0] /home/openhands/.gradle/caches/8.11.1/transforms/0d1b1898082115b914c59965e08d17f8/transformed/emoji2-1.3.0/AndroidManifest.xml:29:13-31:52
+71                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+71-->[androidx.emoji2:emoji2:1.3.0] /home/openhands/.gradle/caches/8.11.1/transforms/0d1b1898082115b914c59965e08d17f8/transformed/emoji2-1.3.0/AndroidManifest.xml:30:17-75
+72                android:value="androidx.startup" />
+72-->[androidx.emoji2:emoji2:1.3.0] /home/openhands/.gradle/caches/8.11.1/transforms/0d1b1898082115b914c59965e08d17f8/transformed/emoji2-1.3.0/AndroidManifest.xml:31:17-49
+73            <meta-data
+73-->[androidx.lifecycle:lifecycle-process:2.7.0] /home/openhands/.gradle/caches/8.11.1/transforms/9a83b3682f56bae74916ac84be086a49/transformed/lifecycle-process-2.7.0/AndroidManifest.xml:29:13-31:52
+74                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+74-->[androidx.lifecycle:lifecycle-process:2.7.0] /home/openhands/.gradle/caches/8.11.1/transforms/9a83b3682f56bae74916ac84be086a49/transformed/lifecycle-process-2.7.0/AndroidManifest.xml:30:17-78
+75                android:value="androidx.startup" />
+75-->[androidx.lifecycle:lifecycle-process:2.7.0] /home/openhands/.gradle/caches/8.11.1/transforms/9a83b3682f56bae74916ac84be086a49/transformed/lifecycle-process-2.7.0/AndroidManifest.xml:31:17-49
+76            <meta-data
+76-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/openhands/.gradle/caches/8.11.1/transforms/a92d4c703ccab45414435e8de8661b50/transformed/profileinstaller-1.3.0/AndroidManifest.xml:29:13-31:52
+77                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+77-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/openhands/.gradle/caches/8.11.1/transforms/a92d4c703ccab45414435e8de8661b50/transformed/profileinstaller-1.3.0/AndroidManifest.xml:30:17-85
+78                android:value="androidx.startup" />
+78-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/openhands/.gradle/caches/8.11.1/transforms/a92d4c703ccab45414435e8de8661b50/transformed/profileinstaller-1.3.0/AndroidManifest.xml:31:17-49
+79        </provider>
+80
+81        <service
+81-->[androidx.room:room-runtime:2.6.1] /home/openhands/.gradle/caches/8.11.1/transforms/2d45dfac9673f31d13880a3e8bde25d1/transformed/room-runtime-2.6.1/AndroidManifest.xml:24:9-28:63
+82            android:name="androidx.room.MultiInstanceInvalidationService"
+82-->[androidx.room:room-runtime:2.6.1] /home/openhands/.gradle/caches/8.11.1/transforms/2d45dfac9673f31d13880a3e8bde25d1/transformed/room-runtime-2.6.1/AndroidManifest.xml:25:13-74
+83            android:directBootAware="true"
+83-->[androidx.room:room-runtime:2.6.1] /home/openhands/.gradle/caches/8.11.1/transforms/2d45dfac9673f31d13880a3e8bde25d1/transformed/room-runtime-2.6.1/AndroidManifest.xml:26:13-43
+84            android:exported="false" />
+84-->[androidx.room:room-runtime:2.6.1] /home/openhands/.gradle/caches/8.11.1/transforms/2d45dfac9673f31d13880a3e8bde25d1/transformed/room-runtime-2.6.1/AndroidManifest.xml:27:13-37
+85
+86        <receiver
+86-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/openhands/.gradle/caches/8.11.1/transforms/a92d4c703ccab45414435e8de8661b50/transformed/profileinstaller-1.3.0/AndroidManifest.xml:34:9-52:20
+87            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+87-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/openhands/.gradle/caches/8.11.1/transforms/a92d4c703ccab45414435e8de8661b50/transformed/profileinstaller-1.3.0/AndroidManifest.xml:35:13-76
+88            android:directBootAware="false"
+88-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/openhands/.gradle/caches/8.11.1/transforms/a92d4c703ccab45414435e8de8661b50/transformed/profileinstaller-1.3.0/AndroidManifest.xml:36:13-44
+89            android:enabled="true"
+89-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/openhands/.gradle/caches/8.11.1/transforms/a92d4c703ccab45414435e8de8661b50/transformed/profileinstaller-1.3.0/AndroidManifest.xml:37:13-35
+90            android:exported="true"
+90-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/openhands/.gradle/caches/8.11.1/transforms/a92d4c703ccab45414435e8de8661b50/transformed/profileinstaller-1.3.0/AndroidManifest.xml:38:13-36
+91            android:permission="android.permission.DUMP" >
+91-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/openhands/.gradle/caches/8.11.1/transforms/a92d4c703ccab45414435e8de8661b50/transformed/profileinstaller-1.3.0/AndroidManifest.xml:39:13-57
+92            <intent-filter>
+92-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/openhands/.gradle/caches/8.11.1/transforms/a92d4c703ccab45414435e8de8661b50/transformed/profileinstaller-1.3.0/AndroidManifest.xml:40:13-42:29
+93                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+93-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/openhands/.gradle/caches/8.11.1/transforms/a92d4c703ccab45414435e8de8661b50/transformed/profileinstaller-1.3.0/AndroidManifest.xml:41:17-91
+93-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/openhands/.gradle/caches/8.11.1/transforms/a92d4c703ccab45414435e8de8661b50/transformed/profileinstaller-1.3.0/AndroidManifest.xml:41:25-88
+94            </intent-filter>
+95            <intent-filter>
+95-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/openhands/.gradle/caches/8.11.1/transforms/a92d4c703ccab45414435e8de8661b50/transformed/profileinstaller-1.3.0/AndroidManifest.xml:43:13-45:29
+96                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+96-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/openhands/.gradle/caches/8.11.1/transforms/a92d4c703ccab45414435e8de8661b50/transformed/profileinstaller-1.3.0/AndroidManifest.xml:44:17-85
+96-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/openhands/.gradle/caches/8.11.1/transforms/a92d4c703ccab45414435e8de8661b50/transformed/profileinstaller-1.3.0/AndroidManifest.xml:44:25-82
+97            </intent-filter>
+98            <intent-filter>
+98-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/openhands/.gradle/caches/8.11.1/transforms/a92d4c703ccab45414435e8de8661b50/transformed/profileinstaller-1.3.0/AndroidManifest.xml:46:13-48:29
+99                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+99-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/openhands/.gradle/caches/8.11.1/transforms/a92d4c703ccab45414435e8de8661b50/transformed/profileinstaller-1.3.0/AndroidManifest.xml:47:17-88
+99-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/openhands/.gradle/caches/8.11.1/transforms/a92d4c703ccab45414435e8de8661b50/transformed/profileinstaller-1.3.0/AndroidManifest.xml:47:25-85
+100            </intent-filter>
+101            <intent-filter>
+101-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/openhands/.gradle/caches/8.11.1/transforms/a92d4c703ccab45414435e8de8661b50/transformed/profileinstaller-1.3.0/AndroidManifest.xml:49:13-51:29
+102                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+102-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/openhands/.gradle/caches/8.11.1/transforms/a92d4c703ccab45414435e8de8661b50/transformed/profileinstaller-1.3.0/AndroidManifest.xml:50:17-95
+102-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/openhands/.gradle/caches/8.11.1/transforms/a92d4c703ccab45414435e8de8661b50/transformed/profileinstaller-1.3.0/AndroidManifest.xml:50:25-92
+103            </intent-filter>
+104        </receiver>
+105    </application>
+106
+107</manifest>
