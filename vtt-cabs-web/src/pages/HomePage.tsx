@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
@@ -164,15 +165,30 @@ function HomePage() {
             Fast, safe, and affordable cab service. Download our app or book directly.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <Link 
+              to="/book"
+              className="w-full sm:w-auto px-8 py-4 bg-white text-blue-900 font-semibold rounded-full hover:bg-blue-50 transition-all transform hover:scale-105 shadow-lg"
+            >
+              🚖 Book Your Ride Now
+            </Link>
+            <Link 
+              to="/login"
+              className="w-full sm:w-auto px-8 py-4 bg-blue-600 text-white font-semibold rounded-full hover:bg-blue-500 transition-all transform hover:scale-105 shadow-lg border-2 border-white/20"
+            >
+              🔐 Login / Register
+            </Link>
+          </div>
+          <div className="mt-6 flex flex-col sm:flex-row gap-4 justify-center items-center">
             <button 
               onClick={openApp}
-              className="w-full sm:w-auto px-8 py-4 bg-white text-blue-900 font-semibold rounded-full hover:bg-blue-50 transition-all transform hover:scale-105 shadow-lg"
+              className="text-blue-200 hover:text-white font-medium transition-colors"
             >
               📱 Download Customer App
             </button>
+            <span className="hidden sm:inline text-blue-300">|</span>
             <button 
               onClick={openApp}
-              className="w-full sm:w-auto px-8 py-4 bg-blue-600 text-white font-semibold rounded-full hover:bg-blue-500 transition-all transform hover:scale-105 shadow-lg border-2 border-white/20"
+              className="text-blue-200 hover:text-white font-medium transition-colors"
             >
               🚗 Download Driver App
             </button>

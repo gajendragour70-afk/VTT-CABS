@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 
 interface NavbarProps {
@@ -59,30 +60,40 @@ export default function Navbar({ scrolled, mobileMenuOpen, setMobileMenuOpen, sc
                 {link.label}
               </button>
             ))}
-            <button
-              onClick={openApp}
+            <Link
+              to="/book"
               className={`px-6 py-2 rounded-full font-semibold transition-all transform hover:scale-105 ${
                 scrolled 
                   ? 'bg-blue-600 text-white hover:bg-blue-700' 
                   : 'bg-white text-blue-900 hover:bg-blue-50'
               }`}
             >
-              Download App
-            </button>
+              Book Now
+            </Link>
+            <Link
+              to="/login"
+              className={`px-6 py-2 rounded-full font-semibold transition-all border-2 ${
+                scrolled 
+                  ? 'border-blue-600 text-blue-600 hover:bg-blue-50' 
+                  : 'border-white text-white hover:bg-white/10'
+              }`}
+            >
+              Login
+            </Link>
           </div>
 
           {/* Mobile menu button */}
           <div className="lg:hidden flex items-center gap-4">
-            <button
-              onClick={openApp}
-              className={`px-4 py-2 rounded-full font-medium text-sm ${
+            <Link
+              to="/book"
+              className={`px-3 py-2 rounded-full font-medium text-sm ${
                 scrolled 
                   ? 'bg-blue-600 text-white' 
                   : 'bg-white text-blue-900'
               }`}
             >
-              App
-            </button>
+              Book
+            </Link>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className={`p-2 rounded-lg ${
@@ -112,12 +123,18 @@ export default function Navbar({ scrolled, mobileMenuOpen, setMobileMenuOpen, sc
                 {link.label}
               </button>
             ))}
-            <button
-              onClick={openApp}
+            <Link
+              to="/book"
               className="block w-full px-4 py-3 bg-blue-600 text-white text-center rounded-lg font-semibold mt-4"
             >
-              Download App
-            </button>
+              Book Now
+            </Link>
+            <Link
+              to="/login"
+              className="block w-full px-4 py-3 border-2 border-blue-600 text-blue-600 text-center rounded-lg font-semibold"
+            >
+              Login / Register
+            </Link>
           </div>
         </div>
       )}
