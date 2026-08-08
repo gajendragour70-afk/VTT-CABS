@@ -3,11 +3,12 @@ import { useNavigate } from 'react-router-dom';
 import { supabase } from '../lib/supabase';
 import { MapPin, Calendar, Clock, Car, CheckCircle, AlertCircle, Loader2 } from 'lucide-react';
 
+// VTT CABS Vehicle Fleet
 const vehicleTypes = [
-  { id: 'sedan', name: 'Sedan', seats: '4 Seats', pricePerKm: 10, image: 'https://images.unsplash.com/photo-1555215695-3004980ad54e?w=200&h=120&fit=crop' },
-  { id: 'hatchback', name: 'Hatchback', seats: '4 Seats', pricePerKm: 8, image: 'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=200&h=120&fit=crop' },
-  { id: 'suv', name: 'SUV', seats: '7 Seats', pricePerKm: 15, image: 'https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?w=200&h=120&fit=crop' },
-  { id: 'luxury', name: 'Luxury', seats: '4 Seats', pricePerKm: 25, image: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=200&h=120&fit=crop' },
+  { id: 'aura', name: 'Aura Prime', seats: '4+1 Seater', nonAcPrice: 10, acPrice: 11, image: 'https://images.unsplash.com/photo-1555215695-3004980ad54e?w=200&h=120&fit=crop' },
+  { id: 'ertiga', name: 'Maruti Ertiga', seats: '6+1 Seater', nonAcPrice: 13, acPrice: 14, image: 'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=200&h=120&fit=crop' },
+  { id: 'swift', name: 'Maruti Swift', seats: '4+1 Seater', nonAcPrice: 8, acPrice: 9, image: 'https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?w=200&h=120&fit=crop' },
+  { id: 'wagonr', name: 'Maruti WagonR', seats: '4+1 Seater', nonAcPrice: 8, acPrice: 9, image: 'https://images.unsplash.com/photo-1559416523-140ddc3d238c?w=200&h=120&fit=crop' },
 ];
 
 export default function BookingPage() {
@@ -24,7 +25,8 @@ export default function BookingPage() {
     dropAddress: '',
     pickupDate: '',
     pickupTime: '',
-    vehicleType: 'sedan',
+    vehicleType: 'aura',
+    isAc: true,
     bookingType: 'local',
     customerNotes: '',
   });
@@ -79,7 +81,7 @@ export default function BookingPage() {
       }
 
       const selectedVehicle = vehicleTypes.find(v => v.id === formData.vehicleType);
-      const baseFare = selectedVehicle?.pricePerKm || 10;
+      const baseFare = selectedVehicle ? (formData.isAc ? selectedVehicle.acPrice : selectedVehicle.nonAcPrice) : 10;
       const estimatedDistance = 10;
       const distanceFare = baseFare * estimatedDistance;
       const totalFare = distanceFare + 50;
@@ -161,7 +163,8 @@ export default function BookingPage() {
   }
 
   const selectedVehicle = vehicleTypes.find(v => v.id === formData.vehicleType);
-  const estimatedPrice = ((selectedVehicle?.pricePerKm || 10) * 10) + 50;
+  const selectedPrice = selectedVehicle ? (formData.isAc ? selectedVehicle.acPrice : selectedVehicle.nonAcPrice) : 10;
+  const estimatedPrice = (selectedPrice * 10) + 50;
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -206,16 +209,17 @@ export default function BookingPage() {
               <label className="block text-sm font-medium text-gray-700 mb-3">Select Vehicle</label>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 {vehicleTypes.map((vehicle) => (
-                  <label key={vehicle.id} className={`relative cursor-pointer rounded-xl border-2 p-3 transition-all ${formData.vehicleType === vehicle.id ? 'border-blue-500 bg-blue-50' : 'border-gray-200 hover:border-blue-200'}`}>
+                  <label key={vehicle.id} className={`relative cursor-pointer rounded-xl border-2 p-3 transition-all ${formData.vehicleType === vehicle.id ? 'border-orange-500 bg-orange-50' : 'border-gray-200 hover:border-orange-200'}`}>
                     <input type="radio" name="vehicleType" value={vehicle.id} checked={formData.vehicleType === vehicle.id} onChange={handleChange} className="sr-only" />
                     <img src={vehicle.image} alt={vehicle.name} className="w-full h-20 object-cover rounded-lg mb-2" />
                     <div className="text-center">
                       <p className="font-semibold text-gray-900">{vehicle.name}</p>
                       <p className="text-xs text-gray-500">{vehicle.seats}</p>
-                      <p className="text-sm font-bold text-blue-600">₹{vehicle.pricePerKm}/km</p>
+                      <p className="text-xs font-bold text-blue-600">Non-AC: ₹{vehicle.nonAcPrice}/km</p>
+                      <p className="text-xs font-bold text-orange-600">AC: ₹{vehicle.acPrice}/km</p>
                     </div>
                     {formData.vehicleType === vehicle.id && (
-                      <div className="absolute top-2 right-2 w-5 h-5 bg-blue-500 rounded-full flex items-center justify-center">
+                      <div className="absolute top-2 right-2 w-5 h-5 bg-orange-500 rounded-full flex items-center justify-center">
                         <CheckCircle className="w-3 h-3 text-white" />
                       </div>
                     )}
@@ -272,16 +276,50 @@ export default function BookingPage() {
               <textarea name="customerNotes" value={formData.customerNotes} onChange={handleChange} placeholder="Any special requests..." rows={3} className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 resize-none" />
             </div>
 
+            {/* AC Toggle */}
+            <div className="bg-gradient-to-r from-blue-50 to-orange-50 rounded-xl p-4">
+              <div className="flex items-center justify-between mb-4">
+                <div className="flex items-center gap-2">
+                  <Car className="w-5 h-5 text-blue-600" />
+                  <span className="font-medium text-gray-900">AC / Non-AC</span>
+                </div>
+                <div className="flex gap-2">
+                  <button
+                    type="button"
+                    onClick={() => setFormData({ ...formData, isAc: false })}
+                    className={`px-4 py-2 rounded-lg font-medium transition-colors ${
+                      !formData.isAc ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-700'
+                    }`}
+                  >
+                    Non-AC
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setFormData({ ...formData, isAc: true })}
+                    className={`px-4 py-2 rounded-lg font-medium transition-colors ${
+                      formData.isAc ? 'bg-orange-500 text-white' : 'bg-gray-200 text-gray-700'
+                    }`}
+                  >
+                    AC
+                  </button>
+                </div>
+              </div>
+              <div className="text-center">
+                <p className="text-3xl font-bold text-orange-600">₹{selectedPrice}/km</p>
+                <p className="text-sm text-gray-600">Rate for {formData.isAc ? 'AC' : 'Non-AC'} {selectedVehicle?.name}</p>
+              </div>
+            </div>
+
             <div className="bg-blue-50 rounded-xl p-4">
               <div className="flex items-center gap-2 mb-2">
                 <Car className="w-5 h-5 text-blue-600" />
                 <span className="font-medium text-blue-900">Estimated Price</span>
               </div>
               <p className="text-2xl font-bold text-blue-600">₹{estimatedPrice}+</p>
-              <p className="text-sm text-blue-700">Based on minimum 10km distance</p>
+              <p className="text-sm text-blue-700">Based on minimum 10km distance | Extra charges may apply</p>
             </div>
 
-            <button type="submit" disabled={submitting} className="w-full py-4 bg-blue-600 text-white font-semibold rounded-xl hover:bg-blue-700 transition-colors disabled:opacity-50 flex items-center justify-center gap-2">
+            <button type="submit" disabled={submitting} className="w-full py-4 bg-gradient-to-r from-blue-600 to-orange-500 text-white font-semibold rounded-xl hover:from-blue-700 hover:to-orange-600 transition-colors disabled:opacity-50 flex items-center justify-center gap-2">
               {submitting ? <><Loader2 className="w-5 h-5 animate-spin" /> Processing...</> : <><CheckCircle className="w-5 h-5" /> Confirm Booking</>}
             </button>
           </div>

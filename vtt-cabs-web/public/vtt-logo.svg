@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <!-- Background Circle -->
+  <circle cx="100" cy="100" r="95" fill="#2563eb" stroke="#f97316" stroke-width="6"/>
+  
+  <!-- V Shape (Stylized Car) -->
+  <path d="M45 130 L75 70 L100 100 L125 70 L155 130 L135 130 L115 95 L100 115 L85 95 L65 130 Z" fill="#ffffff"/>
+  
+  <!-- T Letters -->
+  <text x="62" y="75" font-family="Arial, sans-serif" font-weight="bold" font-size="28" fill="#f97316">T</text>
+  <text x="115" y="75" font-family="Arial, sans-serif" font-weight="bold" font-size="28" fill="#f97316">T</text>
+</svg>
