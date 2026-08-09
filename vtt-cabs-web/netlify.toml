@@ -5,11 +5,6 @@
 [build.environment]
   NODE_VERSION = "18"
 
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
-
 # SPA routing fallback for all routes
 [[redirects]]
   from = "/login"
@@ -46,6 +41,59 @@
   to = "/index.html"
   status = 200
 
+# Legacy driver routes are NOT part of the public (customer-only) website.
+# Redirect any old driver URL to the customer login page (edge-level, before SPA catch-all).
+[[redirects]]
+  from = "/driver"
+  to = "/login"
+  status = 301
+
+[[redirects]]
+  from = "/driver-login"
+  to = "/login"
+  status = 301
+
+[[redirects]]
+  from = "/driver/login"
+  to = "/login"
+  status = 301
+
+[[redirects]]
+  from = "/driver/signup"
+  to = "/login"
+  status = 301
+
+[[redirects]]
+  from = "/driver/register"
+  to = "/login"
+  status = 301
+
+[[redirects]]
+  from = "/driver/dashboard"
+  to = "/login"
+  status = 301
+
+[[redirects]]
+  from = "/driver-dashboard"
+  to = "/login"
+  status = 301
+
+[[redirects]]
+  from = "/driver-portal"
+  to = "/login"
+  status = 301
+
+[[redirects]]
+  from = "/driver-portal/*"
+  to = "/login"
+  status = 301
+
+[[redirects]]
+  from = "/driver/*"
+  to = "/login"
+  status = 301
+
+# SPA catch-all: send everything else to index.html (React Router handles unknown routes)
 [[redirects]]
   from = "/*"
   to = "/index.html"
